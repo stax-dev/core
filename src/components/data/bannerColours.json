@@ -1,0 +1,38 @@
+[
+    {
+        "name": "green",
+        "background": "var(--st11)",
+        "backgroundHover": "var(--st12)",
+        "text": "var(--dtb1)"
+    },
+    {
+        "name": "purple",
+        "background": "var(--st21)",
+        "backgroundHover": "var(--st22)",
+        "text": "var(--dtt1)"
+    },
+    {
+        "name": "yellow",
+        "background": "var(--st31)",
+        "backgroundHover": "var(--st32)",
+        "text": "var(--dtb1)"
+    },
+    {
+        "name": "blue",
+        "background": "var(--st41)",
+        "backgroundHover": "var(--st42)",
+        "text": "var(--dtt1)"
+    },
+    {
+        "name": "red",
+        "background": "var(--rt1)",
+        "backgroundHover": "var(--rt2)",
+        "text": "var(--red-text)"
+    },
+    {
+        "name": "grey",
+        "background": "var(--theme3)",
+        "backgroundHover": "var(--theme2)",
+        "text": "var(--text1)"
+    }
+]

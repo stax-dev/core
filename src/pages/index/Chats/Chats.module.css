@@ -1,0 +1,72 @@
+
+.chats-title {
+    color: var(--text1);
+    font-size: 150%;
+    text-align: center;
+}
+
+.chats-title h1 {
+    font-size: 250%;
+    font-weight: 500;
+    margin: 0%;
+}
+
+.chats-explain {
+    font-size: 150%;
+    text-align: center;
+}
+
+.chats-feature,
+.chats-feature2 {
+    /* css global flex */
+    width: 100%;
+    color: var(--text2);
+}
+
+.chats-feature h2,
+.chats-feature2 h2{
+    color: var(--text1);
+    font-weight: 500;
+    font-size: 250%;
+}
+
+.chats-feature2 {
+    flex-direction: row-reverse;
+}
+
+.chats-feature .chats-feature-info,
+.chats-feature2 .chats-feature-art {
+    margin-right: 2%;
+    width: 48%;
+}
+
+.chats-feature .chats-feature-art,
+.chats-feature2 .chats-feature-info {
+    margin-left: 2%;
+    width: 48%;
+}
+
+.chats-start {
+    width: 100%;
+    text-align: center;
+
+}
+
+.chats-start h2{
+    font-size: 250%;
+    font-weight: 500;
+}
+
+.chats-start-button {
+    width: 150px;
+    padding: 12px 0px;
+    color: var(--theme1);
+    border-radius: 10px;
+    margin: auto;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--accent3);
+}
+
+.chats-start-button:hover{
+    background-color: var(--accent3-hover);
+}

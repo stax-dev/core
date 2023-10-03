@@ -1,0 +1,1369 @@
+/*modals*/
+
+.renewplan {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+}
+
+.renewplan .renewplan-box {
+  max-width: 320px;
+  margin: 0% 5%;
+  padding: 30px;
+  scrollbar-width: none;
+  max-height: calc(90dvh - 60px);
+  height: auto;
+  overflow: auto;
+}
+
+.renewplan-box::-webkit-scrollbar {
+  display: none;
+}
+
+.renewplan-box {
+  background-color: var(--theme3);
+  transform: scale(0.4);
+  transition: all 0.2s ease-in-out;
+  color: var(--text1);
+  font-size: 100%;
+  border-radius: 20px;
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.renewplan-box h1 {
+  font-weight: 400;
+  font-size: 180%;
+  margin: 0%;
+  padding: 0% 0% 2% 0%;
+}
+
+.renewplan-box .fa-exclamation-circle {
+  color: var(--red);
+  margin-right: 1%;
+}
+
+.renewplan-info b {
+  font-weight: 400;
+  font-size: 95%;
+  color: var(--text2);
+}
+
+.renewplan-info {
+  color: var(--text1);
+  background-color: var(--theme1);
+  padding: 1% 5%;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.renewplan-box .far,
+.renewplan-box .fas {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.renewplan-checkbox-off .fas,
+.renewplan-checkbox-on .far {
+  display: none;
+}
+
+.renewplan-buttons {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 5% 0% 0%;
+}
+
+.renewplan-buttons .renewplan-buttons-box {
+  width: 100%;
+}
+
+.renewplan-button-cancel,
+.renewplan-button-submit {
+  padding: 12px 0%;
+  font-size: 100%;
+  border-radius: 10px;
+  border: none;
+  margin: 1% 0%;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.renewplan-button-submit-off {
+  padding: 12px 0%;
+  font-size: 100%;
+  border-radius: 10px;
+  margin: 1% 0%;
+  width: 100%;
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.6;
+}
+
+.renewplan-button-cancel p,
+.renewplan-button-submit p,
+.renewplan-button-submit-off p {
+  margin: 0%;
+}
+
+.renewplan-button-cancel {
+  background-color: var(--theme2);
+  color: var(--text1);
+}
+
+.renewplan-button-cancel:hover {
+  background-color: var(--theme1);
+}
+
+.renewplan-button-submit,
+.renewplan-button-submit-off {
+  background-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.renewplan-button-submit:hover {
+  background-color: var(--accent-hover);
+}
+
+.changeplan {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+}
+
+.changeplan .changeplan-box {
+  max-width: 600px;
+  padding: 30px;
+  margin: 0% 5%;
+  scrollbar-width: none;
+  max-height: calc(90dvh - 60px);
+  overflow: auto;
+}
+
+.changeplan .changeplan-box-final {
+  max-width: 320px;
+  padding: 30px;
+  scrollbar-width: none;
+  max-height: calc(90dvh - 60px);
+  overflow: auto;
+}
+
+.changeplan-box::-webkit-scrollbar,
+.changeplan-box-final::-webkit-scrollbar {
+  display: none;
+}
+
+.changeplan-box,
+.changeplan-box-final {
+  background-color: var(--theme3);
+  transform: scale(0.4);
+  transition: all 0.2s ease-in-out;
+  color: var(--text1);
+  font-size: 100%;
+  font-weight: 300;
+  border-radius: 20px;
+}
+
+.changeplan-box .changeplan-finalpage,
+.changeplan-box-final .changeplan-choosepage {
+  display: none;
+}
+
+.changeplan-finalpage .changeplan-info .fas {
+  margin: 0% 2%;
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.changeplan-box h1,
+.changeplan-box-final h1 {
+  font-weight: 400;
+  font-size: 180%;
+  margin: 0%;
+  padding: 0% 0% 2% 0%;
+}
+
+.changeplan-box .fa-exclamation-circle {
+  color: var(--red);
+  margin-right: 2%;
+}
+
+.changeplan-split {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.changeplan-split .changeplan-info-section {
+  width: 49%;
+  margin-right: 1%;
+}
+
+.changeplan-split .changeplan-plans {
+  width: 49%;
+  margin-left: 1%;
+}
+
+.changeplan a {
+  color: var(--accent);
+}
+
+.changeplan-info b {
+  font-weight: 400;
+  font-size: 95%;
+  color: var(--text2);
+}
+
+.changeplan-info {
+  color: var(--text1);
+  background-color: var(--theme1);
+  padding: 1% 5%;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.changeplan-info-info {
+  font-size: 95%;
+  color: var(--text2);
+}
+
+.changeplan-info-info .fas {
+  margin-right: 2%;
+}
+
+.changeplan-plans-list {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.changeplan-plans-list .changeplan-plans-box,
+.changeplan-plans-list .changeplan-plans-box-off {
+  width: 92%;
+  padding: 4%;
+  margin-bottom: 2%;
+}
+
+.changeplan-plans-box,
+.changeplan-plans-box-off {
+  border-radius: 10px;
+  background-color: var(--theme2);
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: var(--text1);
+  border: 1px solid var(--theme2);
+  transition: all 0.2s ease-in-out;
+}
+
+.changeplan-plans-box-off {
+  opacity: 0.8;
+}
+
+.changeplan-plans-box {
+  cursor: pointer;
+}
+
+.changeplan-plans-box:hover {
+  border: 1px solid var(--accent) !important;
+}
+
+.changeplan-plans-box h1,
+.changeplan-plans-box-off h1 {
+  font-size: 150%;
+  font-weight: 500;
+  margin-top: 0%;
+}
+
+.changeplan-plans-box .changeplan-plans-title,
+.changeplan-plans-box-off .changeplan-plans-title {
+  width: 60%;
+}
+
+.changeplan-plans-box .changeplan-plans-price,
+.changeplan-plans-box-off .changeplan-plans-price {
+  width: 40%;
+}
+
+.changeplan-plans-box .changeplan-plans-info,
+.changeplan-plans-box-off .changeplan-plans-info {
+  width: 80%;
+}
+
+.changeplan-plans-box .changeplan-plans-choice,
+.changeplan-plans-box-off .changeplan-plans-choice {
+  width: 20%;
+}
+
+.changeplan-plans-choice {
+  text-align: right;
+  color: var(--accent);
+  font-size: 150%;
+  transition: all 0.2s ease-in-out;
+}
+
+.changeplan-plans-price {
+  text-align: right;
+}
+
+.changeplan-plans-info p {
+  margin-bottom: 0%;
+}
+
+.grey-text {
+  color: var(--text2);
+}
+
+.changeplan-plans-text p {
+  margin: 0% 0% 2%;
+}
+
+.changeplan-box-final .far,
+.changeplan-box-final .fas {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.changeplan-checkbox-off .fas,
+.changeplan-checkbox-on .far {
+  display: none;
+}
+
+.changeplan-moreinfo p {
+  margin-top: 0%;
+}
+
+#changeplan-finalpage {
+  display: none;
+}
+
+.changeplan-buttons,
+.changeplan-buttons2 {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.changeplan-buttons .changeplan-buttons-box,
+.changeplan-buttons2 .changeplan-buttons-box {
+  width: 50%;
+}
+
+.changeplan-buttons p,
+.changeplan-buttons2 p {
+  margin: 0%;
+}
+
+.changeplan-button-cancel,
+.changeplan-button-submit {
+  border-radius: 10px;
+  margin: 1% 0%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 150px;
+}
+
+.changeplan-button-submit-off {
+  border-radius: 10px;
+  margin: 1% 0%;
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.6;
+  width: 150px;
+}
+
+.changeplan-buttons-box .fas {
+  margin-left: 4%;
+  display: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.changeplan-buttons .changeplan-button-cancel {
+  background-color: var(--theme2);
+  color: var(--text1);
+  padding: 4% 0%;
+}
+
+.changeplan-buttons .changeplan-button-cancel:hover {
+  background-color: var(--theme1);
+}
+
+.changeplan-buttons .changeplan-button-submit,
+.changeplan-buttons .changeplan-button-submit-off {
+  background-color: var(--theme2);
+  padding: 4% 0%;
+  color: var(--text1);
+  margin-left: auto;
+}
+
+.changeplan-buttons .changeplan-button-submit:hover .fas {
+  transform: translateX(2px);
+}
+
+.changeplan-buttons .changeplan-button-submit:hover {
+  background-color: var(--theme1);
+}
+
+.changeplan-buttons2 .changeplan-button-cancel {
+  background-color: var(--theme2);
+  color: var(--text1);
+  margin-right: 2%;
+  padding: 8% 0%;
+  width: 98%;
+}
+.changeplan-buttons2 .changeplan-button-cancel:hover {
+  background-color: var(--theme1);
+}
+
+.changeplan-buttons2 .changeplan-button-submit,
+.changeplan-buttons2 .changeplan-button-submit-off {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  margin-left: 2%;
+  padding: 8% 0%;
+  width: 98%;
+}
+
+.changeplan-buttons2 .changeplan-button-submit:hover {
+  background-color: var(--accent-hover);
+}
+
+.deleteplan {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+}
+
+.deleteplan .deleteplan-box {
+  max-width: 410px;
+  padding: 30px;
+  margin: 0% 5%;
+  max-height: calc(90dvh - 60px);
+  overflow: auto;
+}
+
+.deleteplan-box::-webkit-scrollbar {
+  display: none;
+}
+
+.deleteplan-box {
+  background-color: var(--theme3);
+  transform: scale(0.4);
+  transition: all 0.2s ease-in-out;
+  color: var(--text1);
+  font-size: 100%;
+  font-weight: 300;
+  border-radius: 20px;
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.deleteplan-box h1 {
+  font-weight: 400;
+  font-size: 180%;
+  margin: 0%;
+}
+
+.deleteplan-box .fa-exclamation-circle {
+  color: var(--red);
+  margin-right: 8px;
+}
+
+.deleteplan-info b {
+  font-weight: 400;
+  font-size: 95%;
+  color: var(--text2);
+}
+
+.deleteplan-info {
+  color: var(--text1);
+  background-color: var(--theme1);
+  padding: 1% 5%;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.deleteplan-box .far,
+.deleteplan-box .fas {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.deleteplan-checkbox-off .fas,
+.deleteplan-checkbox-on .far {
+  display: none;
+}
+
+.deleteplan-buttons {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 5% 0% 0%;
+}
+
+.deleteplan-buttons .deleteplan-buttons-box {
+  width: 50%;
+}
+
+.deleteplan-buttons p {
+  margin: 0%;
+}
+
+.deleteplan-button-cancel,
+.deleteplan-button-submit {
+  padding: 12px 0%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  margin: 1% 0%;
+  width: 98%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.deleteplan-button-submit-off {
+  padding: 12px 0%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  margin: 1% 0%;
+  width: 98%;
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.6;
+}
+
+.deleteplan-button-cancel {
+  background-color: var(--theme2);
+  color: var(--text1);
+  margin-right: 4%;
+}
+
+.deleteplan-button-cancel:hover {
+  background-color: var(--theme1);
+}
+
+.deleteplan-button-submit,
+.deleteplan-button-submit-off {
+  background-color: var(--red);
+  color: var(--red-text);
+  margin-left: 2%;
+}
+
+.deleteplan-button-submit:hover {
+  background-color: var(--red-hover);
+}
+
+.dashboard-stretch {
+  margin-bottom: 1%;
+}
+
+.billing-split {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 1%;
+}
+
+.billing-split .billing-info {
+  width: calc(45% - 10px);
+  margin-right: 10px;
+}
+
+.billing-split .billing-settings {
+  width: calc(55% - 10px);
+  margin-left: 10px;
+}
+
+.billing-info {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.billing-info .account-wallet,
+.billing-info .billing-card {
+  width: calc(100% - 50px);
+  max-width: calc(530px - 50px);
+  padding: 25px;
+  margin-bottom: 20px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.billing-info .billing-info-plan {
+  width: calc(100% - 50px);
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.billing-info-plan {
+  border-radius: 20px;
+  color: var(--text2);
+  background-color: var(--theme3);
+  /* css global flex */
+}
+
+.billing-info-plan .fas {
+  margin-left: 5px;
+}
+
+.billing-info-plan b {
+  color: var(--text1);
+  font-weight: 400;
+}
+
+.main-colour-text {
+  color: var(--accent);
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.billing-info-plan p {
+  margin: 0%;
+}
+
+.billing-info-plan .billing-info-plan-title {
+  width: 100%;
+  padding-bottom: 2%;
+  margin-bottom: 4%;
+  border-bottom: 1px solid var(--text2);
+}
+
+.billing-info-plan-title h1 {
+  font-weight: 500;
+  font-size: 120%;
+  margin: 0%;
+  color: var(--text1);
+}
+
+.billing-info-plan .billing-info-plan-box {
+  width: 48%;
+  margin-right: 4%;
+  margin-bottom: 20px;
+}
+
+.billing-info-plan-box:nth-child(even) {
+  margin-right: 0%;
+}
+
+.billing-info-plan .billing-info-plan-footer {
+  width: 100%;
+}
+
+.billing-info-plan-footer .fas {
+  margin-right: 2%;
+  margin-left: 0%;
+}
+
+.billing-info-plan-footer {
+  font-size: 95%;
+  color: var(--text2);
+}
+
+.account-wallet {
+  border-radius: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--accent),
+    var(--accent) 100px,
+    var(--accent-hover) 100px,
+    var(--accent-hover) 200px
+  );
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: var(--text1);
+}
+
+.account-wallet .account-wallet-title {
+  width: 70%;
+}
+
+.account-wallet .account-wallet-icon {
+  width: 30%;
+}
+
+.account-wallet .account-wallet-balance {
+  width: 100%;
+}
+
+.account-wallet .account-wallet-name {
+  width: 100%;
+}
+
+.account-wallet-title p {
+  margin-top: 0%;
+}
+
+.account-wallet-balance h1,
+.account-wallet p {
+  margin: 0%;
+}
+
+.account-wallet-title b {
+  font-size: 110%;
+  font-weight: 400;
+}
+
+.account-wallet-icon {
+  font-size: 200%;
+  line-height: 0%;
+  text-align: right;
+}
+
+.account-wallet-icon img {
+  width: 30%;
+  float: right;
+}
+
+.account-wallet-balance .fas {
+  margin-right: 2%;
+}
+
+.account-wallet-balance h1 {
+  font-weight: 500;
+  font-size: 300%;
+}
+
+.account-wallet-name {
+  text-align: right;
+}
+
+.billing-card {
+  /* css global flex */
+  border-radius: 20px;
+  color: var(--accent-text);
+  background-color: var(--theme2);
+  font-weight: 400;
+}
+
+.billing-card p,
+.billing-card h1 {
+  margin: 0%;
+}
+
+.billing-card-backdrop {
+  width: 50%;
+  transform: rotate(-30deg);
+  position: absolute;
+  z-index: -1;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.billing-card-backdrop .billing-card-backdrop-box1 {
+  padding: 40% 20%;
+  width: 60%;
+  margin-top: 40%;
+  border-radius: 80px;
+}
+
+.billing-card .billing-card-line1,
+.billing-card .billing-card-line2,
+.billing-card .billing-card-line3,
+.billing-card .billing-card-line4 {
+  width: 100%;
+  padding: 0%;
+}
+
+.billing-card-line1 {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.billing-card-line1 .billing-card-line1-box1 {
+  width: calc(100% - 40px);
+}
+
+.billing-card-line1 .billing-card-line1-box2 {
+  width: 40px;
+}
+
+.billing-card-line1-box1 {
+  font-size: 120%;
+  font-weight: 400;
+}
+
+.billing-card-line1-box2 {
+  height: 40px;
+  background-color: var(--theme1);
+  border-radius: 10px;
+}
+
+.billing-card-line1-box2 img {
+  width: 25px;
+  padding: calc(25px / 3);
+  /* 20% padding */
+  float: right;
+  background-color: var(--dtb1);
+  border-radius: 20%;
+}
+
+.billing-card-line2 {
+  font-size: 95%;
+  margin-top: 5%;
+}
+
+.billing-card-line3 p {
+  font-weight: 500;
+  font-size: 350%;
+  line-height: 100%;
+}
+
+.billing-card-line3 {
+  margin-bottom: 8%;
+}
+
+.billing-card-line4 {
+  text-align: right;
+  margin-top: 4%;
+}
+
+.billing-card-line4 .fas {
+  margin-right: 10px;
+}
+
+.billing-settings {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  color: var(--text2);
+}
+
+.billing-settings .renew-plan {
+  padding: 25px;
+  margin-bottom: 20px;
+  width: calc(100% - 50px);
+}
+
+.billing-settings .billing-settings-box {
+  width: calc(100% - 50px);
+  padding: 25px;
+}
+
+.renew-plan {
+  border-radius: 20px;
+  background-color: var(--theme3);
+  color: var(--text1);
+}
+
+.renew-plan h1 {
+  color: var(--text1);
+  margin-top: 0%;
+  font-size: 150%;
+  font-weight: 400;
+}
+
+.renew-plan-button {
+  background-color: var(--accent);
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px 0px;
+  width: 150px;
+  color: var(--accent-text);
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.renew-plan-button p {
+  margin: 0%;
+}
+
+.renew-plan-button:hover {
+  background-color: var(--accent-hover);
+}
+
+.billing-settings-box {
+  border-radius: 20px;
+  background-color: var(--theme3);
+}
+
+.billing-settings-box h1 {
+  color: var(--text1);
+  margin-top: 0%;
+  font-size: 150%;
+  font-weight: 400;
+}
+
+.billing-settings-box b {
+  color: var(--text1);
+  font-weight: 400;
+  font-size: 100%;
+}
+
+.spacing-break1 {
+  padding: 2% 0%;
+}
+
+.autorenew-on,
+.autorenew-off {
+  padding: 8px;
+  width: calc(150px - 16px);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.autorenew-on {
+  background-color: var(--accent);
+}
+
+.autorenew-off {
+  background-color: var(--red);
+}
+
+.autorenew-button {
+  transition: all 0.3s ease-in-out;
+  line-height: 0%;
+  padding: 2%;
+  width: 50%;
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--theme3);
+  color: var(--text1);
+}
+
+.autorenew-on .autorenew-button {
+  margin-left: 0%;
+}
+
+.autorenew-off .autorenew-button {
+  margin-left: 46%;
+}
+
+.autorenew-on .autorenew-value-off,
+.autorenew-off .autorenew-value-on {
+  display: none;
+}
+
+.change-plan-button {
+  background-color: var(--accent);
+  padding: 12px 0%;
+  width: 150px;
+  border-radius: 10px;
+  color: var(--accent-text);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.change-plan-button p {
+  margin: 0%;
+}
+
+.change-plan-button:hover {
+  background-color: var(--accent-hover);
+}
+
+.delete-plan-button {
+  background-color: var(--red);
+  padding: 12px 0%;
+  width: 150px;
+  border-radius: 10px;
+  color: var(--red-text);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.delete-plan-button b{
+  color: var(--red-text);
+}
+
+.delete-plan-button p {
+  margin: 0%;
+}
+
+.delete-plan-button:hover {
+  background-color: var(--red-hover);
+}
+
+@media screen and (min-width: 1600px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+
+
+  .billing-info-plan .billing-info-plan-footer {
+    margin-top: 10px;
+  }
+
+  .billing-info-plan .billing-info-plan-box {
+    width: 100%;
+    margin-right: 0%;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .billing-info-plan .billing-info-plan-box {
+    width: 48%;
+    margin-right: 4%;
+  }
+
+  .billing-info-plan-box:nth-child(odd) {
+    margin-right: 0%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .billing-split .billing-info {
+    width: 100%;
+    margin-right: 0%;
+  }
+
+  .billing-split .billing-settings {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .billing-info-plan .billing-info-plan-box {
+    width: 32%;
+    margin-right: 2%;
+  }
+
+  .billing-info-plan-box:nth-child(4),
+  .billing-info-plan-box:nth-child(7),
+  .billing-info-plan-box:nth-child(10) {
+    margin-right: 0%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .changeplan-split .changeplan-info-section {
+    width: 100%;
+    margin-right: 0%;
+  }
+
+  .changeplan-split .changeplan-plans {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  .billing-info-plan .billing-info-plan-box {
+    width: 48%;
+    margin-right: 4%;
+  }
+
+  .billing-info-plan-box:nth-child(odd) {
+    margin-right: 0%;
+  }
+}
+
+@media screen and (max-width: 525px) {
+
+  .billing-info-plan .billing-info-plan-title {
+    padding-bottom: 4%;
+  }
+
+  .deleteplan-buttons .deleteplan-buttons-box {
+    width: 100%;
+  }
+
+  .changeplan-buttons .changeplan-button-cancel {
+    margin-right: 10%;
+    width: 90%;
+  }
+
+  .changeplan-buttons .changeplan-button-submit,
+  .changeplan-buttons .changeplan-button-submit-off {
+    margin-left: 10%;
+    width: 90%;
+  }
+
+  .changeplan-buttons2 .changeplan-buttons-box {
+    width: 100%;
+  }
+
+  .changeplan-buttons2 .changeplan-button-cancel {
+    margin-right: 0%;
+    padding: 4% 0%;
+    width: 100%;
+  }
+  .changeplan-buttons2 .changeplan-button-submit,
+  .changeplan-buttons2 .changeplan-button-submit-off {
+    margin-left: 0%;
+    padding: 4% 0%;
+    width: 100%;
+  }
+
+  .billing-info .account-wallet,
+  .billing-info .billing-info-plan,
+  .billing-settings .renew-plan {
+    margin-bottom: 15px;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+
+  .changeplan-buttons .changeplan-button-cancel {
+    margin-right: 0%;
+    padding: 4% 0%;
+    width: 100%;
+  }
+
+  .changeplan-buttons .changeplan-button-submit,
+  .changeplan-buttons .changeplan-button-submit-off {
+    margin-left: 0%;
+    padding: 4% 0%;
+    width: 100%;
+  }
+
+  .changeplan-buttons .changeplan-buttons-box {
+    width: 100%;
+  }
+
+  .billing-info-plan .billing-info-plan-box {
+    width: 100%;
+    margin-right: 0%;
+  }
+
+}
+
+@media screen and (max-width: 380px) {
+
+
+  .billing-card-line3 p {
+    font-size: 300%;
+  }
+
+}

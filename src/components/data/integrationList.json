@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Google",
+        "background": "white",
+        "wallpaper": "googleWallpaper",
+        "features": [
+            "login"
+        ],
+        "connected": 1,
+        "connectedName": "hudson101@gmail.com"
+    },
+    {
+        "name": "Github",
+        "background": "#4078C0",
+        "features": [
+            "login"
+        ],
+        "connected": 1,
+        "connectedName": "@Photon862"
+    },
+    {
+        "name": "Apple",
+        "background": "#000000",
+        "features": [
+            "login"
+        ],
+        "connected": 1,
+        "connectedName": "John Wick"
+    },
+    {
+        "name": "Gitlab",
+        "background": "#554488",
+        "features": [
+            "login"
+        ],
+        "connected": 0,
+        "connectedName": "test"
+    },
+    {
+        "name": "Microsoft",
+        "background": "white",
+        "features": [
+            "login"
+        ],
+        "connected": 0,
+        "connectedName": "test"
+    },
+    {
+        "name": "Slack",
+        "features": [
+            "login"
+        ],
+        "connected": 0,
+        "connectedName": "test"
+    },
+    {
+        "name": "Zapier",
+        "features": [
+            "integration"
+        ],
+        "connected": 0,
+        "connectedName": "test"
+    },
+    {
+        "name": "Docker",
+        "features": [
+            "deploy"
+        ],
+        "connected": 0,
+        "connectedName": "test"
+    },
+    {
+        "name": "Cloudfare",
+        "features": [
+            "security"
+        ],
+        "connected": 0,
+        "connectedName": "test"
+    },
+    {
+        "name": "Kubernetes",
+        "connected": 0,
+        "connectedName": "test",
+        "features": [
+            "deploy"
+        ]
+    },
+    {
+        "name": "CircleCI",
+        "connected": 0,
+        "connectedName": "test",
+        "features": [
+            "deploy"
+        ]
+    },
+    {
+        "name": "JenkinsCI",
+        "connected": 0,
+        "connectedName": "test",
+        "features": [
+            "deploy"
+        ]
+    },
+    {
+        "name": "Dropbox",
+        "background": "#0060FF",
+        "features": [
+            "login"
+        ],
+        "connected": 0,
+        "connectedName": "test"
+    },
+    {
+        "name": "Discord",
+        "background": "#5865F2",
+        "features": [
+            "login"
+        ],
+        "connected": 1,
+        "connectedName": "Hudson#0001"
+    }
+]

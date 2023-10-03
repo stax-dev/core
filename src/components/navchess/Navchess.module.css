@@ -1,0 +1,642 @@
+/*modals*/
+
+#navbar-small-icon {
+  transition: all 0.2s ease-in-out;
+}
+
+.navchesssmall {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: scale(0);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0%;
+  padding: 0%;
+}
+
+.navchesssmall .navchesssmall-box {
+  width: calc(300px - 60px);
+  height: calc(100vh - 60px);
+  padding: 30px;
+  margin: 0%;
+  overflow: auto;
+}
+
+.navchesssmall-box::-webkit-scrollbar-thumb {
+  background: var(--theme2);
+}
+
+.navchesssmall-box {
+  background-color: var(--theme1);
+  color: var(--text2);
+  transition: all 0.2s ease-in-out;
+  transform: translateX(-100%);
+  font-size: 100%;
+  font-weight: 300;
+  border-radius: 0px 20px 20px 0px;
+  cursor: default;
+  /* background-image: url('/assets/images/index-bg.svg'); */
+}
+
+.fa-times {
+  background-color: var(--theme3);
+  transition: all 0.2s ease-in-out;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 100%;
+  cursor: pointer;
+  color: var(--red);
+}
+
+.fa-times:hover {
+  background-color: var(--red);
+  color: var(--text1);
+}
+
+#navchesssmall-box {
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-backdrop {
+  width: 150%;
+  transform: rotate(-30deg);
+  position: absolute;
+  z-index: -1;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: none;
+}
+
+.navbar-backdrop .navbar-backdrop-box1 {
+  padding: 40% 20%;
+  width: 50%;
+  margin-top: 20%;
+  border-radius: 80px;
+  background-color: var(--theme3);
+}
+
+.navchesssmall-title {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0% auto 4%;
+}
+
+.navchesssmall-title .navchesssmall-title-text {
+  width: 68%;
+  margin: 0% 1%;
+}
+
+.navchesssmall-title .navchesssmall-title-close {
+  width: 28%;
+  margin: 0% 1%;
+}
+
+.navchesssmall-title-text h1 {
+  font-weight: 500;
+  font-size: 150%;
+  margin: 0%;
+  color: var(--text1);
+}
+
+.navchesssmall-title-close {
+  text-align: right;
+  color: var(--text1);
+  font-size: 150%;
+}
+
+.navchesssmall-title-close p {
+  margin: 0%;
+}
+
+.navchesssmall-menu {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 98%;
+  margin: 0% auto 2%;
+}
+
+.navchesssmall-menu .navchesssmall-link {
+  width: 98%;
+  margin: 1%;
+}
+
+.navchesssmall-menu .navchesssmall-link-big {
+  width: 98%;
+  margin: 1% 1% 1%;
+}
+
+.navchesssmall-list {
+  border-radius: 0px;
+  padding: 4% 5%;
+  color: var(--text1);
+  border-radius: 10px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.navchesssmall-icon .fas {
+  transition: all 0.2s ease-in-out;
+}
+
+.navchesssmall-list:hover .navchesssmall-icon .fas {
+  transform: translateX(4px);
+}
+
+.navchesssmall-list:hover {
+  background-color: var(--theme1);
+}
+
+.navchesssmall-list .navchesssmall-info {
+  width: 90%;
+}
+
+.navchesssmall-list .navchesssmall-icon {
+  width: 10%;
+}
+
+.navchesssmall-icon {
+  text-align: center;
+}
+
+.navchesssmall-info,
+.navchesssmall-icon {
+  line-height: 0%;
+}
+
+.navchesssmall-icon p {
+  margin: 0% 0%;
+}
+
+.navchesssmall-button {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.navchesssmall-button .navchesssmall-button-login,
+.navchesssmall-button .navchesssmall-button-register,
+.navchesssmall-button .navchesssmall-button-splashboard {
+  width: 100%;
+  margin: 4% 0% 0%;
+}
+
+.navchesssmall-button button {
+  color: var(--theme1);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.navchesssmall-button a {
+  padding: 5% 0%;
+  width: 100%;
+  display: block;
+  color: inherit;
+}
+
+.navchesssmall-button-splashboard button,
+.navchesssmall-button-login button {
+  background-color: var(--accent);
+}
+
+.navchesssmall-button-register button {
+  background-color: var(--text1);
+}
+
+.navchesssmall-button-splashboard button:hover,
+.navchesssmall-button-login button:hover {
+  background-color: var(--accent-hover);
+}
+
+.navbarmsmall-button-register button:hover {
+  background-color: var(--text2);
+}
+
+.navchesssmall-button {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.navchesssmall-button .navchesssmall-button-login {
+  width: 100%;
+}
+
+.navchesssmall-button .navchesssmall-button-register {
+  width: 100%;
+}
+
+.navchesssmall-button .navchesssmall-button-splashboard {
+  width: 100%;
+}
+
+@media screen and (max-width: 380px) {
+  .navchesssmall .navchesssmall-box {
+    width: calc(90% - 60px);
+    padding: 30px;
+    margin: 0%;
+    overflow: auto;
+  }
+}
+
+.chessboard {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: stretch;
+  -webkit-align-items: stretch;
+  -ms-align-items: stretch;
+  align-items: stretch;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.chessboard .chessboard-top {
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.chessboard .chessboard-main,
+.chessboard .chessboard-main2 {
+  width: 69%;
+  margin: 1% 0%;
+}
+
+.chessboard .chessboard-side,
+.chessboard .chessboard-side2 {
+  width: 29%;
+  margin: 1% 0%;
+}
+
+.chessboard .chessboard-stretch {
+  width: 100%;
+  margin: 1% 0% 0%;
+}
+
+.chessboard .chessboard-split {
+  width: 49%;
+  margin: 0%;
+}
+
+.chessboard-navbar {
+  color: var(--text1);
+}
+
+.chessboard-navbar-title h1 {
+  color: var(--text1);
+  font-weight: 500;
+  font-size: 150%;
+  margin: 0%;
+}
+
+.navchesssmall .chessboard-navbar-title-text {
+  font-weight: 500;
+  font-size: 100%;
+  color: var(--text1);
+}
+
+.chessboard-navbar-title-text {
+  font-size: 110%;
+  font-weight: 500;
+  color: var(--text1);
+}
+
+.chessboard-navbar-title-text p {
+  margin: 0%;
+}
+
+.server-profile-photo {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  background-size: contain;
+  margin-bottom: 5%;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.online-tag {
+  background-color: rgba(0, 255, 0, 0.171);
+  color: var(--accent);
+}
+
+.offline-tag {
+  background-color: rgba(237, 67, 55, 0.171);
+  color: var(--red);
+}
+
+.restart-tag {
+  background-color: rgba(255, 165, 0, 0.171);
+  color: #ffa500;
+}
+
+.online-tag,
+.offline-tag,
+.restart-tag {
+  border-radius: 20px;
+  cursor: default;
+  padding: 5px 10px;
+  font-weight: 400;
+  font-size: calc(70%);
+  cursor: default;
+}
+
+.online-tag .fas,
+.offline-tag .fas,
+.restart-tag .fas {
+  margin-right: 5px;
+}
+
+.online-tag .offline-tag-text,
+.online-tag .restart-tag-text,
+.offline-tag .online-tag-text,
+.offline-tag .restart-tag-text,
+.restart-tag .offline-tag-text,
+.restart-tag .online-tag-text {
+  display: none;
+}
+
+.chessboard-navbar-pages {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: stretch;
+  -webkit-align-items: stretch;
+  -ms-align-items: stretch;
+  align-items: stretch;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2%;
+  font-size: 95%;
+}
+
+.chessboard-navbar-pages .chessboard-navbar-link {
+  width: 100%;
+  margin: 1% 0%;
+}
+
+.chessboard-navbar-link {
+  line-height: 0%;
+}
+
+.chessboard-navbar-pages-box {
+  color: var(--text2);
+}
+
+.chessboard-navbar-pages-box:hover {
+  background-color: var(--theme2);
+}
+
+.chessboard-navbar-pages-box-active {
+  color: var(--text1);
+  background-color: var(--theme3);
+}
+
+.chessboard-navbar-pages-box,
+.chessboard-navbar-pages-box-active {
+  border-radius: 10px;
+  width: 96%;
+  padding: 2%;
+  transition: all 0.2s ease-in-out;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.chessboard-navbar-pages-box .chessboard-navbar-pages-icon,
+.chessboard-navbar-pages-box-active .chessboard-navbar-pages-icon {
+  width: 20%;
+}
+
+.chessboard-navbar-pages-box .chessboard-navbar-pages-page,
+.chessboard-navbar-pages-box-active .chessboard-navbar-pages-page {
+  width: 60%;
+}
+
+.chessboard-navbar-pages-box .chessboard-navbar-pages-unread,
+.chessboard-navbar-pages-box-active .chessboard-navbar-pages-unread {
+  width: 20%;
+}
+
+.chessboard-navbar-pages-icon {
+  text-align: center;
+}
+
+.chessboard-navbar-pages-page {
+  text-align: left;
+}
+
+.chessboard-navbar-pages-unread {
+  color: var(--red);
+  text-align: center;
+}
+
+/* chessboard top */
+
+.chessboard-top {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: auto;
+  color: var(--text1);
+  margin-bottom: 2%;
+}
+
+.chessboard-top .chessboard-top-title {
+  width: 50%;
+}
+
+.chessboard-top .chessboard-top-menu {
+  width: 50%;
+  display: none;
+}
+
+.chessboard-top-title h1 {
+  font-weight: 500;
+  font-size: 200%;
+  margin: 0%;
+}
+
+.chessboard-top-menu {
+  text-align: right;
+}
+
+.chessboard-top-menu button {
+  font-size: 150%;
+  background-color: var(--theme3);
+  border-radius: 10px;
+  padding: 2px 10px;
+  margin-left: auto;
+  color: var(--text1);
+  transition: all 0.2s ease-in-out;
+}
+
+.chessboard-top-menu button:hover {
+  background-color: var(--text1);
+  color: var(--theme1);
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1000px) {
+  .navchesssmall {
+    display: block;
+  }
+
+  .chessboard-top .chessboard-top-menu {
+    display: block;
+  }
+
+  .chessboard-navbar-title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 525px) {
+}
+
+@media screen and (max-width: 450px) {
+}
+
+@media screen and (max-width: 380px) {
+}

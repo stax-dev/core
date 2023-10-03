@@ -1,0 +1,124 @@
+[
+    {
+        "categoryDisplay": "Server Control",
+        "categoryInfo": "Start, stop and restart the server",
+        "category": "edit-server",
+        "actions": [
+            {
+                "displayName": "Server Start",
+                "name": "server-start"
+            },
+            {
+                "displayName": "Stop Server",
+                "name": "server-stop"
+            },
+            {
+                "displayName": "Restart Server",
+                "name": "server-restart"
+            }
+        ]
+    },
+    {
+        "categoryDisplay": "Edit Plan",
+        "categoryInfo": "Edit plan name and avatar",
+        "category": "edit-plan",
+        "actions": [
+            {
+                "displayName": "Edit Plan Name",
+                "name": "edit-plan-name"
+            },
+            {
+                "displayName": "Edit Plan Avatar",
+                "name": "edit-plan-avatar"
+            }
+        ]
+    },
+    {
+        "categoryDisplay": "View Server Files",
+        "categoryInfo": "Access to view file system only",
+        "category": "view-files",
+        "actions": [
+            {
+                "displayName": "View Files",
+                "name": "view-file"
+            }
+        ]
+    },
+    {
+        "categoryDisplay": "Edit Server Files",
+        "categoryInfo": "Edit and modify all server files",
+        "category": "edit-files",
+        "actions": [
+            {
+                "displayName": "Edit Files",
+                "name": "edit-file"
+            }
+        ]
+    },
+    {
+        "categoryDisplay": "Console Access",
+        "categoryInfo": "Able to access the console and run commands",
+        "category": "edit-console",
+        "actions": [
+            {
+                "displayName": "Create Console Session",
+                "name": "create-consolesession"
+            }
+        ]
+    },
+    {
+        "categoryDisplay": "View History",
+        "categoryInfo": "Access to view audit history logs",
+        "category": "view-history"
+    },
+    {
+        "categoryDisplay": "View Admin",
+        "categoryInfo": "Access to view user list and backups",
+        "category": "view-admin"
+    },
+    {
+        "categoryDisplay": "Manage Users",
+        "categoryInfo": "Add and remove users",
+        "category": "user-manage",
+        "action": [
+            {
+                "displayName": "Add User",
+                "name": "user-add"
+            },
+            {
+                "displayName": "Remove User",
+                "name": "user-remove"
+            }
+        ]
+    },
+    {
+        "categoryDisplay": "Edit Permissions",
+        "categoryInfo": "Edit user permissions (Remember not to lock yourself out)",
+        "category": "user-permissions",
+        "action": [
+            {
+                "displayName": "Edit User Permissions",
+                "name": "user-edit-permissions"
+            }
+        ]
+    },
+    {
+        "categoryDisplay": "Manage Backups",
+        "categoryInfo": "Create, delete and restore backups",
+        "category": "edit-backups",
+        "action": [
+            {
+                "displayName": "Create Backup",
+                "name": "create-backup"
+            },
+            {
+                "displayName": "Delete Backup",
+                "name": "delete-backup"
+            },
+            {
+                "displayName": "Restore Backup",
+                "name": "restore-backup"
+            }
+        ]
+    }
+]

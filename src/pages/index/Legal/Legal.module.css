@@ -1,0 +1,296 @@
+.legal-title {
+  color: var(--text1);
+  font-size: 150%;
+  text-align: center;
+}
+
+.legal-title h1 {
+  font-size: 250%;
+  font-weight: 500;
+  margin: 0%;
+}
+
+.legal {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.legal .legal-list {
+  width: 100%;
+}
+
+.legal-filter {
+  background-color: var(--theme3);
+  color: var(--text1);
+  border-radius: 20px;
+}
+
+.legal-filter h1 {
+  font-size: 200%;
+  font-weight: 500;
+  margin-top: 0%;
+}
+
+.category {
+  color: var(--text1);
+}
+
+.category-box,
+.category-box-active {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 5% 6%;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  transition: all 0.2s ease-in-out;
+}
+
+.category-box p,
+.category-box-active p {
+  margin: 0%;
+}
+
+.category-box-active {
+  background-color: var(--theme1);
+}
+
+.category-box:hover {
+  background-color: var(--theme2);
+}
+
+.category-box .category-box-info,
+.category-box-active .category-box-info {
+  width: 80%;
+}
+
+.category-box .category-box-icon,
+.category-box-active .category-box-icon {
+  width: 20%;
+}
+
+.category-box-icon {
+  text-align: right;
+}
+
+.legal-list {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.legal-list .legal-box {
+  width: 94%;
+  padding: 3%;
+  margin-bottom: 2%;
+}
+
+.legal-box {
+  background-color: var(--theme2);
+  border-radius: 20px;
+  color: var(--text2);
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.legal-box .legal-box-info {
+  width: 70%;
+}
+
+.legal-box .legal-box-view {
+  width: 30%;
+}
+
+.legal-box-info h1 {
+  color: var(--text1);
+  margin: 0%;
+  font-size: 200%;
+  font-weight: 500;
+}
+
+.legal-box-link {
+  width: 100px;
+  margin-left: auto;
+  display: block;
+}
+
+.legal-box-button {
+  background-color: var(--theme3);
+  transition: all 0.2s ease-in-out;
+  color: var(--accent);
+  padding: 10% 0%;
+  font-weight: 400;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.legal-box-button:hover {
+  background-color: var(--text1);
+  color: var(--theme1);
+}
+
+.legal-box-button p {
+  margin: 0%;
+}
+
+.legal-box-button .fas {
+  margin-left: 8%;
+}
+
+.User-tag,
+.Product-tag {
+  display: none;
+}
+
+.User-tag {
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: #7367f0;
+  background-color: #7367f050;
+  cursor: default;
+  margin-right: 2%;
+}
+
+.Product-tag {
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: var(--accent);
+  background-color: #00c79a50;
+  cursor: default;
+  margin-right: 2%;
+}
+
+.User-legalfilter .User-tag {
+  display: inline-block;
+}
+
+.Product-legalfilter .Product-tag {
+  display: inline-block;
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1000px) {
+  .legal-list .legal-box {
+    width: 92%;
+    padding: 4%;
+    margin-bottom: 4%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .legal-list .legal-box {
+    width: 90%;
+    padding: 5%;
+    margin-bottom: 5%;
+  }
+
+  .legal-box .legal-box-info {
+    width: 100%;
+    margin-bottom: 4%;
+  }
+
+  .legal-box .legal-box-view {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 525px) {
+}
+
+@media screen and (max-width: 450px) {
+  .legal-box-info h1 {
+    color: var(--text1);
+    margin: 0%;
+    font-size: 150%;
+    font-weight: 500;
+  }
+
+  .legal-list .legal-box {
+    width: 88%;
+    padding: 6%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .legal-list .legal-box {
+    width: 86%;
+    padding: 8%;
+  }
+
+  .legal-box-link {
+    width: 100%;
+  }
+
+  .legal-box-button {
+    padding: 5% 0%;
+  }
+
+  .legal-box-button .fas {
+    margin-left: 5%;
+  }
+}

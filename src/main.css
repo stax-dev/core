@@ -1,0 +1,16 @@
+.container {
+  background-color: #023061;
+  transform: scale(0.94);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.content {
+  box-shadow: inset 0px -1px 10px 1px #0000002e;
+}
+
+body {
+  font-size: 400%;
+}
+
+/* this is a useless file lol css doesnt even work here */

@@ -1,0 +1,179 @@
+.error-full {
+  /* css global flex */
+  height: calc(100dvh - 48px);
+  width: 1120px;
+  padding: 24px 48px;
+  background-color: var(--theme1);
+}
+
+.error-full .error-page {
+  width: 87.5%;
+}
+
+.error-page {
+  opacity: 100%;
+  /* css global flex */
+}
+
+.error-page .error-page-info {
+  width: 45%;
+  margin-right: 5%;
+}
+
+.error-page .error-page-art {
+  width: 45%;
+  margin-left: 5%;
+}
+
+.error-page-info h1 {
+  margin: 0%;
+  font-size: 500%;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.error-page-info h2 {
+  font-size: 280%;
+  font-weight: 400;
+  color: var(--text1);
+  margin: 0%;
+}
+
+.error-page-info {
+  color: var(--text2);
+}
+
+.error-page-link {
+  width: 180px;
+  display: block;
+  margin: 0%;
+  padding: 0%;
+  border-radius: 10px;
+}
+
+.error-page-button {
+  padding: 12px 0%;
+  background-color: var(--text1);
+  color: var(--theme1);
+  text-align: center;
+  font-weight: 400;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 10px var(--text2));
+}
+
+.error-page-button p {
+  margin: 0%;
+}
+
+.error-page-button:hover {
+  background-color: var(--text2);
+}
+
+.error-page-button .fas {
+  margin-right: 4%;
+}
+
+.error-page-art img {
+  width: 100%;
+  transform: translateX(0%) scale(125%);
+  filter: drop-shadow(0px 0px 20px var(--theme3));
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+  .error-full {
+    width: 92%;
+    padding: 2% 4%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .error-full {
+    padding: 4%;
+  }
+
+  .error-page .error-page-info {
+    width: 55%;
+  }
+
+  .error-page .error-page-art {
+    width: 35%;
+  }
+
+  .error-page-art img {
+    transform: translateX(0%) scale(150%);
+  }
+
+  .error-page-info h2 {
+    font-size: 250%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .error-page {
+    flex-direction: column-reverse;
+  }
+
+  .error-page .error-page-info {
+    width: 100%;
+    margin: 0%;
+    margin-top: 5%;
+  }
+
+  .error-page .error-page-art {
+    width: 75%;
+    margin: 0%;
+  }
+
+  .error-page-info h1 {
+    font-size: 400%;
+  }
+
+  .error-page-info h2 {
+    font-size: 200%;
+  }
+
+  .error-page-art img {
+    transform: translateX(0%) scale(100%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 525px) {
+  .error-page-info h1 {
+    font-size: 300%;
+  }
+
+  .error-page-info h2 {
+    font-size: 150%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+}
+
+@media screen and (max-width: 380px) {
+  .error-page-link {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-height: 400px) {
+  .error-page-button {
+    margin-bottom: 12%;
+  }
+}
+
+.red {
+  background: red;
+}

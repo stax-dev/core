@@ -1,0 +1,483 @@
+
+
+/* OnContext Menu */
+
+.contextmenu {
+  /* css global flex */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  z-index: 50;
+}
+
+.contextmenu .contextmenu-box {
+  width: calc(200px - 20px);
+  padding: 5px;
+  padding-top: 0px;
+  /* buttons/links are margin-top 5px so this cancels out the main box padding */
+  margin: 10px;
+  position: fixed;
+  scrollbar-width: none;
+}
+
+.contextmenu-box {
+  background-color: var(--theme1);
+  transform: scale(0.4);
+  color: var(--text1);
+  font-size: 90%;
+  font-weight: 300;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px var(--theme3);
+  transition: transform 0.1s ease-in-out;
+  transform-origin: top left;
+  font-weight: 300;
+  opacity: 90%;
+}
+
+.contextmenu-box-button {
+  width: 100%;
+  padding: 0px;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.contextmenu-box-link {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: inherit;
+}
+
+.contextmenu-box-button-inside {
+  /* css global flex */
+  width: 100%;
+  padding: 8px 0px;
+  margin: 0%;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.contextmenu-box-button-inside:hover {
+  background-color: var(--text1);
+  color: var(--theme1);
+}
+
+.contextmenu-box-button-inside p{
+  margin: 0%;
+}
+
+.contextmenu-box-button-inside .contextmenu-box-button-icon {
+  width: 40px;
+  text-align: center;
+}
+
+.contextmenu-box-button-inside .contextmenu-box-button-info {
+  width: calc(100% - 40px);
+}
+
+
+
+
+
+
+
+/* scroll reveal */
+
+.rselement-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* uncomment the css in the section tag to continue scroll reveal usage */
+
+section {
+  /* opacity:0;
+    transform:scale(0.9); */
+  transition: all 0.5s ease-in;
+}
+
+/* Notification Popup */
+
+.notificationspopup {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 0%;
+  position: fixed;
+  pointer-events: none;
+  font-size: 90%;
+}
+
+.notification-box {
+  width: 350px;
+  margin: 20px 20px 20px calc(100% - 20px - 350px - 5px); /* scrollbar width calculated + border width*/
+  transform: translateX(200%);
+  background-color: var(--theme3);
+  box-shadow: 0px 0px 10px var(--text2);
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  pointer-events: initial;
+  color: var(--text2);
+}
+
+.notification-box-inside {
+  width: calc(100% - 40px);
+  padding: 20px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.notification-box-inside b {
+  font-size: 90%;
+  font-weight: 400;
+}
+
+.notification-box-inside .notification-box-icon {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.notification-box-inside .notification-box-info {
+  width: calc(100% - 100px);
+}
+
+.notification-box-inside .notification-box-buttons {
+  width: 40px;
+  margin-left: 10px;
+  height: 40px;
+  padding: 0px;
+}
+
+.notification-box-icon {
+  font-size: 100%;
+  text-align: center;
+}
+
+.notification-box-icon .fa-1x {
+  padding: 0px;
+  font-size: 150%;
+  border-radius: 10px;
+  color: var(--accent);
+}
+
+.notification-box p {
+  margin: 0%;
+}
+
+.notification-box-info b {
+  font-size: 110%;
+  color: var(--text1);
+}
+
+.notification-box-info {
+  font-size: 95%;
+}
+
+.notification-box-buttons {
+  text-align: center;
+}
+
+.notification-box-buttons {
+  background-color: var(--theme2);
+  color: var(--text1);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.notification-box-buttons .fas:hover {
+  background-color: var(--theme1);
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1000px) {
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 525px) {
+}
+
+@media screen and (max-width: 450px) {
+  .notification-box {
+    width: 90%;
+    margin: 5%;
+    transform: translateY(-200%);
+  }
+}
+
+@media screen and (max-width: 380px) {
+}
+
+/* snackbar */
+
+.snackbar {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: none;
+  font-size: 90%;
+  font-weight: 400;
+  z-index: 30;
+}
+
+.snackbar .snackbar-box {
+  width: 350px;
+  margin-left: 1%;
+  position: absolute;
+  bottom: 2%;
+}
+
+.snackbar .snackbar-box-small {
+  width: 20%;
+  margin-left: 1%;
+  position: absolute;
+  bottom: 2%;
+}
+
+.snackbar-box,
+.snackbar-box-small {
+  background-color: var(--red);
+  box-shadow: 0px 0px 20px var(--theme1);
+  transition: all 0.3s ease-in-out;
+  font-weight: 400;
+  transform: translateY(300%);
+  border-radius: 10px;
+  pointer-events: initial;
+  color: var(--text1);
+}
+
+.snackbar-box-small .snackbar-inside {
+  padding: 5% 2%;
+  width: 96%;
+}
+
+.snackbar-box .snackbar-inside {
+  padding: 4% 0%;
+  width: 100%;
+}
+
+.snackbar-inside {
+  font-size: 100%;
+  margin: 0%;
+  text-decoration: none;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.snackbar-box .snackbar-inside .snackbar-icon {
+  width: 15%;
+}
+
+.snackbar-box .snackbar-inside .snackbar-info {
+  width: 80%;
+  margin-right: 5%;
+}
+
+.snackbar-icon {
+  font-size: 150%;
+  text-align: center;
+}
+
+.snackbar-info p {
+  margin: 0%;
+}
+
+/*
+.snackbar-icon .fa-check-circle {
+  color: var(--accent);
+}
+
+.snackbar-icon .fa-times-circle {
+  color: var(--red);
+}
+
+.snackbar-icon .fa-info-circle {
+  color: var(--theme1);
+}
+*/
+
+
+
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1000px) {
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 525px) {
+}
+
+@media screen and (max-width: 450px) {
+  .snackbar .snackbar-box {
+    width: 90%;
+    margin: 0% 5%;
+    position: absolute;
+    bottom: 2%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+}
+
+@media screen and (min-width: 2000px) {
+}
+
+@media screen and (max-width: 1232px) {
+}
+
+@media screen and (max-width: 905px) {
+}
+
+@media screen and (max-width: 605px) {
+}
+
+@media screen and (max-width: 425px) {
+}
+
+
+
+
+/* lazy load */
+
+
+.lazy-load {
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  margin: 0%;
+  padding: 0%;
+  position: fixed;
+  height: 100dvh;
+  background-color: var(--theme1);
+  opacity: 100%;
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+}
+
+.lazy-load .lazy-load-box {
+  width: 50px;
+}
+
+.lazy-load-box img{
+  width: 100%;
+  float: left;
+  filter: drop-shadow(0px 0px 10px var(--accent));
+  animation: pulse 1.5s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(100%);
+  }
+  50% {
+    transform: scale(100%);
+  }
+  60% {
+    transform: scale(110%);
+  }
+  70% {
+    transform: scale(100%);
+  }
+  80% {
+    transform: scale(110%);
+  }
+  90% {
+    transform: scale(100%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+@keyframes floating {
+  from {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-5%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}

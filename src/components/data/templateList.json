@@ -1,0 +1,282 @@
+[
+    {
+        "id": "S1",
+        "title": "Raw Setup",
+        "popular": 1,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Raw"
+        ],
+        "info": [
+            "Raw server setup\n- No pre-installed softwares\n- No configurations\n- Windows OS"
+        ]
+    },
+    {
+        "id": "S2",
+        "title": "MEAN Stack",
+        "popular": 1,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "- MongoDB database\n- ExpressJS backend\n- AngularJS frontend\n- NodeJS environment"
+        ]
+    },
+    {
+        "id": "S3",
+        "title": "LAMP Stack",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "- Linux operating system\n- Apache Web server\n- MySQL database\n- PHP"
+        ]
+    },
+    {
+        "id": "S4",
+        "title": "LEMP Stack",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "- Linux operating system\n- Nginx Web server\n- MySQL database\n- PHP full stack"
+        ]
+    },
+    {
+        "id": "S5",
+        "title": "MERN Stack",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "- MongoDB database\n- ExpressJS backend\n- ReactJS frontend\n- NodeJS environment"
+        ]
+    },
+    {
+        "id": "S6",
+        "title": "MEVN Stack",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "- MongoDB database\n- ExpressJS backend\n- VueJS frontend\n- NodeJS environment"
+        ]
+    },
+    {
+        "id": "S7",
+        "title": "Ruby on Rails",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "A Web-app framework that includes everything needed to create a database-backed Web application according to the Model-View-Controller (MVC) pattern."
+        ]
+    },
+    {
+        "id": "S8",
+        "title": "Django",
+        "popular": 0,
+        "createdBy": [
+            "Hudson101"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "Djano is a full-stack python framework designed for Web applications. It is the Web framework for perfectionists with deadlines."
+        ]
+    },
+    {
+        "id": "S9",
+        "title": "Joomla",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Others"
+        ],
+        "info": [
+            "Joomla is used to manage and create websites. It is great for beginners with little coding knowledge."
+        ]
+    },
+    {
+        "id": "S10",
+        "title": "HumHub",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Others"
+        ],
+        "info": [
+            "HumHub is an social networking software that allows users to create their own social network."
+        ]
+    },
+    {
+        "id": "S11",
+        "title": "Caddy",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "Caddy is designed to be easy to use and configure. It is known for its automatic HTTPS encryption, which makes it easy to secure websites without having to manually configure SSL certificates."
+        ]
+    },
+    {
+        "id": "S12",
+        "title": "Ghost",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Others"
+        ],
+        "info": [
+            "Ghost is a modern publishing platform that is designed for bloggers and content creators. It is known for its simplicity and focus on the user experience."
+        ]
+    },
+    {
+        "id": "S13",
+        "title": "Flask",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Web"
+        ],
+        "info": [
+            "Flask is a light framework for Pythonfor web applications. It a popular choice for developers who want to quickly create web applications."
+        ]
+    },
+    {
+        "id": "S14",
+        "title": "Wordpress",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Others"
+        ],
+        "info": [
+            "Djano is a full-stack python framework designed for Web applications. It is the Web framework for perfectionists with deadlines."
+        ]
+    },
+    {
+        "id": "S15",
+        "title": "Drupal",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Others"
+        ],
+        "info": [
+            "Drupal is a Others that is used for building complex websites and applications. It is known for its security and flexibility."
+        ]
+    },
+    {
+        "id": "S16",
+        "title": "Round Cube",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "Others"
+        ],
+        "info": [
+            "Roundcube is a free and open-source webmail software that allows users to access their email accounts through a web interface."
+        ]
+    },
+    {
+        "id": "S17",
+        "title": "MariaDB",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "App"
+        ],
+        "info": [
+            "MariaDB is a fork of MySQL intended to remain free under the GNU GPL. It is notable for being led by the original developers of MySQL, who forked it due to concerns over its acquisition by Oracle."
+        ]
+    },
+    {
+        "id": "S18",
+        "title": "MongoDB",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "App"
+        ],
+        "info": [
+            "MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema."
+        ]
+    },
+    {
+        "id": "S19",
+        "title": "Docker",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "App"
+        ],
+        "info": [
+            "Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers."
+        ]
+    },
+    {
+        "id": "S20",
+        "title": "Appwrite",
+        "popular": 0,
+        "createdBy": [
+            "Stax"
+        ],
+        "tags": [
+            "App"
+        ],
+        "info": [
+            "Appwrite is a secure end-to-end backend server for Web, Mobile, and Flutter developers that is packaged as a set of Docker containers for easy deployment."
+        ]
+    }
+]

@@ -1,0 +1,389 @@
+/*modals*/
+
+.searchhistory {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+}
+
+.searchhistory .searchhistory-box {
+  max-width: 320px;
+  width: 90%;
+  /* just to fill width so it stops at 320px max width */
+  margin: 0% 5%;
+  padding: 30px;
+  scrollbar-width: none;
+  max-height: calc(90dvh - 60px);
+  height: auto;
+  overflow: auto;
+}
+
+.searchhistory-box::-webkit-scrollbar {
+  display: none;
+}
+
+.searchhistory-box {
+  background-color: var(--theme3);
+  transform: scale(0.4);
+  transition: all 0.2s ease-in-out;
+  color: var(--text1);
+  font-size: 100%;
+  border-radius: 20px;
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.searchhistory-box h1 {
+  font-weight: 400;
+  font-size: 180%;
+  margin: 0%;
+  padding: 0% 0% 2% 0%;
+}
+
+.searchhistory-filter {
+  margin-top: 4%;
+}
+
+.searchhistory-filter p {
+  margin: 0%;
+}
+
+.searchhistory-filter input {
+  width: calc(100% - 30px);
+  padding: 15px;
+  font-size: 100%;
+  color: var(--text1);
+  border-radius: 10px;
+  background-color: var(--theme2);
+}
+
+.searchhistory-select {
+  width: 92%;
+  padding: 0% 4%;
+  border-radius: 10px;
+  background-color: var(--theme2);
+}
+
+.searchhistory-select:focus-within {
+  outline: 1px solid var(--text2);
+}
+
+.searchhistory-select select:focus {
+  outline: none;
+}
+
+.searchhistory-filter select {
+  width: 100%;
+  padding: 15px 0%;
+  cursor: pointer;
+  font-size: 100%;
+  background-color: var(--theme2);
+  border-radius: 10px;
+}
+
+.searchhistory-button {
+  margin: 4% 0% 0%;
+  width: 100%;
+}
+
+.searchhistory-button p {
+  margin: 0%;
+}
+
+.searchhistory-button button {
+  width: 150px;
+  padding: 12px 0%;
+  background-color: var(--accent);
+  color: var(--accent-text);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchhistory-button button:hover {
+  background-color: var(--accent-hover);
+}
+
+.history-search {
+  margin-bottom: 5px;
+}
+
+.history-search button {
+  width: 180px;
+  padding: 12px 0px;
+  background-color: var(--theme3);
+  color: var(--text1);
+  border-radius: 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.history-search button:hover {
+  background-color: var(--theme2);
+}
+
+.history-search p {
+  margin: 0%;
+}
+
+.history-search .fas {
+  margin-right: 10px;
+}
+
+.history {
+  width: 100%;
+  background-color: var(--theme1);
+  border-radius: 20px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: stretch;
+  -webkit-align-items: stretch;
+  -ms-align-items: stretch;
+  align-items: stretch;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 1% 0%;
+  color: var(--text1);
+}
+
+.history .history-box,
+.history .history-box-title {
+  width: calc(100% - 40px);
+  padding: 20px;
+}
+
+.history-box p,
+.history-box-title p {
+  margin: 0%;
+}
+
+.history-box:nth-child(odd) {
+  background-color: var(--theme2);
+}
+
+.history-box,
+.history-box-title {
+  transition: all 0.2s ease-in-out;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: left;
+  -webkit-justify-content: left;
+  -ms-justify-content: left;
+  justify-content: left;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.history-box {
+  border-radius: 10px;
+}
+
+.history-box .history-action,
+.history-box-title .history-action {
+  width: 13%;
+  margin-right: 2%;
+}
+
+.history-box .history-date,
+.history-box-title .history-date {
+  width: 30%;
+}
+
+.history-box .history-user,
+.history-box-title .history-user {
+  /* width: 13%; */
+  width: 18%;
+  margin-left: 2%;
+}
+
+.history-box .history-details,
+.history-box-title .history-details {
+  width: 48%;
+  margin-left: 2%;
+}
+
+.history-box-title {
+  color: var(--text1);
+  background-color: var(--theme3);
+  border-radius: 10px;
+}
+
+.history-user-mobile {
+  display: none;
+}
+
+.history-deetails {
+  text-align: center;
+}
+
+.history-status1,
+.history-status2 {
+  border-radius: 10px;
+  border: none;
+  font-family: "Poppins";
+  outline: none;
+  text-align: center;
+  font-weight: 400;
+  color: var(--text1);
+  width: 40%;
+  margin-left: 60%;
+  padding: 4% 0%;
+}
+.history-status1 {
+  background-color: var(--theme3);
+}
+
+.history-status2 {
+  background-color: var(--accent);
+  cursor: pointer;
+  color: var(--theme1);
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+}
+
+.history-status2:hover {
+  background-color: var(--accent-hover);
+}
+
+.history-action .fa-1x {
+  margin-right: 4%;
+}
+
+.history-status1 .history-status-logout {
+  display: none;
+}
+
+.history-status1 .history-status-logout {
+  display: inline-block;
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1000px) {
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 600px) {
+  .history-box-title {
+    display: none;
+  }
+
+  .history-box {
+    background-color: var(--theme2);
+    margin-bottom: 2%;
+  }
+
+  .history-box .history-action .history-box-title .history-action {
+    height: 50%;
+  }
+
+  .history-box .history-action,
+  .history-box .history-user,
+  .history-box-title .history-action,
+  .history-box-title .history-user {
+    width: 100%;
+    margin: 0%;
+  }
+
+  .history-box .history-date,
+  .history-box-title .history-date {
+    width: 100%;
+    color: var(--text2);
+    margin-bottom: 1%;
+    font-size: 95%;
+  }
+
+
+  .history-box .history-user {
+    width: 100%;
+    margin: 0%;
+    color: var(--accent);
+  }
+
+  .history-box .history-details,
+  .history-box-title .history-details {
+    width: 100%;
+    margin: 0%;
+  }
+
+  .history-user-mobile {
+    display: inline-block;
+  }
+
+  .history-action {
+    font-size: 120%;
+    font-weight: 500;
+  }
+
+  .history-action p {
+    margin-top: 0%;
+  }
+
+  .history-date p,
+  .history-user p {
+    margin: 0%;
+  }
+
+  .history-details p {
+    margin: 0%;
+  }
+}
+
+@media screen and (max-width: 525px) {
+
+}
+
+@media screen and (max-width: 450px) {
+
+}
+
+@media screen and (max-width: 380px) {
+
+
+  .searchhistory-button button {
+    width: 100%;
+  }
+
+}

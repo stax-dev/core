@@ -1,0 +1,311 @@
+
+
+
+.status-title {
+    text-align: center;
+    color: var(--text1);
+    font-size: 150%;
+  }
+
+  .status-title h1 {
+      font-weight: 500;
+      margin: 0%;
+      font-size: 250%;
+  }
+
+  .status-title b{
+    font-size: 100%;
+    font-weight: 400;
+  }
+
+  .status-all {
+      background-color: var(--theme3);
+      width: 280px;
+      padding: 10px;
+      text-align: center;
+      font-size: 70%;
+      margin: auto;
+      border-radius: 10px;
+      display: none;
+  }
+
+  .status-all b{
+      font-weight: 400;
+      font-size: 100%;
+      color: var(--text2);
+  }
+
+  .status-all .fas{
+      margin-right: 2%;
+  }
+
+  .main-colour-text {
+      color: var(--accent);
+  }
+
+  .orange-text {
+      color: #FFA500;
+  }
+
+  .red-text {
+      color: var(--red);
+  }
+
+  .status {
+    width: 100%;
+    /* css global flex */
+    font-size: 100%;
+  }
+
+  .status .status-box {
+      width: 44%;
+      padding: 2%;
+      margin-bottom: 2%;
+      margin-right: 2%;
+  }
+
+  .status-box:nth-child(2n){
+    margin-right: 0%;
+  }
+
+  .status-box {
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+    font-size: 100%;
+    color: var(--text2);
+    background-color: var(--theme2);
+    /* css global flex */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .status-box b{
+      font-size: 100%;
+      font-weight: 500;
+      color: var(--text1);
+      display: block;
+      margin-bottom: 1%;
+  }
+
+  .status-box p{
+      margin: 0%;
+  }
+
+
+  .status-box .status-box-info {
+      width: 100%;
+  }
+
+  .status-box .status-box-icon {
+    align-self: flex-end;
+    margin-top: 5%;
+    display: block;
+  }
+
+  .status-box .status-box-icon-online,
+  .status-box .status-box-icon-offline,
+  .status-box .status-box-icon-issues,
+  .status-box .status-box-icon-unknown {
+      width: max-content;
+      margin-left: auto;
+      display: block;
+      padding: 10px 15px;
+  }
+
+  .status-box-icon-online,
+  .status-box-icon-offline,
+  .status-box-icon-issues,
+  .status-box-icon-unknown {
+      text-align: center;
+      font-size: 100%;
+      border-radius: 10px;
+  }
+
+  .status-box .fa-check-circle,
+  .status-box .fa-times-circle,
+  .status-box-icon-unknown .fa-exclamation-circle,
+  .status-box .fa-minus-circle {
+      margin-right: 10px;
+  }
+
+  .status-box-icon-online {
+    color: var(--accent);
+    background-color: #00c79a50;
+    filter: drop-shadow(0px 0px 40px var(--accent));
+  }
+
+  .status-box-icon-offline {
+    color: var(--red);
+    background-color: rgba(255, 0, 0, 0.2);
+    filter: drop-shadow(0px 0px 40px var(--red));
+  }
+
+  .status-box-icon-issues {
+    color: orange;
+    background-color: rgba(255, 166, 0, 0.2);
+    filter: drop-shadow(0px 0px 40px orange);
+  }
+
+.status-box-icon-unknown {
+    color: var(--text2);
+    background-color: var(--theme3);
+    filter: drop-shadow(0px 0px 40px var(--theme3));
+}
+
+.status-box-icon-online-text,
+.status-box-icon-offline-text,
+.status-box-icon-issues-text,
+.status-box-icon-unknown-text{
+    display: none;
+}
+
+.status-box-icon-online .status-box-icon-online-text,
+.status-box-icon-issues .status-box-icon-issues-text,
+.status-box-icon-offline .status-box-icon-offline-text,
+.status-box-icon-unknown .status-box-icon-unknown-text{
+    display: block;
+}
+
+
+
+
+
+/* responsive css */
+
+
+@media screen and (min-width: 1600px) {
+
+    .backdrop {
+      width: 350%;
+    }
+
+    .backdrop .backdrop-box1 {
+      width: 30%;
+      padding: 10% 20% 10%;
+      margin: 2%;
+      border-radius: 400px;
+    }
+
+    .backdrop .backdrop-box2 {
+      padding: 10% 20% 10% 0%;
+      margin: 2%;
+      width: 20%;
+      border-radius: 400px;
+    }
+
+    .backdrop .backdrop-box3 {
+      padding: 10% 0% 10% 20%;
+      margin: 2%;
+      width: 20%;
+      border-radius: 400px;
+    }
+
+    .backdrop .backdrop-box4 {
+      width: 20%;
+      padding: 40% 40% 20%;
+      margin: 2%;
+      border-radius: 400px;
+    }
+
+    .index-title .title-text {
+      width: 46%;
+      padding-right: 0%;
+    }
+
+    .index-title .index-art {
+      width: 46%;
+      padding-left: 0%;
+    }
+
+
+
+    .title-text h1{
+      line-height: 100%;
+      font-size: 250%;
+    }
+
+    body {
+        width: 1600px;
+    }
+
+
+  }
+
+
+  @media screen and (max-width: 1200px) {
+
+
+  }
+
+  @media screen and (max-width: 1000px) {
+
+
+    .status .status-box {
+        padding: 4%;
+        width: 92%;
+        margin-bottom: 4%;
+        margin-right: 0%;
+    }
+
+    .status-box:nth-child(2n){
+      margin-right: 0%;
+    }
+
+
+  }
+
+  @media screen and (max-width: 800px) {
+
+    .status-title h1{
+      font-size: 200%;
+    }
+
+
+  }
+
+  @media screen and (max-width: 600px) {
+
+
+  }
+
+  @media screen and (max-width: 525px) {
+
+    .status-title {
+      font-size: 120%;
+    }
+
+
+  }
+
+  @media screen and (max-width: 450px) {
+
+    .status-all {
+      width: 68%;
+      padding: 4% 6%;
+    }
+
+    .status .status-box {
+        padding: 6%;
+        width: 88%;
+        margin-bottom: 6%;
+    }
+
+
+    .status-box .status-box-info {
+        width: 100%;
+    }
+
+    .status-box .status-box-icon-online,
+    .status-box .status-box-icon-offline,
+    .status-box .status-box-icon-issues,
+    .status-box .status-box-icon-unknown {
+        width: 100%;
+    }
+
+    .status-box-info .fas {
+        margin-right: 1%;
+    }
+
+  }

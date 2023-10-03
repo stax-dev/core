@@ -1,0 +1,139 @@
+.analytics {
+  width: 100%;
+  /* css global flex */
+  color: var(--text1);
+}
+
+.analytics .analytics-box1 {
+  width: calc(49% - 40px);
+  margin-right: 1%;
+  padding: 20px;
+}
+
+.analytics .analytics-box2 {
+  width: calc(49% - 40px);
+  margin-left: 1%;
+  padding: 20px;
+}
+
+.analytics .analytics-box3 {
+  width: calc(100% - 40px);
+  margin: 2% 0%;
+  padding: 20px;
+}
+
+.analytics-box1,
+.analytics-box2,
+.analytics-box3 {
+  background-color: var(--theme3);
+  border-radius: 20px;
+}
+
+.analytics h1 {
+  font-size: 110%;
+  font-weight: 400;
+  margin-top: 0%;
+}
+
+.dashboard-chart {
+  margin: 0% 0% 2%;
+  padding: 1%;
+}
+
+.dashboard-chart-box {
+  height: 300px;
+}
+
+.analytics-view {
+  width: 100%;
+  max-width: 320px;
+  font-size: 80%;
+ /* css global flex */
+}
+
+.analytics-view .analytics-view-box,
+.analytics-view .analytics-view-box-active {
+  width: calc(23.5%);
+  padding: 5px 0px;
+  margin-right: 2%;
+}
+
+.analytics-view-box:nth-child(4n){
+  margin-right: 0%;
+}
+
+.analytics-view-box-active {
+  background-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.analytics-view-box {
+  background-color: var(--theme2);
+  color: var(--text2);
+}
+
+.analytics-view-box,
+.analytics-view-box-active {
+  border-radius: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.analytics-view-box p,
+.analytics-view-box-active p {
+  margin: 0%;
+}
+
+.analytics-view-box:hover {
+  background-color: var(--theme1);
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+  .dashboard-chart-box {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+}
+
+@media screen and (max-width: 800px) {
+
+  .dashboard-chart-box {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+
+  .analytics .analytics-box1,
+  .analytics .analytics-box2,
+  .analytics .analytics-box3 {
+    width: calc(100% - 40px);
+    margin: 0%;
+    margin-bottom: 4%;
+  }
+
+  .dashboard-chart-box {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+}
+
+@media screen and (max-width: 450px) {
+  .dashboard-chart-box {
+    height: 200px;
+  }
+
+}
+
+@media screen and (max-width: 380px) {
+
+}

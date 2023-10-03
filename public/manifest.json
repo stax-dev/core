@@ -1,0 +1,20 @@
+{
+  "short_name": "SDS",
+  "name": "Stax Developer Suite",
+  "icons": [
+    {
+      "src": "https://cdn.st.ax/v2/logo.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg"
+    },
+    {
+      "src": "https://cdn.st.ax/v2/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#00C79A",
+  "background_color": "#14191F"
+}
