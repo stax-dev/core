@@ -1,13 +1,13 @@
-MIT License
+Stax License
 
 Copyright (c) 2023 Stax
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+in the Software in every way except for the following:
+- You may not use the Software for any purpose other than to use the Software for its intended purpose.
+- You may not use the Software for any purpose that is illegal in the United States of America, European Union, or the country in which you reside.
+- You may not sell the Software as closed source. You may sell the Software as open source, but you must provide the source code as publicly available.
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
