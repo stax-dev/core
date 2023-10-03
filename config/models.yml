@@ -1,0 +1,18 @@
+available_text_models: ["gpt-3.5-turbo", "gpt-4"]
+
+info:
+  gpt-3.5-turbo:
+    type: chat_completion
+    name: ChatGPT
+    description: ChatGPT is that well-known model. It's <b>fast</b>. Ideal for everyday tasks. If there are some tasks it can't handle, try the <b>GPT-4</b>.
+
+  gpt-4:
+    type: chat_completion
+    name: GPT-4
+    description: GPT-4 is the <b>smartest</b> and most advanced model in the world. But it is slower and not as efficient as ChatGPT. Best choice for <b>complex</b> intellectual tasks.
+
+  dalle-2:
+     type: image
+
+  whisper:
+    type: audio
