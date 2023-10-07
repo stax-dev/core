@@ -21,3 +21,4 @@ To report a vulnerability, please contact the [EHS Team](https://t.me/everyone_h
 The EHS Team will respond as soon as possible. If the vulnerability is accepted, the EHS Team will create a new issue and tag it with the `security` label. The EHS Team will then work on a fix and release a new version as soon as possible. The EHS Team will then close the issue.
 
 Thank you for helping to keep Stax secure!
+
