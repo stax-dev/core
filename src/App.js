@@ -59,6 +59,9 @@ import ChessCorporate from "./pages/chessboard/ChessCorporate/ChessCorporate";
 import ChessRepository from "./pages/chessboard/ChessRepository/ChessRepository";
 import ChessAdmin from "./pages/chessboard/ChessAdmin/ChessAdmin";
 
+//Landing
+import PreLaunch from "./pages/landing/prelaunch/PreLaunch";
+
 //Other
 import ChatIndex from "./pages/chat/Index/ChatIndex";
 import Chat from "./pages/chat/Chat/Chat";
@@ -85,65 +88,16 @@ function App() {
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-  return (
-    <Routes>
+  var websiteVersion = "prelaunch"
+  //prelaunch or main website version
+
+  if(websiteVersion === "prelaunch"){
+    return (
+      <Routes>
       <Route path="/" element={<Outlet />}>
-        {/* Index */}
 
-        {/* Main */}
-        <Route index element={<Index />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/status" element={<Status />} />
-        <Route path="/support" element={<Support />} />
-
-        {/* Linking */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/checkout" element={<Checkout />} />
-
-        {/* Hosting */}
-        <Route path="/products/hosting" element={<Hosting />} />
-        <Route path="/products/hosting/droplet" element={<HostDroplet />} />
-        <Route path="/products/hosting/templates" element={<HostTemplates />} />
-
-        {/* Chats */}
-        <Route path="/products/chats" element={<Chats />} />
-
-        {/* Legal */}
-        <Route path="/legal" element={<Legal />} />
-        <Route path="/legal/terms-of-service" element={<LegalTOS />} />
-        <Route path="/legal/privacy-policy" element={<LegalPrivacy />} />
-
-        {/* Splashboard */}
-        <Route path="/splashboard" element={<Splashboard />} />
-        <Route path="/splashboard/chatrooms" element={<SplashChatrooms />} />
-        <Route path="/splashboard/settings" element={<SplashSettings />} />
-        <Route path="/splashboard/integrations" element={<SplashIntegrations />}/>
-        <Route path="/splashboard/billing" element={<SplashBilling />} />
-        <Route
-          path="/splashboard/notifications"
-          element={<SplashNotifications />}
-        />
-
-        {/* Dashboard */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/files" element={<DashFiles />} />
-        <Route path="/console" element={<DashConsole />} />
-        <Route path="/analytics" element={<DashAnalytics />} />
-        <Route path="/chatroom" element={<DashChatroom />} />
-        <Route path="/history" element={<DashHistory />} />
-        <Route path="/admin" element={<DashAdmin />} />
-        <Route path="/billing" element={<DashBilling />} />
-
-        {/* Chessboard */}
-        <Route path="/chessboard" element={<Chessboard />} />
-        <Route path="/chessboard/chatrooms" element={<ChessChatrooms />} />
-        <Route path="/chessboard/users" element={<ChessUsers />} />
-        <Route path="/chessboard/servers" element={<ChessServers />} />
-        <Route path="/chessboard/corporate" element={<ChessCorporate />} />
-        <Route path="/chessboard/repository" element={<ChessRepository />} />
-        <Route path="/chessboard/admin" element={<ChessAdmin />} />
+        {/* Landing */}
+        <Route index element={<PreLaunch />}/>
 
         {/* Other */}
         <Route path="chat" element={<Outlet />}>
@@ -153,7 +107,77 @@ function App() {
         <Route path="*" element={<E404 />} />
       </Route>
     </Routes>
-  );
+    )
+  }else if(websiteVersion === "main"){
+    return (
+      <Routes>
+        <Route path="/" element={<Outlet />}>
+
+          {/* Index */}
+          <Route index element={<Index />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/status" element={<Status />} />
+          <Route path="/support" element={<Support />} />
+
+          {/* Linking */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/checkout" element={<Checkout />} />
+
+          {/* Hosting */}
+          <Route path="/products/hosting" element={<Hosting />} />
+          <Route path="/products/hosting/droplet" element={<HostDroplet />} />
+          <Route path="/products/hosting/templates" element={<HostTemplates />} />
+
+          {/* Chats */}
+          <Route path="/products/chats" element={<Chats />} />
+
+          {/* Legal */}
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/legal/terms-of-service" element={<LegalTOS />} />
+          <Route path="/legal/privacy-policy" element={<LegalPrivacy />} />
+
+          {/* Splashboard */}
+          <Route path="/splashboard" element={<Splashboard />} />
+          <Route path="/splashboard/chatrooms" element={<SplashChatrooms />} />
+          <Route path="/splashboard/settings" element={<SplashSettings />} />
+          <Route path="/splashboard/integrations" element={<SplashIntegrations />}/>
+          <Route path="/splashboard/billing" element={<SplashBilling />} />
+          <Route
+            path="/splashboard/notifications"
+            element={<SplashNotifications />}
+          />
+
+          {/* Dashboard */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/files" element={<DashFiles />} />
+          <Route path="/console" element={<DashConsole />} />
+          <Route path="/analytics" element={<DashAnalytics />} />
+          <Route path="/chatroom" element={<DashChatroom />} />
+          <Route path="/history" element={<DashHistory />} />
+          <Route path="/admin" element={<DashAdmin />} />
+          <Route path="/billing" element={<DashBilling />} />
+
+          {/* Chessboard */}
+          <Route path="/chessboard" element={<Chessboard />} />
+          <Route path="/chessboard/chatrooms" element={<ChessChatrooms />} />
+          <Route path="/chessboard/users" element={<ChessUsers />} />
+          <Route path="/chessboard/servers" element={<ChessServers />} />
+          <Route path="/chessboard/corporate" element={<ChessCorporate />} />
+          <Route path="/chessboard/repository" element={<ChessRepository />} />
+          <Route path="/chessboard/admin" element={<ChessAdmin />} />
+
+          {/* Other */}
+          <Route path="chat" element={<Outlet />}>
+            <Route index element={<ChatIndex />} />
+            <Route path=":id" element={<Chat />} />
+          </Route>
+          <Route path="*" element={<E404 />} />
+        </Route>
+      </Routes>
+    );
+  };
 }
 
 export default App;
