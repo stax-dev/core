@@ -85,7 +85,7 @@ export default function DashFiles() {
 
   useEffect(() => {
     APIRequest("all")
-  })
+  },[])
 
   var userStatic = [
     APIRoutes.appTheme,
@@ -232,7 +232,37 @@ export default function DashFiles() {
         setCreateFolderSubmitDisabled(false);
       })
     }else if(type === "uploadFile"){
-      console.log("uploadFile");
+      setUploadFileSubmitDisabled(true);
+      axios.post('http URL HERE',
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            "Authorization": `sessionID ${sessionID}`,
+          },
+          withCredentials: true,
+        },
+        {
+          uplodaFile: data,
+        }
+      )
+      .then(response => {
+        APIRequest("planDynamic");
+        snackbarNotification(1, "Uploaded Successfully");
+        uploadFiles();
+      })
+      .catch(error => {
+        if(error.response){
+          console.log(error.response.status);
+          console.log(error.response.data);
+        }else if(error.request){
+          console.log(error.request);
+        }else{
+          console.log(error.message);
+        }
+      })
+      .finally(() => {
+        setUploadFileSubmitDisabled(false);
+      })
     }else if(type === "openFile"){
       console.log("openFile");
     }else if(type === "renameFile"){
@@ -321,6 +351,9 @@ export default function DashFiles() {
       document.body.style.overflow = 'hidden';
     }
   }
+
+
+  var [uploadFileSubmitDisabled, setUploadFileSubmitDisabled] = useState(true);
 
   function uploadFiles() {
     var uploadfilesbox = document.getElementById("uploadfiles-box");
@@ -606,9 +639,12 @@ export default function DashFiles() {
   useEffect(() => {
     document.getElementById("DashFiles-file-upload-drop-status").addEventListener('dragenter', function(event) {
       document.getElementById("DashFiles-file-upload-drop-status").classList.replace(css["uploadfiles-drop-empty"], css["uploadfiles-drop-hover"]);
+      document.getElementById("DashFiles-uploadfiles-info").style.pointerEvents = "none";
+
     });
     document.getElementById("DashFiles-file-upload-drop-status").addEventListener('dragleave', function(event) {
       document.getElementById("DashFiles-file-upload-drop-status").classList.replace(css["uploadfiles-drop-hover"], css["uploadfiles-drop-empty"]);
+      document.getElementById("DashFiles-uploadfiles-info").style.pointerEvents = "auto";
     });
   })
 
@@ -619,38 +655,36 @@ export default function DashFiles() {
     has to be one or the other cant combine both cause HTML file input prevents cause of security reasons
   */
 
-  var fakeChosenList = [];
+  var fakeChosenList = "";
 
   function uploadHandler(type, event) {
-
-    // Prevent default behavior (Prevent file from being opened)
-    event.preventDefault();
-
     if(type === "drop"){
+      event.preventDefault();
       if(event.dataTransfer.files){
         document.getElementById("DashFiles-file-upload").classList.replace(css["uploadfiles-upload-empty"], css["uploadfiles-upload-list"]);
         document.getElementById("DashFiles-file-upload-drop-status").classList.replace(css["uploadfiles-drop-hover"], css["uploadfiles-drop-empty"]);
 
         fakeChosenList = event.dataTransfer.files;
         reloadChosenFiles("dragdrop");
-        // console.log(event.dataTransfer.files);
       }
+    }else if(type === "drag"){
+      event.preventDefault();
+    }else if(type === "select"){
+      if (document.getElementById("DashFiles-file-upload-info-input").files.length > 0) {
+        document.getElementById("DashFiles-file-upload").classList.replace(css["uploadfiles-upload-empty"], css["uploadfiles-upload-list"]);
+        document.getElementById("DashFiles-file-upload-drop-status").classList.replace(css["uploadfiles-drop-hover"], css["uploadfiles-drop-empty"]);
+      }
+      // console.log(document.getElementById("DashFiles-file-upload-info-input").files);
+      reloadChosenFiles("HTML");
     }
   }
-
-  function fileUpload() {
-    if (document.getElementById("DashFiles-file-upload-info-input").files.length > 0) {
-      document.getElementById("DashFiles-file-upload").classList.replace(css["uploadfiles-upload-empty"], css["uploadfiles-upload-list"]);
-      document.getElementById("DashFiles-file-upload-drop-status").classList.replace(css["uploadfiles-drop-hover"], css["uploadfiles-drop-empty"]);
-    }
-    // console.log(document.getElementById("DashFiles-file-upload-info-input").files);
-    reloadChosenFiles("HTML");
-  }
-
 
  var [ChosenFiles, setChosenFiles] = useState();
 
   function reloadChosenFiles(type){
+    console.log(document.getElementById("DashFiles-file-upload-info-input").files);
+    console.log(fakeChosenList);
+    setUploadFileSubmitDisabled(false);
     if(type === "HTML"){
       setChosenFiles(
         Array.from(document.getElementById("DashFiles-file-upload-info-input").files).map((list, index) => (
@@ -681,7 +715,7 @@ export default function DashFiles() {
             </div>
           </div>
         ))
-      )
+      );
     }
   }
 
@@ -689,6 +723,16 @@ export default function DashFiles() {
     document.getElementById("DashFiles-file-upload").classList.replace(css["uploadfiles-upload-list"], css["uploadfiles-upload-empty"]);
     document.getElementById("DashFiles-file-upload-drop-status").classList.replace(css["uploadfiles-drop-hover"], css["uploadfiles-drop-empty"]);
     document.getElementById("DashFiles-file-upload-info-input").value = "";
+    fakeChosenList = "";
+    setUploadFileSubmitDisabled(true);
+  }
+
+  function UploadFileFinal(){
+    if(fakeChosenList === ""){
+      sendAPI("uploadFile", document.getElementById("DashFiles-file-upload-info-input").files);
+    }else{
+      sendAPI("uploadFile", fakeChosenList);
+    };
   }
 
 
@@ -756,13 +800,13 @@ export default function DashFiles() {
                 onDrop={(event) => uploadHandler("drop", event)}
                 onDragOver={(event) => uploadHandler("drag", event)}
               >
-                <div className={css["uploadfiles-info"]}>
+                <div id="DashFiles-uploadfiles-info" className={css["uploadfiles-info"]}>
                   <i className={`${css["fas"]} ${css["fa-upload"]} ${"fas fa-upload"}`}></i>
                   <p>Drag File or Select</p>
-                  <label className={css["uploadfiles-label"]} for="DashFiles-file-upload-info-input">
+                  <label className={css["uploadfiles-label"]} htmlFor="DashFiles-file-upload-info-input">
                     Select Files
                   </label>
-                  <input onChange={() => fileUpload()} id="DashFiles-file-upload-info-input" multiple={true} type="file"/>
+                  <input onChange={(event) => uploadHandler("select", event)} id="DashFiles-file-upload-info-input" multiple={true} type="file"/>
                 </div>
               </div>
             </div>
@@ -774,8 +818,14 @@ export default function DashFiles() {
             <div className={css["uploadfiles-cancel"]}>
               <button onClick={() => uploadFiles()}>Cancel</button>
             </div>
-            <div className={css["uploadfiles-submit"]}>
-              <button onClick={() => sendAPI("uploadFile")}>Upload</button>
+            <div
+              className={css["uploadfiles-submit"]}
+              style={uploadFileSubmitDisabled === true ? {opacity: "60%", pointerEvents: "none"}:{opacity: "100%"}}
+            >
+              <button
+                disabled={uploadFileSubmitDisabled}
+                onClick={() => UploadFileFinal()}
+              >Upload</button>
             </div>
           </div>
         </div>
@@ -1136,10 +1186,20 @@ export default function DashFiles() {
                   <button onClick={() => searchFiles()} className={css["file-search-button"]}>
                     <i className={`${css["fas"]} ${css["fa-search"]} ${"fas fa-search"}`}></i>Search
                   </button>
-                  <button disabled={createFileSubmitDisabled} onClick={() => sendAPI("createFile")} className={css["file-file-button"]}>
+                  <button
+                    disabled={createFileSubmitDisabled}
+                    onClick={() => sendAPI("createFile")}
+                    className={css["file-file-button"]}
+                    style={createFileSubmitDisabled === true ? {opacity: "60%", cursor: "default", pointerEvents: "none"}:{opacity: "100%"}}
+                  >
                     <i className={`${css["fas"]} ${css["fa-plus"]} ${"fas fa-plus-circle"}`}></i>New File
                   </button>
-                  <button disabled={createFolderSubmitDisabled} onClick={() => sendAPI("createFolder")} className={css["file-folder-button"]}>
+                  <button
+                    disabled={createFolderSubmitDisabled}
+                    onClick={() => sendAPI("createFolder")}
+                    className={css["file-folder-button"]}
+                    style={createFolderSubmitDisabled === true ? {opacity: "60%", cursor: "default", pointerEvents: "none"}:{opacity: "100%"}}
+                  >
                     <i className={`${css["fas"]} ${css["fa-plus"]} ${"fas fa-plus-circle"}`}></i>New Folder
                   </button>
                   <button onClick={() => uploadFiles()} className={css["file-upload-button"]}>

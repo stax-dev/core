@@ -14,9 +14,17 @@ import notificationPing from "../../sounds/notificationPing.mp3";
 
 const logo = "https://cdn.st.ax/v2/logo.svg";
 
-//Online Check
+//Global Checks
 window.addEventListener("offline", (event) => {
   snackbarNotification(2, "You are offline");
+});
+
+window.addEventListener("online", (event) => {
+  snackbarNotification(1, "You are online");
+});
+
+window.addEventListener("drop", (event) => {
+  event.preventDefault();
 });
 
 
