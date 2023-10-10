@@ -8,6 +8,7 @@ import css from "./Nav.module.css";
 // const {BrowserWindow,dialog,Menu} = remote
 
 import cssGlobal from "../globalcss/GlobalCSS.module.css";
+// Importing electron and ipcRenderer
 
 export default function Nav(pages) {
   // document.querySelector("#exit-btn").addEventListener("click", function (e) {
