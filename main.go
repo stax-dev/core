@@ -1,6 +1,18 @@
 package main
 
+import (
+	"api/src/server"
+	"log"
+	"os"
+)
+
 func main() {
-	server := NewAPIServer(":8080")
-	server.Start()
+	// Get the port from the environment
+	port := os.Getenv("PORT")
+
+	// Create a new server
+	s := server.NewServer(":" + port)
+
+	// Start the server
+	log.Fatal(s.Start())
 }

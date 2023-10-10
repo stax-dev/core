@@ -1,5 +1,12 @@
-FROM nginx AS nginx2
-COPY --from=nginx1 /usr/share/nginx/html /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM golang as builder
+WORKDIR /go/src/github.com/stax-dev/core/sds-api
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+
+FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=builder /go/src/github.com/stax-dev/core/sds-api/app .
+CMD ["./app"]
+
+# Path: docker-compose.yml

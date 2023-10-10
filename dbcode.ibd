@@ -1,0 +1,65 @@
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  userID VARCHAR(10) UNIQUE,
+  username VARCHAR(16) UNIQUE,
+  userAvatar BLOB,
+  appTheme TINYINT,
+  bannerID TINYINT,
+  userRank VARCHAR(20),
+  joinDate DATETIME,
+  userWallet DECIMAL(10, 2),
+  passhash VARCHAR(100),
+  salt VARCHAR(100),
+	emailList JSON,
+	addressList JSON,
+	paymentList JSON,
+	disposableCount TINYINT,
+	disposableActive BOOLEAN,
+	planList JSON,
+	accountStatus VARCHAR(50),
+	loginActivityList JSON,
+	passwordLastChanged DATETIME,
+	transactionHistory JSON,
+	notificationList JSON,
+)
+
+CREATE TABLE servers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  planID VARCHAR(10) UNIQUE,
+  planName VARCHAR(16),
+  planAvatar BLOB,
+  planStatus VARCHAR(50),
+  serverStatus TINYINT,
+  planUptime SMALLINT,
+  planRAM SMALLINT,
+  planStorage SMALLINT,
+  planCost SMALLINT,
+  planCreationDate DATETIME,
+  planOwnerID VARCHAR(20),
+  memberList JSON,
+  snapshotList JSON,
+  planExpiry DATETIME,
+  planHistory JSON,
+  autoRenew BOOLEAN,
+  planCPUData SMALLINT,
+  planRAMData SMALLINT,
+)
+
+CREATE TABLE chatrooms (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  chatroomID VARCHAR(20) UNIQUE,
+  chatroomType VARCHAR(20),
+  chatroomChats JSON,
+  chatroomMembers JSON,
+  chatroomLinkedID VARCHAR(20)
+)
+
+
+
+
+
+
+
+
+
+
