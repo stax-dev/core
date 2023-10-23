@@ -28,6 +28,8 @@ import iconHosting from "../../../images/icons/hosting.svg";
 import iconWiki from "../../../images/icons/wiki.svg";
 import iconOffices from "../../../images/icons/offices.svg";
 import iconChat from "../../../images/icons/chat.svg";
+import splashboardArt from "../../../images/main/splashboard.svg";
+import codingclockArt from "../../../images/main/codingclock.svg";
 
 export default function Index() {
   document.addEventListener("scroll", function () {
@@ -68,14 +70,16 @@ export default function Index() {
             <div className={`${css["landing-title"]} ${cssGlobal["flex-center-left"]}`}>
               <div className={css["landing-title-text"]}>
               <h1>
-                A <span className={css["landing-title-text-2"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-3"]}>seamlessly</span> build, deploy and manage projects.
-              </h1>
-              <h1>
-                <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
+                A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>seamlessly</span> build, deploy and manage projects.
               </h1>
               </div>
               <div className={css["landing-title-art"]}>
-
+                <img src={splashboardArt} />
+              </div>
+              <div className={css["landing-title-text"]}>
+              <h1>
+                <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
+              </h1>
               </div>
             </div>
           </div>
@@ -162,11 +166,24 @@ export default function Index() {
             </div>
           </div> */}
           <div className={cssGlobal["content-100"]}>
+            <div className={css["landing-updates-art"]}>
+              <img src={codingclockArt}/>
+            </div>
             <div className={css["landing-updates-title"]}>
               <h1>Development Updates</h1>
             </div>
             <div className={css["landing-updates"]}>
               {/* add updates here */}
+
+              <div className={css["landing-updates-box"]}>
+                <h1>Introduction • 6th October 2023</h1>
+                <p>
+                  Hey there! Welcome to the SDS pre-launch page.{" "}
+                  SDS is currently in the process of development and more news is yet to come!{" "}
+                  Updates will be posted here as things progress.<br/><br/>
+                  We look forward to having you at our release!
+                </p>
+              </div>
 
               <div className={css["landing-updates-box"]}>
                 <h1>Introduction • 6th October 2023</h1>

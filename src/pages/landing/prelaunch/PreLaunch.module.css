@@ -62,12 +62,12 @@
 }
 
 .landing-title .landing-title-text {
-    width: 48%;
-    margin-right: 4%;
+    width: 100%;
 }
 
 .landing-title .landing-title-art {
-    width: 48%;
+    width: 100%;
+    margin: 4% auto;
 }
 
 .landing-title h1{
@@ -210,7 +210,7 @@
 
 .landing-updates-title {
     width: 100%;
-    margin-bottom: 4%;
+    margin: 5% 0%;
 }
 
 .landing-updates-title h1{
@@ -219,6 +219,15 @@
     margin: 0%;
 }
 
+.landing-updates-art {
+    width: 100%;
+}
+
+.landing-updates-art img{
+    width: 100%;
+}
+
+
 .landing-updates {
     /* css global flex */
     width: 100%;
@@ -226,7 +235,7 @@
 
 .landing-updates .landing-updates-box {
     width: 100%;
-    margin-top: 4%;
+    margin-bottom: 5%;
 }
 
 .landing-updates-box h1 {
@@ -239,6 +248,11 @@
     border-left: 5px solid var(--accent);
     color: var(--text2);
     margin: 0%;
+    font-weight: 400;
+}
+
+.landing-updates-box:nth-child(1) p{
+    color: var(--text1);
 }
 
 .landing-updates-box:nth-child(2n) p{
