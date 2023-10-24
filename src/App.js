@@ -88,7 +88,7 @@ function App() {
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-  var websiteVersion = "prelaunch"
+  var websiteVersion = "main"
   //prelaunch or main website version
 
   if(websiteVersion === "prelaunch"){
