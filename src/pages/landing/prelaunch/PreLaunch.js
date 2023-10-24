@@ -44,17 +44,59 @@ export default function Index() {
   var releaseDate = "April 2024";
 
 
+  window.addEventListener('scroll', function() {
+    // Get the current scroll position
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    // Check if the scroll position is at or beyond 25px
+    if (scrollPosition >= 0) {
+      document.getElementById("logo-display").style.height = "100dvh";
+      document.getElementById("logo-display").style.marginBottom = "60dvh";
+    }
+    if (scrollPosition >= 25) {
+      document.getElementById("logo-display").style.height = "70dvh";
+      document.getElementById("logo-display").style.marginBottom = "40dvh";
+    }
+    if (scrollPosition >= 50) {
+      document.getElementById("logo-display").style.height = "40dvh";
+      document.getElementById("logo-display").style.marginBottom = "20dvh";
+    }
+
+  });
+
+  // Get references to the div elements
+  var div1 = document.getElementById("logo-display");
+  var div2 = document.getElementById("logo-");
+
+  // Add scroll event listener to the window
+  window.addEventListener("scroll", function() {
+    // Get the current scroll position
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Check if div1 is in view
+    if (scrollPosition > div1.offsetTop && scrollPosition < div1.offsetTop + div1.offsetHeight) {
+      // Scroll to div2
+      window.scrollTo({
+        top: div2.offsetTop,
+        behavior: "smooth"
+      });
+    }
+  });
+
+
+
   return (
     <div id="Index-react-div" className={cssGlobal["react-div"]}>
       <div id="Index-react-background" className={cssGlobal["react-background"]} style={{ backgroundImage: `url(${background})` }}>
         <div className={cssGlobal["page-full"]}>
           <Addons />
           <Bubbles />
-          <div className={cssGlobal["content-100"]}>
-            <div className={`${css["landing-nav"]} ${cssGlobal["flex-center-left"]}`}>
-              <div className={css["landing-nav-logo"]}>
-                <img src={logo} alt="logo" />
-              </div>
+          <div id="logo-display" className={`${css["logo-display"]} ${cssGlobal["flex-center-center"]}`}>
+            <div className={css["logo-display-box"]}>
+              <img src={logo} alt="logo" />
+            </div>
+          </div>
+          <div id="logo-title" className={`${css["logo-title"]} ${cssGlobal["flex-center-center"]}`}>
+            <div className={`${css["landing-nav"]} ${cssGlobal["flex-center-center"]}`}>
               <div className={css["landing-nav-title"]}>
                 <p>Stax Developer Studios</p>
               </div>
@@ -68,13 +110,15 @@ export default function Index() {
           </div>
           <div className={cssGlobal["content-100"]}>
             <div className={`${css["landing-title"]} ${cssGlobal["flex-center-left"]}`}>
+              <div className={css["landing-title-art"]}>
+                <section className={"rs-element-both"}>
+                  <img src={splashboardArt} />
+                </section>
+              </div>
               <div className={css["landing-title-text"]}>
               <h1>
                 A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>seamlessly</span> build, deploy and manage projects.
               </h1>
-              </div>
-              <div className={css["landing-title-art"]}>
-                <img src={splashboardArt} />
               </div>
               <div className={css["landing-title-text"]}>
               <h1>
@@ -92,7 +136,9 @@ export default function Index() {
             <div className={css["landing-project"]}>
               <div className={`${css["landing-project-title"]} ${cssGlobal["flex-center-left"]}`}>
                 <div className={css["landing-project-title-icon"]}>
-                  <img src={iconHosting} alt="logo" />
+                  <section className={"rs-element-both"}>
+                    <img src={iconHosting} alt="logo" />
+                  </section>
                 </div>
                 <div className={css["landing-project-title-text"]}>
                   <h1>SDS Hosting</h1>
@@ -114,7 +160,7 @@ export default function Index() {
                   </p>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                  <div style={{animationDelay: "1s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                     <i className={`${css["fas"]} ${css["fa-gauge=high"]} ${"fas fa-gauge-high"}`}></i>
                   </div>
                   <p>
@@ -122,7 +168,7 @@ export default function Index() {
                   </p>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                  <div style={{animationDelay: "1.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                     <i className={`${css["fas"]} ${css["fa-rocket"]} ${"fas fa-rocket"}`}></i>
                   </div>
                   <p>
@@ -130,7 +176,7 @@ export default function Index() {
                   </p>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                  <div style={{animationDelay: "2s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                     <i className={`${css["fas"]} ${css["fa-wand-magic-sparkles"]} ${"fas fa-wand-magic-sparkles"}`}></i>
                   </div>
                   <p>
@@ -138,7 +184,7 @@ export default function Index() {
                   </p>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                  <div style={{animationDelay: "2.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                     <i className={`${css["fas"]} ${css["fa-shapes"]} ${"fas fa-shapes"}`}></i>
                   </div>
                   <p>
@@ -167,7 +213,9 @@ export default function Index() {
           </div> */}
           <div className={cssGlobal["content-100"]}>
             <div className={css["landing-updates-art"]}>
-              <img src={codingclockArt}/>
+              <section className={"rs-element-both"}>
+                <img src={codingclockArt}/>
+              </section>
             </div>
             <div className={css["landing-updates-title"]}>
               <h1>Development Updates</h1>
@@ -176,23 +224,27 @@ export default function Index() {
               {/* add updates here */}
 
               <div className={css["landing-updates-box"]}>
-                <h1>Introduction • 6th October 2023</h1>
-                <p>
-                  Hey there! Welcome to the SDS pre-launch page.{" "}
-                  SDS is currently in the process of development and more news is yet to come!{" "}
-                  Updates will be posted here as things progress.<br/><br/>
-                  We look forward to having you at our release!
-                </p>
+                <section className={"rs-element"}>
+                  <h1>Introduction • 6th October 2023</h1>
+                  <p>
+                    Hey there! Welcome to the SDS pre-launch page.{" "}
+                    SDS is currently in the process of development and more news is yet to come!{" "}
+                    Updates will be posted here as things progress.<br/><br/>
+                    We look forward to having you at our release!
+                  </p>
+                </section>
               </div>
 
               <div className={css["landing-updates-box"]}>
-                <h1>Introduction • 6th October 2023</h1>
-                <p>
-                  Hey there! Welcome to the SDS pre-launch page.{" "}
-                  SDS is currently in the process of development and more news is yet to come!{" "}
-                  Updates will be posted here as things progress.<br/><br/>
-                  We look forward to having you at our release!
-                </p>
+                <section className={"rs-element"}>
+                  <h1>Introduction • 6th October 2023</h1>
+                  <p>
+                    Hey there! Welcome to the SDS pre-launch page.{" "}
+                    SDS is currently in the process of development and more news is yet to come!{" "}
+                    Updates will be posted here as things progress.<br/><br/>
+                    We look forward to having you at our release!
+                  </p>
+                </section>
               </div>
             </div>
           </div>

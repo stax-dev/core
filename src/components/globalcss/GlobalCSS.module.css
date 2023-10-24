@@ -2,6 +2,14 @@
   background: blue;
 }
 
+/* scroll reveal */
+
+.rs-element-active {
+  opacity: 100%;
+  transform: scale(1);
+}
+
+
 /* react page css */
 
 .react-div {

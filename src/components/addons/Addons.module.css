@@ -90,13 +90,6 @@
 
 /* scroll reveal */
 
-.rselement-active {
-  opacity: 100%;
-  transform: scale(1);
-}
-
-/* uncomment the css in the section tag to continue scroll reveal usage */
-
 section {
   opacity: 0%;
   transform: scale(0.9);
