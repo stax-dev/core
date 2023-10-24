@@ -51,11 +51,11 @@
 }
 .landing-nav .landing-nav-text {
     width: 100%;
+    margin-bottom: 5%;
 }
 
 .landing-nav .landing-finish-date {
     text-align: center;
-    margin-top: 5%;
     font-size: 100%;
 }
 

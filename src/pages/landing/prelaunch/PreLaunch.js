@@ -103,27 +103,31 @@ export default function Index() {
               <div className={css["landing-nav-text"]}>
                 <p>The Ultimate DevOps Ecosystem</p>
               </div>
-              <div className={css["landing-finish-date"]}>
+              <section className={"rs-element-both"}>
+                <div className={css["landing-finish-date"]}>
                   <p>{releaseDate}</p>
                 </div>
+              </section>
             </div>
           </div>
           <div className={cssGlobal["content-100"]}>
             <div className={`${css["landing-title"]} ${cssGlobal["flex-center-left"]}`}>
               <div className={css["landing-title-art"]}>
+                <img src={splashboardArt} />
+              </div>
+              <div className={css["landing-title-text"]}>
                 <section className={"rs-element-both"}>
-                  <img src={splashboardArt} />
+                  <h1>
+                    A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>seamlessly</span> build, deploy and manage projects.
+                  </h1>
                 </section>
               </div>
               <div className={css["landing-title-text"]}>
-              <h1>
-                A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>seamlessly</span> build, deploy and manage projects.
-              </h1>
-              </div>
-              <div className={css["landing-title-text"]}>
-              <h1>
-                <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
-              </h1>
+                <section className={"rs-element-both"}>
+                  <h1>
+                    <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
+                  </h1>
+                </section>
               </div>
             </div>
           </div>
@@ -134,62 +138,74 @@ export default function Index() {
           </div> */}
           <div className={cssGlobal["content-100"]}>
             <div className={css["landing-project"]}>
-              <div className={`${css["landing-project-title"]} ${cssGlobal["flex-center-left"]}`}>
-                <div className={css["landing-project-title-icon"]}>
-                  <section className={"rs-element-both"}>
-                    <img src={iconHosting} alt="logo" />
-                  </section>
+              <section className={"rs-element-both"}>
+                <div className={`${css["landing-project-title"]} ${cssGlobal["flex-center-left"]}`}>
+                  <div className={css["landing-project-title-icon"]}>
+                    <section className={"rs-element-both"}>
+                      <img src={iconHosting} alt="logo" />
+                    </section>
+                  </div>
+                  <div className={css["landing-project-title-text"]}>
+                    <h1>SDS Hosting</h1>
+                  </div>
+                  <div className={css["landing-project-title-info"]}>
+                    <p>Hosting for anything. Literally.</p>
+                  </div>
                 </div>
-                <div className={css["landing-project-title-text"]}>
-                  <h1>SDS Hosting</h1>
+                <div className={css["landing-project-progress"]}>
+                  <div style={{width: "64%"}} className={css["landing-project-progress-bar"]}></div>
                 </div>
-                <div className={css["landing-project-title-info"]}>
-                  <p>Hosting for anything. Literally.</p>
-                </div>
-              </div>
-              <div className={css["landing-project-progress"]}>
-                <div style={{width: "64%"}} className={css["landing-project-progress-bar"]}></div>
-              </div>
+              </section>
               <div className={`${css["landing-project-list"]} ${cssGlobal["flex-flex-start-left"]}`}>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-server"]} ${"fas fa-server"}`}></i>
-                  </div>
-                  <p>
-                    Scalable Droplet Hosting allows you to change your budget and resources <span>on the fly.</span>
-                  </p>
+                  <section className={"rs-element-both"}>
+                    <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-server"]} ${"fas fa-server"}`}></i>
+                    </div>
+                    <p>
+                      Scalable Droplet Hosting allows you to change your budget and resources <span>on the fly.</span>
+                    </p>
+                  </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div style={{animationDelay: "1s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-gauge=high"]} ${"fas fa-gauge-high"}`}></i>
-                  </div>
-                  <p>
-                    <span>Built-in Dashboard</span> with an AI Chatbot, team permissions, server analytics and more...
-                  </p>
+                  <section className={"rs-element-both"}>
+                    <div style={{animationDelay: "1s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-gauge=high"]} ${"fas fa-gauge-high"}`}></i>
+                    </div>
+                    <p>
+                      <span>Built-in Dashboard</span> with an AI Chatbot, team permissions, server analytics and more...
+                    </p>
+                  </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div style={{animationDelay: "1.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-rocket"]} ${"fas fa-rocket"}`}></i>
-                  </div>
-                  <p>
-                    Launch your droplet easily with several <span>pre-built templates</span> to choose from.
-                  </p>
+                  <section className={"rs-element-both"}>
+                    <div style={{animationDelay: "1.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-rocket"]} ${"fas fa-rocket"}`}></i>
+                    </div>
+                    <p>
+                      Launch your droplet easily with several <span>pre-built templates</span> to choose from.
+                    </p>
+                  </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div style={{animationDelay: "2s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-wand-magic-sparkles"]} ${"fas fa-wand-magic-sparkles"}`}></i>
-                  </div>
-                  <p>
-                    Load balancers, snapshots, custom domains and tons more <span>with every server.</span>
-                  </p>
+                  <section className={"rs-element-both"}>
+                    <div style={{animationDelay: "2s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-wand-magic-sparkles"]} ${"fas fa-wand-magic-sparkles"}`}></i>
+                    </div>
+                    <p>
+                      Load balancers, snapshots, custom domains and tons more <span>with every server.</span>
+                    </p>
+                    </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div style={{animationDelay: "2.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-shapes"]} ${"fas fa-shapes"}`}></i>
-                  </div>
-                  <p>
-                    We aim to accomodate <span>all skill levels.</span> Our services are designed to be <span>simple and easy to use.</span>
-                  </p>
+                  <section className={"rs-element-both"}>
+                    <div style={{animationDelay: "2.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-shapes"]} ${"fas fa-shapes"}`}></i>
+                    </div>
+                    <p>
+                      We aim to accomodate <span>all skill levels.</span> Our services are designed to be <span>simple and easy to use.</span>
+                    </p>
+                  </section>
                 </div>
               </div>
             </div>
@@ -213,9 +229,9 @@ export default function Index() {
           </div> */}
           <div className={cssGlobal["content-100"]}>
             <div className={css["landing-updates-art"]}>
-              <section className={"rs-element-both"}>
+              {/* <section className={"rs-element-both"}> */}
                 <img src={codingclockArt}/>
-              </section>
+              {/* </section> */}
             </div>
             <div className={css["landing-updates-title"]}>
               <h1>Development Updates</h1>
@@ -224,7 +240,7 @@ export default function Index() {
               {/* add updates here */}
 
               <div className={css["landing-updates-box"]}>
-                <section className={"rs-element"}>
+                <section className={"rs-element-both"}>
                   <h1>Introduction • 6th October 2023</h1>
                   <p>
                     Hey there! Welcome to the SDS pre-launch page.{" "}
@@ -236,7 +252,7 @@ export default function Index() {
               </div>
 
               <div className={css["landing-updates-box"]}>
-                <section className={"rs-element"}>
+                <section className={"rs-element-both"}>
                   <h1>Introduction • 6th October 2023</h1>
                   <p>
                     Hey there! Welcome to the SDS pre-launch page.{" "}
