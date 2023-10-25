@@ -125,7 +125,7 @@ export default function Hosting() {
           {/* why explain */}
           <div id="Hosting-content-100--2" className={cssGlobal["content-100"]}>
             <div id="Hosting-index-internal-split" className={`${css["index-internal-split"]} ${cssGlobal["flex-center-center"]}`}>
-              <section id="Hosting-rselement-active" className={"rs-element"}>
+              <section id="Hosting-rselement-active" className={cssGlobal["rs-element"]}>
                 <div id="Hosting-why" className={css["why"]}>
                   <div id="Hosting-why-title" className={css["why-title"]}>
                     <h1 id="Hosting-why-title-h1">Enhance your experience.</h1>
@@ -247,7 +247,7 @@ export default function Hosting() {
           <div id="Hosting-content-875" className={cssGlobal["content-875"]}>
             <div id="Hosting-hosting-feature2" className={`${css["hosting-feature2"]} ${cssGlobal["flex-center-center"]}`}>
               <div id="Hosting-hosting-feature2-art--2" className={css["hosting-feature2-art"]}>
-                <section id="Hosting-rs-element" className={"rs-element"}>
+                <section id="Hosting-rs-element" className={cssGlobal["rs-element"]}>
                   <img id="Hosting-hosting-feature2-art-img"
                     src={dashboardArt}
                   />
@@ -291,7 +291,7 @@ export default function Hosting() {
                                 </form> */}
               </div>
               <div id="Hosting-hosting-feature-art" className={css["hosting-feature-art"]}>
-                <section id="Hosting-rs-element--2" className={"rs-element"}>
+                <section id="Hosting-rs-element--2" className={cssGlobal["rs-element"]}>
                   <img id="Hosting-hosting-feature-art-img"
                     src={IntegrationArt}
                   />
@@ -312,7 +312,7 @@ export default function Hosting() {
                                 </p>
                             </div>
                             <div id="Hosting-hosting-feature-art" className={css["hosting-feature-art"]}>
-                                <section className={"rs-element"}>
+                                <section className={cssGlobal["rs-element"]}>
 
                                 </section>
                             </div>
@@ -322,7 +322,7 @@ export default function Hosting() {
           {/* <div id="Hosting-content-875--2" className={cssGlobal["content-875"]}>
                         <div id="Hosting-control-panel" className={`${css["control-panel"]} ${cssGlobal["flex-center-center"]}`}>
                             <div id="Hosting-control-panel-art" className={css["control-panel-art"]}>
-                                <section className={"rs-element"}>
+                                <section className={cssGlobal["rs-element"]}>
                                     <img src={dashboardArt}/>
                                 </section>
                             </div>
@@ -345,7 +345,7 @@ export default function Hosting() {
           </div>
 
           <div id="Hosting-content-875--5" className={cssGlobal["content-875"]}>
-            <section id="Hosting-rs-element--3" className={"rs-element"}>
+            <section id="Hosting-rs-element--3" className={cssGlobal["rs-element"]}>
               <div id="Hosting-hostingoptions-list" className={`${css["hostingoptions-list"]} ${cssGlobal["flex-flex-start-center"]}`}>
                 <div id="Hosting-hostingoptions-list-title" className={css["hostingoptions-list-title"]}>
                   <h1 id="Hosting-hostingoptions-list-title-h1">

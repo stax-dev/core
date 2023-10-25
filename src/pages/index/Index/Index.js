@@ -157,7 +157,7 @@ export default function Index() {
                 </p>
               </div>
               <div id="Index-index-feature-art" className={css["index-feature-art"]}>
-                <section id="Index-rs-element" className={"rs-element"}>
+                <section id="Index-rs-element" className={cssGlobal["rs-element"]}>
                   <img id="Index-index-feature-art-img" src={whitelabel} />
                 </section>
               </div>
@@ -176,7 +176,7 @@ export default function Index() {
                 </p>
               </div>
               <div id="Index-index-feature-art" className={css["index-feature2-art"]}>
-                <section className={"rs-element"}>
+                <section className={cssGlobal["rs-element"]}>
                   <img src={secureArt} />
                 </section>
               </div>
@@ -194,7 +194,7 @@ export default function Index() {
                   </button>
                 </div>
                 <div id="Index-index-feature-art" className={css["index-feature-art"]}>
-                  <section className={"rs-element"}>
+                  <section className={cssGlobal["rs-element"]}>
 
                   </section>
                 </div>
@@ -207,7 +207,7 @@ export default function Index() {
                 <h1>News and Updates</h1>
                 <div className={`${css["news-section"]} ${cssGlobal["flex-stretch-center"]}`}>
                   <a href="/splashboard" className={css["news-top-link"]}>
-                    <section className={"rs-element"}>
+                    <section className={cssGlobal["rs-element"]}>
                       <div className={`${css["news-top"]} ${cssGlobal["flex-stretch-center"]}`}>
                           <div className={css["news-top-box"]}>
                             <h2><span className={css["news-date"]}>17th June 2021</span></h2>
@@ -246,7 +246,7 @@ export default function Index() {
             </div> */}
 
           <div id="Index-content-875--3" className={cssGlobal["content-875"]}>
-            <section id="Index-rs-element-both" className={"rs-element-both"}>
+            <section id="Index-rs-element-both" className={cssGlobal["rs-element-both"]}>
               <div id="Index-register-now" className={css["register-now"]}>
                 <h1 id="Index-register-now-h1">
                   Welcome to the

@@ -103,7 +103,7 @@ export default function Index() {
               <div className={css["landing-nav-text"]}>
                 <p>The Ultimate DevOps Ecosystem</p>
               </div>
-              <section className={"rs-element-both"}>
+              <section className={cssGlobal["rs-element-both"]}>
                 <div className={css["landing-finish-date"]}>
                   <p>{releaseDate}</p>
                 </div>
@@ -112,18 +112,18 @@ export default function Index() {
           </div>
           <div className={cssGlobal["content-100"]}>
             <div className={`${css["landing-title"]} ${cssGlobal["flex-center-left"]}`}>
-              <div className={css["landing-title-art"]}>
-                <img src={splashboardArt} />
-              </div>
               <div className={css["landing-title-text"]}>
-                <section className={"rs-element-both"}>
+                <section className={cssGlobal["rs-element-both-left"]}>
                   <h1>
                     A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>seamlessly</span> build, deploy and manage projects.
                   </h1>
                 </section>
               </div>
+              <div className={css["landing-title-art"]}>
+                <img id="PreLaunch-landing-title-art-image" src={splashboardArt} />
+              </div>
               <div className={css["landing-title-text"]}>
-                <section className={"rs-element-both"}>
+                <section className={cssGlobal["rs-element-both-left"]}>
                   <h1>
                     <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
                   </h1>
@@ -138,10 +138,10 @@ export default function Index() {
           </div> */}
           <div className={cssGlobal["content-100"]}>
             <div className={css["landing-project"]}>
-              <section className={"rs-element-both"}>
+              <section className={cssGlobal["rs-element-both"]}>
                 <div className={`${css["landing-project-title"]} ${cssGlobal["flex-center-left"]}`}>
                   <div className={css["landing-project-title-icon"]}>
-                    <section className={"rs-element-both"}>
+                    <section className={cssGlobal["rs-element-both"]}>
                       <img src={iconHosting} alt="logo" />
                     </section>
                   </div>
@@ -158,7 +158,7 @@ export default function Index() {
               </section>
               <div className={`${css["landing-project-list"]} ${cssGlobal["flex-flex-start-left"]}`}>
                 <div className={css["landing-project-list-box"]}>
-                  <section className={"rs-element-both"}>
+                  <section className={cssGlobal["rs-element-both"]}>
                     <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                       <i className={`${css["fas"]} ${css["fa-server"]} ${"fas fa-server"}`}></i>
                     </div>
@@ -168,7 +168,7 @@ export default function Index() {
                   </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <section className={"rs-element-both"}>
+                  <section className={cssGlobal["rs-element-both"]}>
                     <div style={{animationDelay: "1s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                       <i className={`${css["fas"]} ${css["fa-gauge=high"]} ${"fas fa-gauge-high"}`}></i>
                     </div>
@@ -178,7 +178,7 @@ export default function Index() {
                   </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <section className={"rs-element-both"}>
+                  <section className={cssGlobal["rs-element-both"]}>
                     <div style={{animationDelay: "1.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                       <i className={`${css["fas"]} ${css["fa-rocket"]} ${"fas fa-rocket"}`}></i>
                     </div>
@@ -188,7 +188,7 @@ export default function Index() {
                   </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <section className={"rs-element-both"}>
+                  <section className={cssGlobal["rs-element-both"]}>
                     <div style={{animationDelay: "2s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                       <i className={`${css["fas"]} ${css["fa-wand-magic-sparkles"]} ${"fas fa-wand-magic-sparkles"}`}></i>
                     </div>
@@ -198,7 +198,7 @@ export default function Index() {
                     </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <section className={"rs-element-both"}>
+                  <section className={cssGlobal["rs-element-both"]}>
                     <div style={{animationDelay: "2.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
                       <i className={`${css["fas"]} ${css["fa-shapes"]} ${"fas fa-shapes"}`}></i>
                     </div>
@@ -229,7 +229,7 @@ export default function Index() {
           </div> */}
           <div className={cssGlobal["content-100"]}>
             <div className={css["landing-updates-art"]}>
-              {/* <section className={"rs-element-both"}> */}
+              {/* <section className={cssGlobal["rs-element-both"]}> */}
                 <img src={codingclockArt}/>
               {/* </section> */}
             </div>
@@ -240,7 +240,7 @@ export default function Index() {
               {/* add updates here */}
 
               <div className={css["landing-updates-box"]}>
-                <section className={"rs-element-both"}>
+                <section className={cssGlobal["rs-element-both-left"]}>
                   <h1>Introduction • 6th October 2023</h1>
                   <p>
                     Hey there! Welcome to the SDS pre-launch page.{" "}
@@ -252,7 +252,7 @@ export default function Index() {
               </div>
 
               <div className={css["landing-updates-box"]}>
-                <section className={"rs-element-both"}>
+                <section className={cssGlobal["rs-element-both-left"]}>
                   <h1>Introduction • 6th October 2023</h1>
                   <p>
                     Hey there! Welcome to the SDS pre-launch page.{" "}

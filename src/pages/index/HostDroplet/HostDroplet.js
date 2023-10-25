@@ -133,7 +133,7 @@ export default function HostDroplet() {
                 </p>
               </div>
               <div id="HostDroplet-droplet-art" className={css["droplet-art"]}>
-                <section id="HostDroplet-rs-element" className={"rs-element"}>
+                <section id="HostDroplet-rs-element" className={cssGlobal["rs-element"]}>
                   <img id="HostDroplet-droplet-art-img" src={scalableArt} />
                 </section>
               </div>
@@ -143,7 +143,7 @@ export default function HostDroplet() {
           <div id="HostDroplet-content-875--2" className={cssGlobal["content-875"]}>
             <div id="HostDroplet-droplet-feature2" className={`${css["droplet-feature2"]} ${cssGlobal["flex-center-center"]}`}>
               <div id="HostDroplet-droplet-art--2" className={css["droplet-art"]}>
-                <section id="HostDroplet-rs-element--2" className={"rs-element"}>
+                <section id="HostDroplet-rs-element--2" className={cssGlobal["rs-element"]}>
                   <img id="HostDroplet-droplet-art-img--2" src={locationArt} />
                 </section>
               </div>
@@ -163,7 +163,7 @@ export default function HostDroplet() {
                                 <p id="HostDroplet-droplet-info-p--3">Our droplets are equipped with AES-256 encryption. Feauturing symmetric key encryption algorithm that is virtually impenetrable</p>
                             </div>
                             <div id="HostDroplet-droplet-art--3" className={css["droplet-art"]}>
-                                <section className={"rs-element"}>
+                                <section className={cssGlobal["rs-element"]}>
 
                                 </section>
                             </div>

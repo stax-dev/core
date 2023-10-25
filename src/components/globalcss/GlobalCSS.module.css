@@ -4,10 +4,30 @@
 
 /* scroll reveal */
 
-.rs-element-active {
-  opacity: 100%;
-  transform: scale(1);
+.rs-element,
+.rs-element-both {
+  opacity: 0%;
+  transform: scale(0.9);
+  transition: all 0.5s ease-in;
 }
+
+.rs-element-active {
+  opacity: 100% !important;
+  transform: scale(1) !important;
+}
+
+.rs-element-left,
+.rs-element-both-left {
+  opacity: 0%;
+  transform: translateX(-10%);
+  transition: all 0.5s ease-in;
+}
+
+.rs-element-active-left {
+  opacity: 100%;
+  transform: translateX(0%);
+}
+
 
 
 /* react page css */
