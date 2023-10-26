@@ -1,5 +1,7 @@
 build:
-	@go build -o bin/app
+	@$env:GOOS="linux"; $env:GOARCH="amd64"; go build -o bin/app_linux
+	@$env:GOOS="darwin"; $env:GOARCH="amd64"; go build -o bin/app_darwin
+	@$env:GOOS="windows"; $env:GOARCH="amd64"; go build -o bin/app.exe
 
 run: build
 	@./bin/app
