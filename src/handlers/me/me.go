@@ -35,7 +35,7 @@ func HandleMe(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetUserIDFromDeviceID(deviceID string) string {
-	db := db.Connect()
+	db, nil := db.Connect()
 	defer db.Close()
 
 	// Get the user ID from the database
@@ -49,7 +49,7 @@ func GetUserIDFromDeviceID(deviceID string) string {
 }
 
 func GetUserData(userID string) types.User {
-	db := db.Connect()
+	db, nil := db.Connect()
 	defer db.Close()
 
 	// Get the user data from the database

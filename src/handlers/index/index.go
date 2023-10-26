@@ -6,8 +6,10 @@ import (
 	handle "api/src/handlers"
 )
 
+// HandleIndex handles the index route and returns API information.
 func HandleIndex(w http.ResponseWriter, r *http.Request) {
 	handle.MakeHandler(func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello World!"))
+		// Return API information
+		handle.ReturnJSON(w, []uint8(`{"name": "API", "version": "0.0.1", "author": "Stax", "Route:": "/", "methods": ["GET", "POST"]}`))
 	})(w, r)
 }

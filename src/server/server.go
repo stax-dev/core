@@ -10,12 +10,14 @@ import (
 // Server is the main server struct
 type Server struct {
 	listenAddr string
+	port       string
 }
 
 // NewServer creates a new server
-func NewServer(listenAddr string) *Server {
+func NewServer(listenAddr string, port string) *Server {
 	return &Server{
 		listenAddr: listenAddr,
+		port:       port,
 	}
 }
 
@@ -23,10 +25,18 @@ func NewServer(listenAddr string) *Server {
 func (s *Server) Start() error {
 	router := http.NewServeMux()
 
-	// Add the routes
-	for _, route := range routes.Routes {
-		router.HandleFunc(route.Pattern, route.HandlerFunc)
-	}
+	// Sense the method and path, and call the appropriate handler
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		for _, route := range routes.Routes {
+			if route.Pattern == r.URL.Path {
+				for _, method := range route.Methods {
+					if method.Name == r.Method {
+						method.HandlerFunc(w, r)
+					}
+				}
+			}
+		}
+	})
 
 	// Start the server
 	log.Println("Starting server on", s.listenAddr)

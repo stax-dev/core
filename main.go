@@ -7,11 +7,16 @@ import (
 )
 
 func main() {
-	// Get the port from the environment
+	// Get the port from the env file
 	port := os.Getenv("PORT")
 
+	// If the port is empty, set it to 8080
+	if port == "" {
+		port = "8080"
+	}
+
 	// Create a new server
-	s := server.NewServer(":" + port)
+	s := server.NewServer("localhost:"+port, port)
 
 	// Start the server
 	log.Fatal(s.Start())
