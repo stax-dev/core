@@ -1,16 +1,22 @@
 
 
 
+.logo-main::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
 .logo-display {
     height: 100dvh;
     width: 100%;
+    overflow: hidden;
     transition: all 1s ease-in-out;
     /* css global flex */
 }
 
 .logo-title {
     height: 100dvh;
-    transition: all 1s ease-in-out;
+    overflow: hidden;
     /* css global flex */
 }
 
@@ -52,6 +58,7 @@
 .landing-nav .landing-nav-text {
     width: 100%;
     margin-bottom: 5%;
+    scroll-snap-align: start;
 }
 
 .landing-nav .landing-finish-date {
@@ -95,14 +102,15 @@
 }
 
 .landing-title-art {
-    perspective: 800px;
+    perspective: 1500px;
 }
 
 .landing-title-art img{
     filter: drop-shadow(0px 0px 10px var(--theme3));
     transition: all 0.2s ease-in-out;
-    transform: rotateX(0deg) rotateY(20deg);
+    transform: rotateX(15deg) rotateY(-15deg);
 	transform-origin: center center;
+    image-rendering: optimizeQuality;
 }
 
 .landing-title h1{
@@ -297,7 +305,20 @@
 
 .landing-updates-art img{
     width: 100%;
-    filter: drop-shadow(0px 0px 10px var(--theme3));
+    filter: drop-shadow(0px 0px 10px var(--text1));
+    animation: glow 4s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0px 0px 10px var(--text1));
+    }
+    50% {
+        filter: drop-shadow(0px 0px 10px var(--theme3));
+    }
+    100% {
+        filter: drop-shadow(0px 0px 10px var(--text1));
+    }
 }
 
 
@@ -384,7 +405,7 @@
 }
 
 .landing-contact-list-box {
-    background-color: var(--theme3);
+    background-color: var(--theme2);
     border-radius: 20px;
 }
 
@@ -442,17 +463,17 @@
 }
 
 .landing-finish-date {
-    padding: 10px 20px;
+    padding: 10px 0px;
     font-weight: 500;
     font-size: 90%;
-    border-radius: 40px;
+    border-radius: 80px;
     background-color: var(--text1);
     color: var(--theme1);
-    width: max-content;
+    width: 150px;
+    max-width: 100%;
     margin: 20px auto 0%;
+    transition: all 0.2s ease-in-out;
 }
-
-
 
 
 

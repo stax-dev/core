@@ -44,6 +44,7 @@ export default function Index() {
   var releaseDate = "April 2024";
 
 
+
   window.addEventListener('scroll', function() {
     // Get the current scroll position
     var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -63,24 +64,7 @@ export default function Index() {
 
   });
 
-  // Get references to the div elements
-  var div1 = document.getElementById("logo-display");
-  var div2 = document.getElementById("logo-");
 
-  // Add scroll event listener to the window
-  window.addEventListener("scroll", function() {
-    // Get the current scroll position
-    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Check if div1 is in view
-    if (scrollPosition > div1.offsetTop && scrollPosition < div1.offsetTop + div1.offsetHeight) {
-      // Scroll to div2
-      window.scrollTo({
-        top: div2.offsetTop,
-        behavior: "smooth"
-      });
-    }
-  });
 
 
 
@@ -104,9 +88,9 @@ export default function Index() {
                 <p>The Ultimate DevOps Ecosystem</p>
               </div>
               <section className={cssGlobal["rs-element-both"]}>
-                <div className={css["landing-finish-date"]}>
+                <button className={css["landing-finish-date"]}>
                   <p>{releaseDate}</p>
-                </div>
+                </button>
               </section>
             </div>
           </div>
