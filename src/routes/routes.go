@@ -17,6 +17,7 @@ type Route struct {
 		HandlerFunc http.HandlerFunc
 	}
 	Pattern     string
+	Description string
 	HandlerFunc http.HandlerFunc
 }
 
@@ -66,6 +67,7 @@ var Routes = []Route{
 				HandlerFunc: index.HandleIndex,
 			},
 		},
+		Description: "This is the index route. It returns API information, but not much else. It's mostly used to test if the API is running.",
 		HandlerFunc: index.HandleIndex, // The handler function for the route. This is the function that will be called when the route is matched.
 	},
 	{
@@ -84,6 +86,7 @@ var Routes = []Route{
 				HandlerFunc: users.CreateUser,
 			},
 		},
+		Description: "This route returns all users. It can also be used to create a user. To create a user, send a POST request to this route with the user data in the request body.",
 		HandlerFunc: users.GetUsers,
 	},
 	{
@@ -106,6 +109,7 @@ var Routes = []Route{
 				HandlerFunc: users.DeleteUser,
 			},
 		},
+		Description: "This route returns a user. It can also be used to update a user or delete a user. To update a user, send a PUT request to this route with the user data in the request body. To delete a user, send a DELETE request to this route.",
 		HandlerFunc: users.GetUser,
 	},
 	{
@@ -119,7 +123,12 @@ var Routes = []Route{
 				Name:        "GET",
 				HandlerFunc: me.HandleMe,
 			},
+			{
+				Name:        "PUT",
+				HandlerFunc: me.UpdateMe,
+			},
 		},
+		Description: "This route returns the current user. It can also be used to update the current user. To update the current user, send a PUT request to this route with the user data in the request body.",
 		HandlerFunc: me.HandleMe,
 	},
 	{
@@ -138,6 +147,7 @@ var Routes = []Route{
 				HandlerFunc: plans.CreatePlan,
 			},
 		},
+		Description: "This route returns all plans. It can also be used to create a plan. To create a plan, send a POST request to this route with the plan data in the request body.",
 		HandlerFunc: plans.GetPlans,
 	},
 	{
@@ -160,6 +170,7 @@ var Routes = []Route{
 				HandlerFunc: plans.DeletePlan,
 			},
 		},
+		Description: "This route returns a plan. It can also be used to update a plan or delete a plan. To update a plan, send a PUT request to this route with the plan data in the request body. To delete a plan, send a DELETE request to this route.",
 		HandlerFunc: plans.GetPlan,
 	},
 }

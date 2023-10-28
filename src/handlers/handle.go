@@ -5,13 +5,28 @@ import (
 	"net/http"
 )
 
-func MakeHandler(fn func(http.ResponseWriter, *http.Request)) http.HandlerFunc {
+// MakeHandler is a wrapper for mux.Handler
+func MakeHandler(f func(w http.ResponseWriter, r *http.Request)) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		// Log the request
-		log.Printf("%s %s %s", r.RemoteAddr, r.Method, r.URL)
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error:", err)
+				ReturnInternalServerError(w)
+			}
+		}()
+		f(w, r)
+	}
+}
 
-		// Call the handler
-		fn(w, r)
+func MakeReturnHandler(f func(w http.ResponseWriter, r *http.Request) interface{}) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error:", err)
+				ReturnInternalServerError(w)
+			}
+		}()
+		ReturnJSON(w, f(w, r))
 	}
 }
 

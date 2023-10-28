@@ -16,7 +16,7 @@ func main() {
 	}
 
 	// Create a new server
-	s := server.NewServer("localhost:"+port, port)
+	s := server.NewServer("127.0.0.1:"+port, port)
 
 	// Start the server
 	log.Fatal(s.Start())

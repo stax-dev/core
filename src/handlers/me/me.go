@@ -34,6 +34,36 @@ func HandleMe(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(userDataJSON))
 }
 
+// When the user goes to the /me/ route with a PUT request, the updateMe function will be called
+func UpdateMe(w http.ResponseWriter, r *http.Request) {
+	// Get the device ID from the post request
+	vars := mux.Vars(r)
+	deviceID := vars["deviceID"]
+
+	// In the database, the device ID is in the devices table, so we need to get the user ID from the devices table using the device ID
+	userID := GetUserIDFromDeviceID(deviceID)
+
+	// Get the user data from the database
+	userData := GetUserData(userID)
+
+	// Convert the user data to JSON
+	userDataJSON, err := json.Marshal(userData)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Update the user data in the database
+	db, nil := db.Connect()
+	defer db.Close()
+	_, err = db.Exec("UPDATE users SET first_name = $1, last_name = $2, email = $3 WHERE id = $4", userData.FirstName, userData.LastName, userData.Email, userData.ID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Write the JSON to the response
+	fmt.Fprintf(w, string(userDataJSON))
+}
+
 func GetUserIDFromDeviceID(deviceID string) string {
 	db, nil := db.Connect()
 	defer db.Close()

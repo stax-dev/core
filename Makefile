@@ -1,9 +1,13 @@
 build:
-	@$env:GOOS="linux"; $env:GOARCH="amd64"; go build -o bin/app_linux
-	@$env:GOOS="darwin"; $env:GOARCH="amd64"; go build -o bin/app_darwin
-	@$env:GOOS="windows"; $env:GOARCH="amd64"; go build -o bin/app.exe
+	@echo "Building for Linux"
+	@powershell $$env:GOOS=\"linux\"; $$env:GOARCH=\"amd64\"; go build -o bin/app_linux
+	@echo "Building for Mac"
+	@powershell $$env:GOOS=\"darwin\"; $$env:GOARCH=\"amd64\"; go build -o bin/app_darwin
+	@echo "Building for Windows"
+	@powershell $$env:GOOS=\"windows\"; $$env:GOARCH=\"amd64\"; go build -o bin/app.exe
 
-run: build
+run:
+	@go build -o bin/app
 	@./bin/app
 
 test:

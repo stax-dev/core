@@ -10,6 +10,6 @@ import (
 func HandleIndex(w http.ResponseWriter, r *http.Request) {
 	handle.MakeHandler(func(w http.ResponseWriter, r *http.Request) {
 		// Return API information
-		handle.ReturnJSON(w, []uint8(`{"name": "API", "version": "0.0.1", "author": "Stax", "Route:": "/", "methods": ["GET", "POST"]}`))
+		handle.ReturnJSON(w, []uint8(`{"name": "API", "version": "0.0.1", "author": "Stax", "Route:": "/", "Description": "This is the index route.", "methods": ["GET", "POST"]}`))
 	})(w, r)
 }
