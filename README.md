@@ -2,7 +2,7 @@
 
 **Hi there! 👋 This is something new. Let's have a look, shall we?**
 
-This is the `stax-dev` mono-repo. It contains all the Stax codebases, including the Stax CLI, Stax API, Stax SDS Frontend, and Stax SDS Backend. It also contains the Stax documentation, and the Stax website.
+This is the `stax-dev/core` mono-repo. It contains all the Stax codebases, including the Stax CLI, Stax API, Stax SDS Frontend, and Stax SDS Backend. It also contains the Stax documentation, and the Stax website.
 
 ## What is Stax?
 
