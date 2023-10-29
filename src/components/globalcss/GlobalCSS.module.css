@@ -7,13 +7,13 @@
 .rs-element,
 .rs-element-both {
   opacity: 0%;
-  transform: scale(0.9);
+  transform: translateY(10%);
   transition: all 0.5s ease-in;
 }
 
 .rs-element-active {
-  opacity: 100% !important;
-  transform: scale(1) !important;
+  opacity: 100%;
+  transform: translateY(0%);
 }
 
 .rs-element-left,

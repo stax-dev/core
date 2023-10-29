@@ -67,10 +67,10 @@ export default function Index() {
 
 
 
-
   return (
     <div id="Index-react-div" className={cssGlobal["react-div"]}>
-      <div id="Index-react-background" className={cssGlobal["react-background"]} style={{ backgroundImage: `url(${background})` }}>
+      <div id="Index-react-background" className={cssGlobal["react-background"]}>
+         {/* style={{ backgroundImage: `url(${background})` }}> */}
         <div className={cssGlobal["page-full"]}>
           <Addons />
           <Bubbles />
@@ -97,21 +97,29 @@ export default function Index() {
           <div className={cssGlobal["content-100"]}>
             <div className={`${css["landing-title"]} ${cssGlobal["flex-center-left"]}`}>
               <div className={css["landing-title-text"]}>
-                <section className={cssGlobal["rs-element-both-left"]}>
-                  <h1>
-                    A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>seamlessly</span> build, deploy and manage projects.
-                  </h1>
-                </section>
+                <h1>
+                  A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>streamline</span> the DevOps workflow.
+                </h1>
               </div>
-              <div className={css["landing-title-art"]}>
-                <img id="PreLaunch-landing-title-art-image" src={splashboardArt} />
-              </div>
-              <div className={css["landing-title-text"]}>
+              {/* <div className={css["landing-title-text"]}>
                 <section className={cssGlobal["rs-element-both-left"]}>
                   <h1>
                     <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
                   </h1>
                 </section>
+              </div> */}
+              <div id="PreLaunch-landing-title-art"className={css["landing-title-art"]}>
+                <section style={{perspective: "1500px"}} className={cssGlobal["rs-element-both"]}>
+                  <img id="PreLaunch-landing-title-art-image" src={splashboardArt} />
+                </section>
+              </div>
+            </div>
+            <div className={`${css["landing-features"]} ${cssGlobal["flex-center-center"]}`}>
+              <div className={css["landing-features-box"]}>
+                <h1>An Ecosystem Integrating Seamlessly</h1>
+              </div>
+              <div className={css["landing-features-box"]}>
+                <h1>Enhancing Teamwork and Collaboration</h1>
               </div>
             </div>
           </div>
@@ -224,27 +232,23 @@ export default function Index() {
               {/* add updates here */}
 
               <div className={css["landing-updates-box"]}>
-                <section className={cssGlobal["rs-element-both-left"]}>
-                  <h1>Introduction • 6th October 2023</h1>
-                  <p>
-                    Hey there! Welcome to the SDS pre-launch page.{" "}
-                    SDS is currently in the process of development and more news is yet to come!{" "}
-                    Updates will be posted here as things progress.<br/><br/>
-                    We look forward to having you at our release!
-                  </p>
-                </section>
+                <h1>Introduction • 6th October 2023</h1>
+                <p>
+                  Hey there! Welcome to the SDS pre-launch page.{" "}
+                  SDS is currently in the process of development and more news is yet to come!{" "}
+                  Updates will be posted here as things progress.<br/><br/>
+                  We look forward to having you at our release!
+                </p>
               </div>
 
               <div className={css["landing-updates-box"]}>
-                <section className={cssGlobal["rs-element-both-left"]}>
-                  <h1>Introduction • 6th October 2023</h1>
-                  <p>
-                    Hey there! Welcome to the SDS pre-launch page.{" "}
-                    SDS is currently in the process of development and more news is yet to come!{" "}
-                    Updates will be posted here as things progress.<br/><br/>
-                    We look forward to having you at our release!
-                  </p>
-                </section>
+                <h1>Introduction • 6th October 2023</h1>
+                <p>
+                  Hey there! Welcome to the SDS pre-launch page.{" "}
+                  SDS is currently in the process of development and more news is yet to come!{" "}
+                  Updates will be posted here as things progress.<br/><br/>
+                  We look forward to having you at our release!
+                </p>
               </div>
             </div>
           </div>

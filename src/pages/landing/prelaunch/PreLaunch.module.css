@@ -88,38 +88,41 @@
 
 
 .landing-title {
-    width: 100%;
+    width: calc(100% - 80px);
+    background-color: var(--theme2);
+    padding: 40px;
+    border-radius: 40px;
     /* css global flex */
 }
 
 .landing-title .landing-title-text {
     width: 100%;
+    margin-bottom: 4%;
 }
 
 .landing-title .landing-title-art {
     width: 100%;
-    margin: 4% auto;
-}
-
-.landing-title-art {
-    perspective: 1500px;
 }
 
 .landing-title-art img{
-    filter: drop-shadow(0px 0px 10px var(--theme3));
     transition: all 0.2s ease-in-out;
-    transform: rotateX(15deg) rotateY(-15deg);
+}
+
+.landing-title-art img {
+    filter: drop-shadow(0px 0px 10px var(--theme3));
+    transform: rotateX(15deg) rotateY(-15deg) translateX(-5%) translateZ(0);
 	transform-origin: center center;
-    image-rendering: optimizeQuality;
+    backface-visibility: hidden;
 }
 
 .landing-title h1{
     font-weight: 500;
     font-size: 200%;
+    margin: 0%;
 }
 
 .landing-title-text {
-    color: var(--text2);
+    color: var(--text1);
 }
 
 .landing-title-text-white{
@@ -149,6 +152,48 @@
     font-size: 150%;
     font-weight: 400;
 }
+
+
+
+
+.landing-features {
+    /* css global flex */
+    width: 100%;
+    margin-top: 4%;
+}
+
+.landing-features .landing-features-box {
+    width: calc(48% - 80px);
+    padding: 40px;
+    margin-right: 4%;
+}
+
+.landing-features .landing-features-box:nth-child(even){
+    margin-right: 0%;
+}
+
+.landing-features-box {
+    border-radius: 20px;
+    background-color: var(--theme2);
+}
+
+.landing-features-box h1{
+    margin: 0%;
+    font-weight: 500;
+    font-size: 200%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .landing-project {
     width: 100%;
@@ -328,12 +373,24 @@
 }
 
 .landing-updates .landing-updates-box {
-    width: 100%;
-    margin-bottom: 5%;
+    width: calc(100% - 80px);
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.landing-updates-box {
+    background-color: var(--theme2);
+    border-radius: 20px;
+    box-shadow: 0px 10px 5px var(--theme1);
+}
+
+.landing-updates-box:nth-child(1) {
+    background-color: var(--theme3);
 }
 
 .landing-updates-box h1 {
     font-weight: 500;
+    margin: 0% 0% 20px;
     font-size: 120%;
 }
 
