@@ -1,3 +1,5 @@
+// Path: src/handlers/wallets/wallets.go
+
 package wallets
 
 import (

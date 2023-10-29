@@ -1,3 +1,5 @@
+// Path: src/server/server.go
+
 package server
 
 import (

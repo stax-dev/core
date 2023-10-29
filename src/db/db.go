@@ -1,3 +1,5 @@
+// Path: src/db/db.go
+
 package db
 
 // Handle database operations with MariaDB SQL database

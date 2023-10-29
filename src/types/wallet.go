@@ -1,3 +1,5 @@
+// Path: src/types/wallet.go
+
 package types
 
 type Wallet struct {

@@ -1,3 +1,5 @@
+// Path: src/handlers/users/users.go
+
 package users
 
 import (

@@ -1,3 +1,5 @@
+// Path: src/handlers/handle.go
+
 package handle
 
 import (

@@ -1,3 +1,5 @@
+# Path: Dockerfile
+
 FROM golang as builder
 WORKDIR /go/src/github.com/stax-dev/core/sds-api
 COPY . .
@@ -8,5 +10,3 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=builder /go/src/github.com/stax-dev/core/sds-api/app .
 CMD ["./app"]
-
-# Path: docker-compose.yml

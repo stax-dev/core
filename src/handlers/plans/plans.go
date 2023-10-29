@@ -1,3 +1,5 @@
+// Path: src/handlers/plans/plans.go
+
 package plans
 
 // This file contains the implementation of handlers for plans.

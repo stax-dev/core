@@ -1,3 +1,5 @@
+// Path: src/routes/routes.go
+
 package routes
 
 // Package routes defines the HTTP routes for the API.

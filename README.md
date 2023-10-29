@@ -1,3 +1,5 @@
+<!-- Path: README.md -->
+
 # sds-api
 The API Wiki for the SDS
 

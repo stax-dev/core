@@ -1,3 +1,5 @@
+// Path: src/types/plan.go
+
 package types
 
 import (

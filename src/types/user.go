@@ -1,3 +1,5 @@
+// Path: src/types/user.go
+
 package types
 
 import (

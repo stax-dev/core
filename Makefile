@@ -1,3 +1,5 @@
+# Path: Makefile
+
 build:
 	@echo "Building for Linux"
 	@powershell $$env:GOOS=\"linux\"; $$env:GOARCH=\"amd64\"; go build -o bin/app_linux

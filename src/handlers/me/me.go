@@ -1,3 +1,5 @@
+// Path: src/handlers/me/me.go
+
 package me
 
 import (

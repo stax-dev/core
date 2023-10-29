@@ -1,3 +1,5 @@
+// Path: src/handlers/index/index.go
+
 package index
 
 import (
