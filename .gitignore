@@ -1,0 +1,10 @@
+# Ignore node_modules folder
+node_modules
+
+# Ignore dotenv file
+.env
+
+# Ignore build, dist, and bin folders
+build/
+dist/
+bin/
