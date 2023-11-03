@@ -229,10 +229,10 @@ useEffect(() => {
 
 
   return (
-    <div style={{overflow: "initial"}}  id="Index-react-div" className={cssGlobal["react-div"]}>
-      <div style={{overflow: "initial"}} id="Index-react-background" className={cssGlobal["react-background"]}>
+    <div id="Index-react-div" className={cssGlobal["react-div"]}>
+      <div id="Index-react-background" className={cssGlobal["react-background"]}>
          {/* style={{ backgroundImage: `url(${background})` }}> */}
-        <div style={{overflow: "initial"}} className={cssGlobal["page-full"]}>
+        <div className={cssGlobal["page-full"]}>
           <Addons />
           <Bubbles />
           <div className={css["test"]}>
@@ -395,24 +395,57 @@ useEffect(() => {
             <div className={css["landing-updates"]}>
               {/* add updates here */}
 
-              <div className={css["landing-updates-box"]}>
-                <h1>Introduction • 6th October 2023</h1>
-                <p>
-                  Hey there! Welcome to the SDS pre-launch page.{" "}
-                  SDS is currently in the process of development and more news is yet to come!{" "}
-                  Updates will be posted here as things progress.<br/><br/>
-                  We look forward to having you at our release!
-                </p>
+              <div className={`${css["landing-updates-box"]} ${cssGlobal["flex-center-left"]}`}>
+                <div className={css["landing-updates-box-line"]}></div>
+                <div className={css["landing-updates-box-circle"]}></div>
+                <div className={css["landing-updates-box-info"]}>
+                  <h1>Introduction • 6th October 2023</h1>
+                  <p>
+                    Hey there! Welcome to the SDS pre-launch page.{" "}
+                    SDS is currently in the process of development and more news is yet to come!{" "}
+                    Updates will be posted here as things progress.<br/><br/>
+                    We look forward to having you at our release!
+                  </p>
+                </div>
               </div>
-
-              <div className={css["landing-updates-box"]}>
-                <h1>Introduction • 6th October 2023</h1>
-                <p>
-                  Hey there! Welcome to the SDS pre-launch page.{" "}
-                  SDS is currently in the process of development and more news is yet to come!{" "}
-                  Updates will be posted here as things progress.<br/><br/>
-                  We look forward to having you at our release!
-                </p>
+              <div className={`${css["landing-updates-box"]} ${cssGlobal["flex-center-left"]}`}>
+                <div className={css["landing-updates-box-line"]}></div>
+                <div className={css["landing-updates-box-circle"]}></div>
+                <div className={css["landing-updates-box-info"]}>
+                  <h1>Introduction • 6th October 2023</h1>
+                  <p>
+                    Hey there! Welcome to the SDS pre-launch page.{" "}
+                    SDS is currently in the process of development and more news is yet to come!{" "}
+                    Updates will be posted here as things progress.<br/><br/>
+                    We look forward to having you at our release!
+                  </p>
+                </div>
+              </div>
+              <div className={`${css["landing-updates-box"]} ${cssGlobal["flex-center-left"]}`}>
+                <div className={css["landing-updates-box-line"]}></div>
+                <div className={css["landing-updates-box-circle"]}></div>
+                <div className={css["landing-updates-box-info"]}>
+                  <h1>Introduction • 6th October 2023</h1>
+                  <p>
+                    Hey there! Welcome to the SDS pre-launch page.{" "}
+                    SDS is currently in the process of development and more news is yet to come!{" "}
+                    Updates will be posted here as things progress.<br/><br/>
+                    We look forward to having you at our release!
+                  </p>
+                </div>
+              </div>
+              <div className={`${css["landing-updates-box"]} ${cssGlobal["flex-center-left"]}`}>
+                <div className={css["landing-updates-box-line"]}></div>
+                <div className={css["landing-updates-box-circle"]}></div>
+                <div className={css["landing-updates-box-info"]}>
+                  <h1>Introduction • 6th October 2023</h1>
+                  <p>
+                    Hey there! Welcome to the SDS pre-launch page.{" "}
+                    SDS is currently in the process of development and more news is yet to come!{" "}
+                    Updates will be posted here as things progress.<br/><br/>
+                    We look forward to having you at our release!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
