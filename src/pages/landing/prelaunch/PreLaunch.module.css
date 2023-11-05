@@ -390,15 +390,17 @@
 }
 
 .landing-updates p{
-    padding-left: 20px;
-    border-left: 5px solid var(--accent);
+    padding-left: 0px;
+    border-left: 0px solid var(--theme1);
     color: var(--text2);
     margin: 0%;
     font-weight: 400;
 }
 
+/*
+
 .landing-updates-box:nth-child(1) p{
-    color: var(--text1);
+    border-color: var(--text1);
 }
 
 .landing-updates-box:nth-child(2n) p{
@@ -417,44 +419,66 @@
     border-color: var(--text1);
 }
 
+*/
 .landing-updates-box .landing-updates-box-line {
-    width: 15px;
+    width: 12px;
     align-self: stretch;
 }
 
 .landing-updates-box .landing-updates-box-circle {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
 }
 
 .landing-updates-box .landing-updates-box-info {
     width: calc(100% - 45px - 80px);
+    /* combined width of line/circle - padding - border width */
     padding: 40px;
     margin: 20px 0px;
 }
 
 .landing-updates-box-line {
-    border-left: 8px solid var(--accent);
-    filter: drop-shadow(0px 0px 10px var(--accent));
+    border-left: 6px solid var(--accent);
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .landing-updates-box-circle {
-    transform: translateX(calc(-100% + 4px));
+    z-index: 2;
+    transform: translateX(calc(-100% + 3px));
+    /* deduct px half of border width of the line */
     border-radius: 50%;
-    filter: drop-shadow(0px 0px 10px var(--accent));
-    background-color: var(--accent);
     transition: all 0.2s ease-in-out;
+    background-color: var(--theme3);
+    filter: drop-shadow(0px 0px 10px var(--theme3));
+}
+
+.landing-updates-box-line,
+.landing-updates-box-circle {
+    border-color: var(--theme3);
+    /* grouped it this way so easier colour change cause they all the same */
 }
 
 .landing-updates-box-info {
-    background-color: var(--theme2);
     border-radius: 20px;
-    box-shadow: 0px 10px 5px var(--theme1);
+    /* box-shadow: 0px 10px 5px var(--theme1); */
+    /* border: 2px solid var(--theme1); */
+    transition: all 0.2s ease-in-out;
+}
+
+.landing-updates-box-info:hover {
+    background-color: var(--theme2);
 }
 
 .landing-updates-box:nth-child(1) .landing-updates-box-info{
     background-color: var(--theme3);
+    /* border-color: var(--theme3); */
+    /* filter: drop-shadow(0px 0px 10px var(--theme3)); */
+}
+
+.landing-updates-box:nth-child(1) .landing-updates-box-circle {
+    background-color: var(--text1);
+    filter: drop-shadow(0px 0px 10px var(--text1));
 }
 
 .landing-updates-box:nth-child(1) .landing-updates-box-line {
