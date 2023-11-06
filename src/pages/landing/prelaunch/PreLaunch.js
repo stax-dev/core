@@ -56,16 +56,24 @@ export default function Index() {
       document.getElementById("logo-display").style.height = "100dvh";
       document.getElementById("logo-display").style.marginBottom = "60dvh";
     }
-    if (scrollPosition >= 25) {
+    if (scrollPosition >= 30) {
       document.getElementById("logo-display").style.height = "70dvh";
       document.getElementById("logo-display").style.marginBottom = "40dvh";
     }
-    if (scrollPosition >= 50) {
+    if (scrollPosition >= 60) {
       document.getElementById("logo-display").style.height = "40dvh";
       document.getElementById("logo-display").style.marginBottom = "20dvh";
     }
 
   });
+
+  function appTheme(){
+    if(document.documentElement.getAttribute("data-apptheme") === "dark") {
+      document.documentElement.setAttribute("data-apptheme", "light");
+    }else {
+      document.documentElement.setAttribute("data-apptheme", "dark");
+    }
+  }
 
 
 
@@ -90,7 +98,7 @@ export default function Index() {
                 <p>The Ultimate DevOps Ecosystem</p>
               </div>
               <section className={cssGlobal["rs-element-both"]}>
-                <button className={css["landing-finish-date"]}>
+                <button onClick={() => appTheme()} className={css["landing-finish-date"]}>
                   <p>{releaseDate}</p>
                 </button>
               </section>
@@ -264,9 +272,9 @@ export default function Index() {
               </div>
             </div>
             <div className={css["landing-finish"]}>
-              <div className={css["landing-finish-date"]}>
+              <button onClick={() => appTheme()} className={css["landing-finish-date"]}>
                 <p>{releaseDate}</p>
-              </div>
+              </button>
             </div>
 
           </div>

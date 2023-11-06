@@ -29,7 +29,7 @@
     width: 60%;
     padding: 20%;
     border-radius: 20%;
-    background-color: var(--theme3);
+    background-color: var(--dtb3);
 }
 
 
@@ -69,6 +69,7 @@
 .landing-nav-title {
     font-size: 450%;
     font-weight: 600;
+    color: var(--text1);
 }
 
 .landing-nav-title,
@@ -92,6 +93,7 @@
     background-color: var(--theme2);
     padding: 40px;
     border-radius: 40px;
+    color: var(--text1);
     /* css global flex */
 }
 
@@ -127,19 +129,8 @@
 
 .landing-title-text-white{
     color: var(--text1);
-    filter: drop-shadow(0px 0px 10px var(--text1));
+    /* filter: drop-shadow(0px 0px 10px var(--text1)); */
 }
-
-.landing-title-text-2 {
-    filter: drop-shadow(0px 0px 10px var(--accent2));
-    color: var(--accent2);
-}
-
-.landing-title-text-3 {
-    filter: drop-shadow(0px 0px 10px var(--accent3));
-    color: var(--accent3);
-}
-
 
 .landing-subtitle {
     text-align: center;
@@ -160,6 +151,7 @@
     /* css global flex */
     width: 100%;
     margin-top: 4%;
+    color: var(--text1);
 }
 
 .landing-features .landing-features-box {
@@ -202,6 +194,7 @@
 .landing-project-title {
     /* css global flex */
     width: 100%;
+    color: var(--text1);
 }
 
 .landing-project-title .landing-project-title-icon {
@@ -336,6 +329,7 @@
 .landing-updates-title {
     width: 100%;
     margin: 5% 0%;
+    color: var(--text1);
 }
 
 .landing-updates-title h1{
@@ -375,18 +369,11 @@
     width: 100%;
 }
 
-.test {
-    position: sticky;
-    top: 20px;
-    height: 200px;
-    margin-bottom: 20px;
-    background: white;
-}
-
 .landing-updates-box h1 {
     font-weight: 500;
     margin: 0% 0% 20px;
     font-size: 120%;
+    color: var(--text1);
 }
 
 .landing-updates p{
@@ -504,6 +491,7 @@
 
 .landing-contact {
     width: 100%;
+    color: var(--text1);
 }
 
 .landing-contact-list {
@@ -560,16 +548,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 .landing-finish {
     width: 100%;
     text-align: center;
@@ -595,7 +573,9 @@
     transition: all 0.2s ease-in-out;
 }
 
-
+.landing-finish-date:hover {
+    background-color: var(--text2);
+}
 
 
 
