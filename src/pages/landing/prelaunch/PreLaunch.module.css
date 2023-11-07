@@ -36,7 +36,8 @@
 
 
 .logo-title .landing-nav {
-    width: 100%;
+    width: 90%;
+    margin: 0% 5%;
     /* css global flex */
 }
 
@@ -158,6 +159,7 @@
     width: calc(48% - 80px);
     padding: 40px;
     margin-right: 4%;
+    margin-bottom: 4%;
 }
 
 .landing-features .landing-features-box:nth-child(even){
@@ -592,10 +594,21 @@
 
 @media screen and (max-width: 1200px) {
 
+    .landing-features .landing-features-box {
+        width: calc(100% - 80px);
+        padding: 40px;
+        margin-right: 0%;
+    }
+
+
 }
 
 @media screen and (max-width: 1000px) {
 
+
+    .landing-nav-title {
+        font-size: 350%;
+    }
 
 }
 
@@ -607,28 +620,23 @@
         margin-right: 0%;
     }
 
+    .landing-nav-title {
+        font-size: 300%;
+    }
+
+
 }
 
 @media screen and (max-width: 600px) {
 
-    .landing-project-title-text h1{
-        font-size: 250%;
+    .landing-nav-title,
+    .landing-project-title-text h1 {
+        font-size: 220%;
     }
 
-    .landing-title-art img,
-    .landing-updates-art img {
-        transform: scale(140%);
+    .landing-nav-text {
+        font-size: 150%;
     }
-
-    .landing-title .landing-title-art,
-    .landing-updates-art {
-        width: 100%;
-        margin: 20% auto;
-    }
-
-}
-
-@media screen and (max-width: 525px) {
 
     .landing-project-list .landing-project-list-box {
         width: 100%;
@@ -636,12 +644,54 @@
         margin-bottom: 40px;
     }
 
+    .landing-updates-art {
+        margin-bottom: 10%;
+    }
+
+    .landing-updates-art img {
+        transform: scale(140%);
+    }
+
+    .landing-title h1,
+    .landing-features-box h1{
+        font-size: 180%;
+    }
+
+}
+
+@media screen and (max-width: 525px) {
+
+    .landing-updates-box .landing-updates-box-info {
+        width: calc(100% - 45px - 50px);
+        /* combined width of line/circle - padding - border width */
+        padding: 25px;
+        font-size: 100%;
+    }
+
+    .landing-title {
+        border-radius: 20px;
+    }
+
+    .landing-title h1,
+    .landing-features-box h1{
+        font-size: 150%;
+    }
+
+
 }
 
 @media screen and (max-width: 450px) {
 
     .landing-nav-title {
-        font-size: 350%;
+        font-size: 200%;
+    }
+
+    .landing-nav-text {
+        font-size: 120%;
+    }
+
+    .landing-nav .landing-nav-text {
+        margin-top: 10%;
     }
 
 }
@@ -652,6 +702,11 @@
     .landing-updates-title h1,
     .landing-contact h1 {
         font-size: 200%;
+    }
+
+    .landing-title h1,
+    .landing-features-box h1{
+        font-size: 120%;
     }
 
 }

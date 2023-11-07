@@ -68,11 +68,13 @@ export default function Index() {
   });
 
   function appTheme(){
+    /*
     if(document.documentElement.getAttribute("data-apptheme") === "dark") {
       document.documentElement.setAttribute("data-apptheme", "light");
     }else {
       document.documentElement.setAttribute("data-apptheme", "dark");
     }
+    */
   }
 
 
