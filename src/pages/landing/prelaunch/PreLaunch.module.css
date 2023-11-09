@@ -96,6 +96,7 @@
     border-radius: 40px;
     color: var(--text1);
     /* css global flex */
+    overflow: hidden;
 }
 
 .landing-title .landing-title-text {
@@ -105,10 +106,12 @@
 
 .landing-title .landing-title-art {
     width: 100%;
+    max-height: 500px;
 }
 
 .landing-title-art img{
     transition: all 0.2s ease-in-out;
+    width: 120%;
 }
 
 .landing-title-art img {
