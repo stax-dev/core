@@ -1,0 +1,159 @@
+[
+    {
+        "name": "Website",
+        "variables": [],
+        "requests":[
+            {
+                "request_domain": "st.ax",
+                "request_path": "/",
+                "request_ports": [80, 443]
+            }
+        ],
+        "service_host": "website",
+        "service_port": 80,
+        "service_protocol": "http"
+    },
+    {
+        "name": "Container Registry",
+        "variables": ["user", "image"],
+        "requests": [
+            {
+                "request_domain": "st.ax",
+                "request_path": "/{user}/{image}",
+                "request_ports": [443]
+            },
+            {
+                "request_domain": "{user}.st.ax",
+                "request_path": "/{image}",
+                "request_ports": [443]
+            },
+            {
+                "request_domain": "registry.st.ax",
+                "request_path": "/{user}/{image}",
+                "request_ports": [443]
+            }
+        ],
+        "service_host": "registry",
+        "service_port": 443,
+        "service_protocol": "https"
+    },
+    {
+        "name": "API",
+        "variables": [],
+        "requests": [
+            {
+                "request_domain": "api.st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/"
+            },
+            {
+                "request_domain": "st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/api/"
+            }
+        ],
+        "service_host": "api",
+        "service_port": 80,
+        "service_protocol": "http"
+    },
+    {
+        "name": "[user]",
+        "variables": ["user"],
+        "requests": [
+            {
+                "request_domain": "st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/{user}"
+            },
+            {
+                "request_domain": "{user}.st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/"
+            }
+        ],
+        "service_host": "user",
+        "service_port": 80,
+        "service_protocol": "http"
+    },
+    {
+        "name": "Droplet",
+        "variables": ["user", "user_id", "droplet_id", "droplet"],
+        "requests": [
+            {
+                "request_domain": "st.ax",
+                "request_path": "/{user}/{droplet}",
+                "request_ports": [80, 443]
+            },
+            {
+                "request_domain": "{user}.st.ax",
+                "request_path": "/{droplet}",
+                "request_ports": [80, 443]
+            },
+            {
+                "request_domain": "droplet.st.ax",
+                "request_path": "/{droplet_id}",
+                "request_ports": [80, 443]
+            },
+            {
+                "request_domain": "st.ax",
+                "request_path": "/{droplet_id}",
+                "request_ports": [80, 443]
+            }
+        ],
+        "service_host": "droplet",
+        "service_port": 80,
+        "service_protocol": "http"
+    },
+    {
+        "name": "Splashboard",
+        "variables": [],
+        "requests": [
+            {
+                "request_domain": "splash.st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/"
+            },
+            {
+                "request_domain": "splashboard.st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/"
+            }
+        ],
+        "service_host": "splashboard",
+        "service_port": 80,
+        "service_protocol": "http"
+    },
+    {
+        "name": "Dashboard",
+        "variables": [],
+        "requests": [
+            {
+                "request_domain": "dash.st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/"
+            },
+            {
+                "request_domain": "dashboard.st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/"
+            }
+        ],
+        "service_host": "dashboard",
+        "service_port": 80,
+        "service_protocol": "http"
+    },
+    {
+        "name": "IDE",
+        "variables": [],
+        "requests": [
+            {
+                "request_domain": "code.st.ax",
+                "request_ports": [80, 443],
+                "request_path": "/"
+            }
+        ],
+        "service_host": "ide",
+        "service_port": 80,
+        "service_protocol": "http"
+    }
+]
