@@ -506,11 +506,11 @@
 }
 
 .landing-contact-list .landing-contact-list-box {
-    width: calc(32% - 40px - 8px);
+    width: calc(32% - 40px - 4px);
     padding: 20px;
     margin-right: 2%;
     margin-bottom: 2%;
-    border: 4px solid var(--accent);
+    border: 2px solid var(--accent);
 }
 
 .landing-contact-list-box:nth-child(3n){
@@ -647,12 +647,10 @@
         margin-bottom: 40px;
     }
 
-    .landing-updates-art {
-        margin-bottom: 10%;
-    }
 
     .landing-updates-art img {
-        transform: scale(140%);
+        width: 200%;
+        transform: translateX(-25%);
     }
 
     .landing-title h1,
@@ -686,11 +684,11 @@
 @media screen and (max-width: 450px) {
 
     .landing-nav-title {
-        font-size: 200%;
+        font-size: 220%;
     }
 
     .landing-nav-text {
-        font-size: 120%;
+        font-size: 150%;
     }
 
     .landing-nav .landing-nav-text {

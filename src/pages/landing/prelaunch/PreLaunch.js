@@ -56,13 +56,13 @@ export default function Index() {
       document.getElementById("logo-display").style.height = "100dvh";
       document.getElementById("logo-display").style.marginBottom = "60dvh";
     }
-    if (scrollPosition >= 30) {
-      document.getElementById("logo-display").style.height = "70dvh";
-      document.getElementById("logo-display").style.marginBottom = "40dvh";
-    }
-    if (scrollPosition >= 60) {
-      document.getElementById("logo-display").style.height = "40dvh";
-      document.getElementById("logo-display").style.marginBottom = "20dvh";
+    // if (scrollPosition >= 30) {
+    //   document.getElementById("logo-display").style.height = "70dvh";
+    //   document.getElementById("logo-display").style.marginBottom = "40dvh";
+    // }
+    if (scrollPosition >= 50) {
+      document.getElementById("logo-display").style.height = "20dvh";
+      document.getElementById("logo-display").style.marginBottom = "0dvh";
     }
 
   });
