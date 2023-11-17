@@ -49,5 +49,8 @@ info:
   dalle-2:
      type: image
 
+  dalle-3:
+     type: image
+
   whisper:
     type: audio
