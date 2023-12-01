@@ -1,7 +1,7 @@
 const devUpdatesList = [
     {
       title: "Introduction",
-      date: "4th December 2023",
+      date: "1st December 2023",
       info: [
         <p>
             Hey there! Welcome to the SDS pre-launch page.{" "}
@@ -10,18 +10,7 @@ const devUpdatesList = [
             We look forward to having you at our release!
         </p>,
       ],
-    },
-    {
-      title: "Landing Launch",
-      date: "5th November 2023",
-      info: [
-        <p>
-            The SDS landing page has been launched!{" "}
-            This is the first step towards the release of{" "}<br/>
-            We look forward to having you at our release!
-        </p>
-      ]
-    },
+    }
   ];
 
   export default devUpdatesList;

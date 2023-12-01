@@ -30,6 +30,8 @@ import iconOffices from "../../../images/icons/offices.svg";
 import iconChat from "../../../images/icons/chat.svg";
 import splashboardArt from "../../../images/main/splashboard.svg";
 import codingclockArt from "../../../images/main/codingclock.svg";
+import collaborationArt from "../../../images/main/collaboration.svg";
+import ecosystemArt from "../../../images/main/ecosystem.svg";
 
 //Extra
 import devUpdatesList from "./devUpdatesList";
@@ -44,7 +46,7 @@ export default function Index() {
 
   var logo = "https://cdn.st.ax/v2/logo.svg";
 
-  var releaseDate = "April 2024";
+  var releaseDate = "Sep 2024";
 
 
 
@@ -129,9 +131,19 @@ export default function Index() {
             <div className={`${css["landing-features"]} ${cssGlobal["flex-center-center"]}`}>
               <div className={css["landing-features-box"]}>
                 <h1>An Ecosystem Integrating Seamlessly</h1>
+                <div className={css["landing-features-box-art"]}>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <img id="PreLaunch-landing-feaetures-box-art-img" src={ecosystemArt} />
+                  </section>
+                </div>
               </div>
               <div className={css["landing-features-box"]}>
                 <h1>Enhancing Teamwork and Collaboration</h1>
+                <div className={css["landing-features-box-art"]}>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <img id="PreLaunch-landing-feaetures-box-art-img--2" src={collaborationArt} />
+                  </section>
+                </div>
               </div>
             </div>
           </div>
@@ -177,7 +189,7 @@ export default function Index() {
                       <i className={`${css["fas"]} ${css["fa-gauge=high"]} ${"fas fa-gauge-high"}`}></i>
                     </div>
                     <p>
-                      <span>Built-in Dashboard</span> with an AI Chatbot, team permissions, server analytics and more...
+                      <span>Built-in Dashboard</span> with an AI Chatbot, custom team permissions, server analytics and more...
                     </p>
                   </section>
                 </div>
@@ -187,7 +199,7 @@ export default function Index() {
                       <i className={`${css["fas"]} ${css["fa-rocket"]} ${"fas fa-rocket"}`}></i>
                     </div>
                     <p>
-                      Launch your droplet easily with several <span>pre-built templates</span> to choose from.
+                      Launch your droplet easily with several popular <span>pre-built templates</span> to choose from.
                     </p>
                   </section>
                 </div>
@@ -197,7 +209,7 @@ export default function Index() {
                       <i className={`${css["fas"]} ${css["fa-wand-magic-sparkles"]} ${"fas fa-wand-magic-sparkles"}`}></i>
                     </div>
                     <p>
-                      Load balancers, snapshots, custom domains and tons more <span>with every server.</span>
+                      Load balancers, snapshots, custom domains, custom ports and tons more <span>with every server.</span>
                     </p>
                     </section>
                 </div>
@@ -242,7 +254,7 @@ export default function Index() {
             </div>
             <div className={css["landing-updates"]}>
               {[...Array(1)].map((number, index) => (
-                devUpdatesList.reverse().map((list, index) => (
+                devUpdatesList.map((list, index) => (
                   <div key={index} className={`${css["landing-updates-box"]} ${cssGlobal["flex-center-left"]}`}>
                     <div className={css["landing-updates-box-line"]}></div>
                     <div className={css["landing-updates-box-circle"]}></div>
@@ -251,28 +263,24 @@ export default function Index() {
                       {list.info}
                     </div>
                   </div>
-                ))
+                )).reverse()
               ))}
             </div>
           </div>
+          {/* Contact Us */}
           <div className={cssGlobal["content-100"]}>
-            <div className={css["landing-contact"]}>
+            {/* <div className={css["landing-contact"]}>
               <h1>Contact Us</h1>
               <div className={`${css["landing-contact-list"]} ${cssGlobal["flex-flex-start-left"]}`}>
-                <div className={css["landing-contact-list-box"]}>
+                <div style={{borderColor: "#229ED9"}} className={css["landing-contact-list-box"]}>
                   <div className={`${css["landing-contact-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-envelope"]} ${"fas fa-envelope"}`}></i>
+                    <i style={{color: "#229ED9", fontSize: "160%"}} className={`${css["fas"]} ${css["fa-telegram"]} ${"fab fa-telegram"}`}></i>
                   </div>
-                  <p>Contact Us at </p>
+                  <p>Subscribe to our Telegram Bot for live announcements and updates!</p>
                 </div>
-                <div className={css["landing-contact-list-box"]}>
-                  <div className={`${css["landing-contact-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-envelope"]} ${"fas fa-envelope"}`}></i>
-                  </div>
-                  <p>Follow us on twitter for announcements and updates</p>
-                </div>
+
               </div>
-            </div>
+            </div> */}
             <div className={css["landing-finish"]}>
               <button onClick={() => appTheme()} className={css["landing-finish-date"]}>
                 <p>{releaseDate}</p>

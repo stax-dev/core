@@ -163,6 +163,7 @@
     padding: 40px;
     margin-right: 4%;
     margin-bottom: 4%;
+    max-height: 400px;
 }
 
 .landing-features .landing-features-box:nth-child(even){
@@ -172,6 +173,7 @@
 .landing-features-box {
     border-radius: 20px;
     background-color: var(--theme2);
+    overflow: hidden;
 }
 
 .landing-features-box h1{
@@ -181,7 +183,17 @@
 }
 
 
+.landing-features-box:nth-child(1) img {
+    width: 100%;
+    float: left;
+    transform: translateY(40%) translateX(20%) scale(140%);
+}
 
+.landing-features-box:nth-child(2) img {
+    width: 100%;
+    float: left;
+    transform: translateY(25%) translateX(-10%) scale(110%);
+}
 
 
 
@@ -477,9 +489,9 @@
     transform: translateY(50%);
 }
 
-.landing-updates-box:nth-last-child(1) .landing-updates-box-line {
+/* .landing-updates-box:nth-last-child(1) .landing-updates-box-line {
     transform: translateY(-50%);
-}
+} */
 
 
 
@@ -506,11 +518,11 @@
 }
 
 .landing-contact-list .landing-contact-list-box {
-    width: calc(32% - 40px - 4px);
+    width: calc(32% - 40px - 6px);
     padding: 20px;
     margin-right: 2%;
     margin-bottom: 2%;
-    border: 2px solid var(--accent);
+    border: 3px solid var(--accent);
 }
 
 .landing-contact-list-box:nth-child(3n){
@@ -531,6 +543,7 @@
     border-radius: 50%;
     background-color: var(--theme1);
     color: var(--accent);
+    font-size: 150%;
     /* css global flex */
 }
 
@@ -598,9 +611,7 @@
 @media screen and (max-width: 1200px) {
 
     .landing-features .landing-features-box {
-        width: calc(100% - 80px);
-        padding: 40px;
-        margin-right: 0%;
+        max-height: 350px;
     }
 
 
@@ -608,14 +619,42 @@
 
 @media screen and (max-width: 1000px) {
 
+    .landing-features .landing-features-box {
+        width: calc(100% - 80px);
+        padding: 40px;
+        margin-right: 0%;
+    }
+
+    .landing-title-art img {
+        transform: rotateX(15deg) rotateY(-15deg) translateY(10%) translateX(-10%) translateZ(0);
+    }
+
 
     .landing-nav-title {
         font-size: 350%;
     }
 
+    .landing-features-box:nth-child(1) img {
+        width: 100%;
+        float: left;
+        transform: translateY(10%) translateX(0%) scale(90%);
+    }
+
+    .landing-features-box:nth-child(2) img {
+        width: 100%;
+        float: left;
+        transform: translateY(5%) translateX(-0%) scale(100%);
+    }
+
+
 }
 
 @media screen and (max-width: 800px) {
+
+
+    .landing-title-art img {
+        transform: rotateX(15deg) rotateY(-15deg) translateY(20%) translateX(-10%) translateZ(0) scale(120%);
+    }
 
 
     .landing-contact-list .landing-contact-list-box {
@@ -627,10 +666,26 @@
         font-size: 300%;
     }
 
+    .landing-features-box:nth-child(1) img {
+        width: 100%;
+        float: left;
+        transform: translateY(40%) translateX(20%) scale(140%);
+    }
+
+    .landing-features-box:nth-child(2) img {
+        width: 100%;
+        float: left;
+        transform: translateY(25%) translateX(-10%) scale(110%);
+    }
+
 
 }
 
 @media screen and (max-width: 600px) {
+
+    .landing-title-art img {
+        transform: rotateX(15deg) rotateY(-15deg) translateY(25%) translateX(-10%) translateZ(0) scale(140%);
+    }
 
     .landing-nav-title,
     .landing-project-title-text h1 {
