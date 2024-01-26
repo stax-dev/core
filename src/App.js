@@ -69,6 +69,7 @@ import Chat from "./pages/chat/Chat/Chat";
 // Not Found
 import E404 from "./pages/errors/E404";
 
+
 // const electron = window.require('electron');
 // const remote = electron.remote;  // remote is a module that is available to the renderer process
 // const {BrowserWindow,dialog,Menu} = remote;  // BrowserWindow is a class that is available to the renderer process

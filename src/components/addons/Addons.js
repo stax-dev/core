@@ -175,7 +175,7 @@ export function scrollReveal() {
   //how many pixels below element's top line to start revealing the element
   var rselementpoint = 50;
 
-  var rselements = document.getElementsByClassName("rs-element");
+  var rselements = document.getElementsByClassName(cssGlobal["rs-element"]);
   //section with class name "rselement" will be revealed on scroll down and stay visible
   for (var i = 0; i < rselements.length; i++) {
     var windowheight = window.innerHeight;
@@ -194,7 +194,7 @@ export function scrollReveal() {
     }
   }
 
-  var rselementsboth = document.getElementsByClassName("rs-element-both");
+  var rselementsboth = document.getElementsByClassName(cssGlobal["rs-element-both"]);
   //section with class name "rselementboth" will be revealed on scroll up and down
 
   for (var i = 0; i < rselementsboth.length; i++) {
@@ -213,6 +213,46 @@ export function scrollReveal() {
       // if user scrolls from bottom to top
     }
   }
+
+  var rselementsleft = document.getElementsByClassName(cssGlobal["rs-element-left"]);
+  //section with class name "rselement" will be revealed on scroll down and stay visible
+  for (var i = 0; i < rselementsleft.length; i++) {
+    var windowheight = window.innerHeight;
+    var rselementtop = rselementsleft[i].getBoundingClientRect().top;
+    var rselementbottom = rselementsleft[i].getBoundingClientRect().bottom;
+    if (rselementtop < windowheight - rselementpoint) {
+      //if user scrolls in view of element
+      rselementsleft[i].classList.add(cssGlobal["rs-element-active-left"]);
+    } else {
+      // rselements[i].classList.remove('rselement-active');
+      //if user scrolls past element
+    }
+    if (rselementbottom < 0 + rselementpoint) {
+      // rselements[i].classList.remove('rselement-active');
+      // if user scrolls from bottom to top
+    }
+  }
+
+  var rselementsbothleft = document.getElementsByClassName(cssGlobal["rs-element-both-left"]);
+  //section with class name "rselementboth" will be revealed on scroll up and down
+
+  for (var i = 0; i < rselementsbothleft.length; i++) {
+    var windowheight = window.innerHeight;
+    var rselementtop = rselementsbothleft[i].getBoundingClientRect().top;
+    var rselementbottom = rselementsbothleft[i].getBoundingClientRect().bottom;
+    if (rselementtop < windowheight - rselementpoint) {
+      rselementsbothleft[i].classList.add(cssGlobal["rs-element-active-left"]);
+      //if user scrolls in view of element
+    } else {
+      rselementsbothleft[i].classList.remove(cssGlobal["rs-element-active-left"]);
+      //if user scrolls past element
+    }
+    if (rselementbottom < -200 + rselementpoint) {
+      rselementsbothleft[i].classList.remove(cssGlobal["rs-element-active-left"]);
+      // if user scrolls from bottom to top
+    }
+  }
+
 }
 
 //Payment Sound

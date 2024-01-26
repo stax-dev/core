@@ -59,7 +59,7 @@ export default function Chats() {
                     <p>Secure Messaging that is immune to tunneling or hacking</p>
                 </div>
                 <div className={css["chats-feature-art"]}>
-                    <section className={"rs-element"}>
+                    <section className={cssGlobal["rs-element"]}>
                         {/* <img src={whitelabel} /> */}
                     </section>
                 </div>
@@ -72,7 +72,7 @@ export default function Chats() {
                     <p>Exploding Messages that can only be viewed once, timed messages that delete themselves and much more</p>
                 </div>
                 <div className={css["chats-feature-art"]}>
-                    <section className={"rs-element"}>
+                    <section className={cssGlobal["rs-element"]}>
                         {/* <img src={whitelabel} /> */}
                     </section>
                 </div>
@@ -85,7 +85,7 @@ export default function Chats() {
                     <p>SDS Chats supports multiple devices with cross-platform capability. Secure and restrict your specific devices and limits</p>
                 </div>
                 <div className={css["chats-feature-art"]}>
-                    <section className={"rs-element"}>
+                    <section className={cssGlobal["rs-element"]}>
                         {/* <img src={whitelabel} /> */}
                     </section>
                 </div>
@@ -98,7 +98,7 @@ export default function Chats() {
                     <p>Apart from being its standalone application, SDS Chats are integrated into all Stax Developer Studio services, keeping the entire ecosystem fully secure.</p>
                 </div>
                 <div className={css["chats-feature-art"]}>
-                    <section className={"rs-element"}>
+                    <section className={cssGlobal["rs-element"]}>
                         {/* <img src={whitelabel} /> */}
                     </section>
                 </div>

@@ -181,7 +181,7 @@ export default function AboutUs() {
         </div>
 
         <div id="AboutUs-content-750" className={cssGlobal["content-750"]}>
-          <section className={"rs-element-both"}>
+          <section className={cssGlobal["rs-element-both"]}>
             <div id="AboutUs-statement" className={css["statement"]}>
               <p className="mb-10" id="AboutUs-statement-p">
                 Our mission is to create a comprehensive programming ecosystem

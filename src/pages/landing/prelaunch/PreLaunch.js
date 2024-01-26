@@ -28,6 +28,13 @@ import iconHosting from "../../../images/icons/hosting.svg";
 import iconWiki from "../../../images/icons/wiki.svg";
 import iconOffices from "../../../images/icons/offices.svg";
 import iconChat from "../../../images/icons/chat.svg";
+import splashboardArt from "../../../images/main/splashboard.svg";
+import codingclockArt from "../../../images/main/codingclock.svg";
+import collaborationArt from "../../../images/main/collaboration.svg";
+import ecosystemArt from "../../../images/main/ecosystem.svg";
+
+//Extra
+import devUpdatesList from "./devUpdatesList";
 
 export default function Index() {
   document.addEventListener("scroll", function () {
@@ -35,47 +42,108 @@ export default function Index() {
   });
 
   document.documentElement.setAttribute("data-apptheme", "dark");
-  document.body.style.overflow = 'auto';
+  document.body.style.overflow = 'initial';
 
   var logo = "https://cdn.st.ax/v2/logo.svg";
 
-  var releaseDate = "April 2024";
+  var releaseDate = "Sep 2024";
+
+
+
+  window.addEventListener('scroll', function() {
+    // Get the current scroll position
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    // Check if the scroll position is at or beyond 25px
+    if (scrollPosition >= 0) {
+      document.getElementById("logo-display").style.height = "100dvh";
+      document.getElementById("logo-display").style.marginBottom = "60dvh";
+    }
+    // if (scrollPosition >= 30) {
+    //   document.getElementById("logo-display").style.height = "70dvh";
+    //   document.getElementById("logo-display").style.marginBottom = "40dvh";
+    // }
+    if (scrollPosition >= 50) {
+      document.getElementById("logo-display").style.height = "20dvh";
+      document.getElementById("logo-display").style.marginBottom = "0dvh";
+    }
+
+  });
+
+  function appTheme(){
+    /*
+    if(document.documentElement.getAttribute("data-apptheme") === "dark") {
+      document.documentElement.setAttribute("data-apptheme", "light");
+    }else {
+      document.documentElement.setAttribute("data-apptheme", "dark");
+    }
+    */
+  }
+
 
 
   return (
     <div id="Index-react-div" className={cssGlobal["react-div"]}>
-      <div id="Index-react-background" className={cssGlobal["react-background"]} style={{ backgroundImage: `url(${background})` }}>
+      <div id="Index-react-background" className={cssGlobal["react-background"]}>
+         {/* style={{ backgroundImage: `url(${background})` }}> */}
         <div className={cssGlobal["page-full"]}>
           <Addons />
           <Bubbles />
-          <div className={cssGlobal["content-100"]}>
-            <div className={`${css["landing-nav"]} ${cssGlobal["flex-center-left"]}`}>
-              <div className={css["landing-nav-logo"]}>
-                <img src={logo} alt="logo" />
-              </div>
+          <div id="logo-display" className={`${css["logo-display"]} ${cssGlobal["flex-center-center"]}`}>
+            <div className={css["logo-display-box"]}>
+              <img src={logo} alt="logo" />
+            </div>
+          </div>
+          <div id="logo-title" className={`${css["logo-title"]} ${cssGlobal["flex-center-center"]}`}>
+            <div className={`${css["landing-nav"]} ${cssGlobal["flex-center-center"]}`}>
               <div className={css["landing-nav-title"]}>
                 <p>Stax Developer Studios</p>
               </div>
               <div className={css["landing-nav-text"]}>
                 <p>The Ultimate DevOps Ecosystem</p>
               </div>
-              <div className={css["landing-finish-date"]}>
+              <section className={cssGlobal["rs-element-both"]}>
+                <button onClick={() => appTheme()} className={css["landing-finish-date"]}>
                   <p>{releaseDate}</p>
-                </div>
+                </button>
+              </section>
             </div>
           </div>
           <div className={cssGlobal["content-100"]}>
             <div className={`${css["landing-title"]} ${cssGlobal["flex-center-left"]}`}>
               <div className={css["landing-title-text"]}>
-              <h1>
-                A <span className={css["landing-title-text-2"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-3"]}>seamlessly</span> build, deploy and manage projects.
-              </h1>
-              <h1>
-                <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
-              </h1>
+                <h1>
+                  A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>streamline</span> the DevOps workflow.
+                </h1>
               </div>
-              <div className={css["landing-title-art"]}>
-
+              {/* <div className={css["landing-title-text"]}>
+                <section className={cssGlobal["rs-element-both-left"]}>
+                  <h1>
+                    <span className={css["landing-title-text-white"]}>Collaboration and Development Made Easy.</span>
+                  </h1>
+                </section>
+              </div> */}
+              <div id="PreLaunch-landing-title-art"className={css["landing-title-art"]}>
+                <section style={{perspective: "1500px"}} className={cssGlobal["rs-element-both"]}>
+                  <img id="PreLaunch-landing-title-art-image" src={splashboardArt} />
+                </section>
+              </div>
+            </div>
+            <div className={`${css["landing-features"]} ${cssGlobal["flex-center-center"]}`}>
+              <div className={css["landing-features-box"]}>
+                <h1>An Ecosystem Integrating Seamlessly</h1>
+                <div className={css["landing-features-box-art"]}>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <img id="PreLaunch-landing-feaetures-box-art-img" src={ecosystemArt} />
+                  </section>
+                </div>
+              </div>
+              <div className={css["landing-features-box"]}>
+                <h1>Enhancing Teamwork and Collaboration</h1>
+                <div className={css["landing-features-box-art"]}>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <img id="PreLaunch-landing-feaetures-box-art-img--2" src={collaborationArt} />
+                  </section>
+                </div>
               </div>
             </div>
           </div>
@@ -86,60 +154,74 @@ export default function Index() {
           </div> */}
           <div className={cssGlobal["content-100"]}>
             <div className={css["landing-project"]}>
-              <div className={`${css["landing-project-title"]} ${cssGlobal["flex-center-left"]}`}>
-                <div className={css["landing-project-title-icon"]}>
-                  <img src={iconHosting} alt="logo" />
+              <section className={cssGlobal["rs-element-both"]}>
+                <div className={`${css["landing-project-title"]} ${cssGlobal["flex-center-left"]}`}>
+                  <div className={css["landing-project-title-icon"]}>
+                    <section className={cssGlobal["rs-element-both"]}>
+                      <img src={iconHosting} alt="logo" />
+                    </section>
+                  </div>
+                  <div className={css["landing-project-title-text"]}>
+                    <h1>SDS Hosting</h1>
+                  </div>
+                  <div className={css["landing-project-title-info"]}>
+                    <p>Hosting for anything. Literally.</p>
+                  </div>
                 </div>
-                <div className={css["landing-project-title-text"]}>
-                  <h1>SDS Hosting</h1>
+                <div className={css["landing-project-progress"]}>
+                  <div style={{width: "64%"}} className={css["landing-project-progress-bar"]}></div>
                 </div>
-                <div className={css["landing-project-title-info"]}>
-                  <p>Hosting for anything. Literally.</p>
-                </div>
-              </div>
-              <div className={css["landing-project-progress"]}>
-                <div style={{width: "64%"}} className={css["landing-project-progress-bar"]}></div>
-              </div>
+              </section>
               <div className={`${css["landing-project-list"]} ${cssGlobal["flex-flex-start-left"]}`}>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-server"]} ${"fas fa-server"}`}></i>
-                  </div>
-                  <p>
-                    Scalable Droplet Hosting allows you to change your budget and resources <span>on the fly.</span>
-                  </p>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-server"]} ${"fas fa-server"}`}></i>
+                    </div>
+                    <p>
+                      Scalable Droplet Hosting allows you to change your budget and resources <span>on the fly.</span>
+                    </p>
+                  </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-gauge=high"]} ${"fas fa-gauge-high"}`}></i>
-                  </div>
-                  <p>
-                    <span>Built-in Dashboard</span> with an AI Chatbot, team permissions, server analytics and more...
-                  </p>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <div style={{animationDelay: "1s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-gauge=high"]} ${"fas fa-gauge-high"}`}></i>
+                    </div>
+                    <p>
+                      <span>Built-in Dashboard</span> with an AI Chatbot, custom team permissions, server analytics and more...
+                    </p>
+                  </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-rocket"]} ${"fas fa-rocket"}`}></i>
-                  </div>
-                  <p>
-                    Launch your droplet easily with several <span>pre-built templates</span> to choose from.
-                  </p>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <div style={{animationDelay: "1.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-rocket"]} ${"fas fa-rocket"}`}></i>
+                    </div>
+                    <p>
+                      Launch your droplet easily with several popular <span>pre-built templates</span> to choose from.
+                    </p>
+                  </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-wand-magic-sparkles"]} ${"fas fa-wand-magic-sparkles"}`}></i>
-                  </div>
-                  <p>
-                    Load balancers, snapshots, custom domains and tons more <span>with every server.</span>
-                  </p>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <div style={{animationDelay: "2s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-wand-magic-sparkles"]} ${"fas fa-wand-magic-sparkles"}`}></i>
+                    </div>
+                    <p>
+                      Load balancers, snapshots, custom domains, custom ports and tons more <span>with every server.</span>
+                    </p>
+                    </section>
                 </div>
                 <div className={css["landing-project-list-box"]}>
-                  <div className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-shapes"]} ${"fas fa-shapes"}`}></i>
-                  </div>
-                  <p>
-                    We aim to accomodate <span>all skill levels.</span> Our services are designed to be <span>simple and easy to use.</span>
-                  </p>
+                  <section className={cssGlobal["rs-element-both"]}>
+                    <div style={{animationDelay: "2.5s"}} className={`${css["landing-project-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
+                      <i className={`${css["fas"]} ${css["fa-shapes"]} ${"fas fa-shapes"}`}></i>
+                    </div>
+                    <p>
+                      We aim to accomodate <span>all skill levels.</span> Our services are designed to be <span>simple and easy to use.</span>
+                    </p>
+                  </section>
                 </div>
               </div>
             </div>
@@ -162,45 +244,47 @@ export default function Index() {
             </div>
           </div> */}
           <div className={cssGlobal["content-100"]}>
+            <div className={css["landing-updates-art"]}>
+              {/* <section className={cssGlobal["rs-element-both"]}> */}
+                <img src={codingclockArt}/>
+              {/* </section> */}
+            </div>
             <div className={css["landing-updates-title"]}>
               <h1>Development Updates</h1>
             </div>
             <div className={css["landing-updates"]}>
-              {/* add updates here */}
-
-              <div className={css["landing-updates-box"]}>
-                <h1>Introduction • 6th October 2023</h1>
-                <p>
-                  Hey there! Welcome to the SDS pre-launch page.{" "}
-                  SDS is currently in the process of development and more news is yet to come!{" "}
-                  Updates will be posted here as things progress.<br/><br/>
-                  We look forward to having you at our release!
-                </p>
-              </div>
+              {[...Array(1)].map((number, index) => (
+                devUpdatesList.map((list, index) => (
+                  <div key={index} className={`${css["landing-updates-box"]} ${cssGlobal["flex-center-left"]}`}>
+                    <div className={css["landing-updates-box-line"]}></div>
+                    <div className={css["landing-updates-box-circle"]}></div>
+                    <div className={css["landing-updates-box-info"]}>
+                      <h1>{list.title} • {list.date}</h1>
+                      {list.info}
+                    </div>
+                  </div>
+                )).reverse()
+              ))}
             </div>
           </div>
+          {/* Contact Us */}
           <div className={cssGlobal["content-100"]}>
-            <div className={css["landing-contact"]}>
+            {/* <div className={css["landing-contact"]}>
               <h1>Contact Us</h1>
               <div className={`${css["landing-contact-list"]} ${cssGlobal["flex-flex-start-left"]}`}>
-                <div className={css["landing-contact-list-box"]}>
+                <div style={{borderColor: "#229ED9"}} className={css["landing-contact-list-box"]}>
                   <div className={`${css["landing-contact-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-envelope"]} ${"fas fa-envelope"}`}></i>
+                    <i style={{color: "#229ED9", fontSize: "160%"}} className={`${css["fas"]} ${css["fa-telegram"]} ${"fab fa-telegram"}`}></i>
                   </div>
-                  <p>Contact Us at </p>
+                  <p>Subscribe to our Telegram Bot for live announcements and updates!</p>
                 </div>
-                <div className={css["landing-contact-list-box"]}>
-                  <div className={`${css["landing-contact-list-box-icon"]} ${cssGlobal["flex-center-center"]}`}>
-                    <i className={`${css["fas"]} ${css["fa-envelope"]} ${"fas fa-envelope"}`}></i>
-                  </div>
-                  <p>Follow us on twitter for announcements and updates</p>
-                </div>
+
               </div>
-            </div>
+            </div> */}
             <div className={css["landing-finish"]}>
-              <div className={css["landing-finish-date"]}>
+              <button onClick={() => appTheme()} className={css["landing-finish-date"]}>
                 <p>{releaseDate}</p>
-              </div>
+              </button>
             </div>
 
           </div>
