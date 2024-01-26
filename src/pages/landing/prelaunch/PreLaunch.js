@@ -169,7 +169,7 @@ export default function Index() {
                   </div>
                 </div>
                 <div className={css["landing-project-progress"]}>
-                  <div style={{width: "64%"}} className={css["landing-project-progress-bar"]}></div>
+                  <div style={{width: "70%"}} className={css["landing-project-progress-bar"]}></div>
                 </div>
               </section>
               <div className={`${css["landing-project-list"]} ${cssGlobal["flex-flex-start-left"]}`}>

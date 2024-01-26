@@ -186,7 +186,7 @@
 .landing-features-box:nth-child(1) img {
     width: 100%;
     float: left;
-    transform: translateY(40%) translateX(20%) scale(140%);
+    transform: translateY(20%) translateX(20%) scale(120%);
 }
 
 .landing-features-box:nth-child(2) img {
