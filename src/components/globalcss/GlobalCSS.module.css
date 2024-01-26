@@ -328,6 +328,11 @@
     width: 96%;
     padding: 2% 2%;
   }
+
+  .splashboard .splashboard-main {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 800px) {

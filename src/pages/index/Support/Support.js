@@ -25,6 +25,10 @@ export default function Support() {
     function CopyEmail(){
         navigator.clipboard.writeText(supportEmail);
         snackbarNotification(1,'Email copied to clipboard!', 2);
+        document.getElementById("Support-contact-box-emailbox").classList.replace(css["contact-box-emailbox"], css["contact-box-emailbox-copied"]);
+        setTimeout(() => {
+            document.getElementById("Support-contact-box-emailbox").classList.replace(css["contact-box-emailbox-copied"], css["contact-box-emailbox"]);
+        }, 2000);
     }
 
     //this function is basically window.onscroll but div version
@@ -82,6 +86,9 @@ export default function Support() {
                                 <div id="Support-contact-box-emailbox" className={css["contact-box-emailbox"]}>
                                     <button id="Support-contact-box-email" onClick={() => CopyEmail()} className={css["contact-box-email"]}>
                                         <p id="Support-contact-box-email-p"><i id="Support-contact-box-email-icon" className={`${css["fas"]} ${css["fa-copy"]} ${"fas fa-copy"}`}></i>Copy Email</p>
+                                    </button>
+                                    <button disabled id="Support-contact-box-email-copied" onClick={() => CopyEmail()} className={css["contact-box-email-copied"]}>
+                                        <p id="Support-contact-box-email-copied-p"><i id="Support-contact-box-email-copied-icon" className={`${css["fas"]} ${css["fa-check-circle"]} ${"fas fa-check-circle"}`}></i>Copied</p>
                                     </button>
                                 </div>
                             </div>

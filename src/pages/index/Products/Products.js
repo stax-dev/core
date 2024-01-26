@@ -40,7 +40,7 @@ export default function Products() {
           info: " Hosting service to launch your projects, developments and websites.",
           link: "/products/hosting",
           icon: iconHosting,
-        },
+        },/*
         {
           title: "Chats",
           colour: "var(--accent3)",
@@ -55,7 +55,7 @@ export default function Products() {
           info: "The ultimate note-taking and collaboration workplace for your team.",
           link: "/products/offices",
           icon: iconOffices,
-        },
+        },*/
         {
           title: "Wiki",
           colour: "var(--accent4)",
@@ -103,7 +103,8 @@ export default function Products() {
 
                     <div className={cssGlobal["content-750"]}>
                       <div className={css["products-subtitle"]}>
-                        <p id="Product-plan-title-p">The Ecosystem of Stax Developer Suite.<br/>Working seamlessly with one another to create an experience for you. Our products are built with functionality and user experience at the forefront of our minds.</p>
+                        <p id="Product-plan-title-p">The Ecosystem of Stax Developer Studios.</p>
+                        <p id="Product-plan-title-p--2">Working seamlessly with one another to create an experience for you. Our products are built with functionality and user experience at the forefront of our minds.</p>
                       </div>
                     </div>
 

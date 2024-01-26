@@ -157,11 +157,17 @@
     border-radius: 10px;
   }
 
-  .contact-box-emailbox {
+  .contact-box-emailbox,
+  .contact-box-emailbox-copied{
     display: block;
     width: 150px;
     cursor: pointer;
     border-radius: 10px;
+  }
+
+  .contact-box-emailbox .contact-box-email-copied,
+  .contact-box-emailbox-copied .contact-box-email {
+    display: none;
   }
 
   .contact-box-button {
@@ -197,15 +203,28 @@
     color: var(--accent);
   }
 
+  .contact-box-email-copied {
+    width: 100%;
+    background-color: var(--theme2);
+    transition: all 0.2s ease-in-out;
+    padding: 12px 0%;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--text1);
+    cursor: default;
+  };
+
   .contact-box-email:hover {
     background-color: var(--theme2);
   }
 
-  .contact-box-email p{
+  .contact-box-email p,
+  .contact-box-email-copied p{
     margin: 0%;
   }
 
-  .contact-box-email .fas{
+  .contact-box-email .fas,
+  .contact-box-email-copied .fas{
     margin-right: 4%;
   }
 
