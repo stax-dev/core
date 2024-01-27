@@ -263,13 +263,15 @@
 }
 
 .plan-avatar {
-  border-radius: 50%;
+  border-radius: 10px;
   width: 100%;
   height: 40px;
   margin: auto;
   background-size: contain;
   margin-bottom: 5%;
   background-color: var(--theme1);
+  font-size: 150%;
+  line-height: 0%;
   border: none;
   transition: all 0.2s ease-in-out;
 }
@@ -667,13 +669,13 @@
 .dashchatroom-main {
   /* 40px padding top/bot, 50px margin height top/bot, 70px input height, 60px title height*/
   height: calc(100dvh - 40px - 50px - 70px - 60px);
-  overflow: auto;
   overflow-x: hidden;
   word-wrap: break-word;
   color: var(--text2);
-  padding-right: 10px;
   font-size: 90%;
+  padding-right: 10px;
   border-radius: 10px;
+  overflow: auto;
 }
 
 .dashchatroom-type {
@@ -740,51 +742,70 @@
   background-color: var(--accent-hover);
 }
 
-
-.chatroom-messages {
-  border-radius: 0px;
-}
-
 .chatroom-messages::-webkit-scrollbar-thumb-track {
   background: var(--theme1);
 }
 
-.chatroom-other p,
-.chatroom-self p,
-.chatroom-date p {
+.chatroom-messages {
+  border-radius: 0px;
+  font-weight: 300;
+}
+
+.chatroom-messages p {
   margin: 0%;
-}
-
-.chatroom-other,
-.chatroom-self {
-  width: max-content;
-  max-width: calc(100% - 20px);
-  word-wrap: break-word;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
-}
-
-.chatroom-other {
-  color: var(--text1);
-  background-color: var(--theme1);
 }
 
 .chatroom-messages b{
   font-weight: 400;
-  font-size: 100%;
+  font-size: 90%;
   display: block;
+}
+
+.chatroom-stax .fas{
+  margin-left: 5px;
+}
+
+.chatroom-other,
+.chatroom-self,
+.chatroom-stax {
+  width: max-content;
+  max-width: calc(100% - 20px);
+  word-wrap: break-word;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.chatroom-stax {
+  color: var(--text1);
+  background-color: var(--theme1);
+  font-weight: 300;
+}
+
+.chatroom-stax b{
   color: var(--accent);
+  font-weight: 500;
+  font-size: 100%;
+}
+
+.chatroom-other {
+  color: var(--text2);
+  background-color: var(--theme1);
+}
+
+.chatroom-other b{
+  color: var(--text1);
 }
 
 .chatroom-self b{
   display: none;
+  color: var(--text2);
 }
 
 .chatroom-self {
   margin-left: auto;
-  background-color: var(--accent);
-  color: var(--accent-text);
+  background-color: var(--theme3);
+  color: var(--text1);
 }
 
 .chatroom-date {

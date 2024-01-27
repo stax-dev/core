@@ -188,7 +188,7 @@ export default function Nav(pages) {
         <div id="Nav-logo" className={css["logo"]}>
           <Link id="Nav-logo-a" to="/">
             <img id="Nav-logo-img"
-              alt="Stax Developer Suite Logo"
+              alt="Stax Developer Studios Logo"
               src="https://cdn.st.ax/v2/logo.svg"
             />
           </Link>
@@ -283,7 +283,7 @@ export default function Nav(pages) {
     /*<nav className={css.navbar}>
       <div className={css.logo}>
         <Link to="/">
-          <img alt="Stax Developer Suite Logo" src="https://cdn.st.ax/v2/logo-512.png" />
+          <img alt="Stax Developer Studios Logo" src="https://cdn.st.ax/v2/logo-512.png" />
         </Link>
       </div>
 

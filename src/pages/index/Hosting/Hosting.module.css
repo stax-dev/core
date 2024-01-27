@@ -395,8 +395,8 @@ h2 {
 }
 
 .hostingoptions-list .hostingoptions-list-box {
-  width: calc(50% - 50px);
-  padding: 25px;
+  width: calc(50% - 80px);
+  padding: 40px;
   margin-right: 0%;
   /* margin-right: 2%; */
   /* if more than 1 box */

@@ -18,10 +18,10 @@ function Footer() {
         <div id="020104" className={css["footer-logo"]}>
           <img src="https://cdn.st.ax/v2/logo.svg" />
           <p id="020501">
-            <b>Stax Developer Suite</b>
+            <b>Stax Developer Studios</b>
           </p>
           <p id="020502">
-            The Stax Developer Suite is a programming ecosystem for developers
+            The Stax Developer Studios is a programming ecosystem for developers
             worldwide. Visit different pages to learn more about our products
             and services.
           </p>

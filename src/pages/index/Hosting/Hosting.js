@@ -153,7 +153,7 @@ export default function Hosting() {
                       <i id="Hosting-why-box-icon--3" className={`${css["fas"]} ${css["fa-tools"]} ${css["fa-1x"]} ${"fas fa-tools fa-1x"}`}></i>
                       <h1 id="Hosting-why-box-h1--3">Coding Ecosystem</h1>
                       <p id="Hosting-why-box-p--3">
-                        Integrated with the full Stax Developer Suite products
+                        Integrated with the full Stax Developer Studios products
                         and services to provide you easy workflow.
                       </p>
                     </div>
@@ -282,7 +282,7 @@ export default function Hosting() {
                   hosting-features, , and more!
                 </p>
                 <p id="Hosting-hosting-feature-box-p--2">
-                  All inside your Stax Developer Suite account, integrated right
+                  All inside your Stax Developer Studios account, integrated right
                   into your living room. Find out more in your splashboard
                   integrations page.
                 </p>
@@ -305,7 +305,7 @@ export default function Hosting() {
                             <div id="Hosting-hosting-feature-box" className={css["hosting-feature-box"]}>
                                 <h1 id="Hosting-hosting-feature-box-h1">Scalable Plans</h1>
                                 <p id="Hosting-hosting-feature-box-p">
-                                    Stax Developer Suite offers prices and scalibility like no other. View our killer pricing plan deals and customise it just right to your needs.
+                                    Stax Developer Studios offers prices and scalibility like no other. View our killer pricing plan deals and customise it just right to your needs.
                                 </p>
                                 <p id="Hosting-hosting-feature-box-p--2">
                                     Why buy 12gb of RAM when you only need technically 10? But what if I need more in the future? No worries! Our flexible plans allow you to upgrade and downgrade your server specs at any time.

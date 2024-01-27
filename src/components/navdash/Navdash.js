@@ -52,11 +52,35 @@ export default function Navdash(page) {
     },
     {
       author: "Stax",
-      message: "yea thanks dill have a look at it soon",
+      message: "yea thanks ill have a look at it soon",
+    },
+    {
+      author: "Stax",
+      message: "Please make sure to watch carefully when the next time you try to do it. It could be dangerous!",
+    },
+    {
+      author: "Dasho",
+      message:"I know I know, I'll be careful next time. Thanks for the help!",
+    },
+    {
+      author: "Dasho",
+      message:"also john is a bot",
+    },
+    {
+      author: "John12",
+      message:"no im not",
+    },
+    {
+      author: "Dasho",
+      message:"yes you are",
+    },
+    {
+      author: "John12",
+      message: "fuck you",
     }
   ]);
   var [username, SetUsername] = useState("Dasho");
-  var [bannerID, SetBannerID] = useState("purple");
+  var [bannerID, SetBannerID] = useState("grey");
   var [planName, SetPlanName] = useState("1234567890123456");
   var [planID, SetPlanID] = useState("1234567890");
   var [chatroomPing, SetChatroomPing] = useState(0); //0 for none 1 for unread message(s)
@@ -630,11 +654,21 @@ export default function Navdash(page) {
                 <div className={css["chatroom-date"]}>
                   <p>24th July 2021</p>
                 </div>
-                  {chatroomChat && (chatroomChat.map((list) => (
-                    <div className={list.author === username ? (css["chatroom-self"]):(css["chatroom-other"])}>
-                      <p><b>{list.author}</b>{list.message}</p>
-                    </div>
-                  )))}
+                {chatroomChat && (chatroomChat.map((list, index) => (
+                  <div className={
+                    list.author === username ?
+                      (css["chatroom-self"]):
+                      (list.author == "Stax" ? css["chatroom-stax"]:css["chatroom-other"])
+                  }>
+                    <p>
+                      <b>
+                        {list.author}
+                        {list.author === "Stax" && <i className={`${css["fas"]} ${css["fa-check-circle"]} ${"fas fa-check-circle"}`}></i>}
+                      </b>
+                      {list.message}
+                    </p>
+                  </div>
+                )))}
               </div>
             </div>
             <div id="Navdash-dashchatroom-type" className={`${css["dashchatroom-type"]} ${cssGlobal["flex-center-center"]}`}>

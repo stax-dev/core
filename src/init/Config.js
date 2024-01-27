@@ -19,7 +19,7 @@ export const Config = {
     name: "testing_for_sds",
   },
   service: {
-    name: "Stax Developer Suite",
+    name: "Stax Developer Studios",
     company: "Stax",
     abbreviation: "SDS",
     version: "1.0.0",

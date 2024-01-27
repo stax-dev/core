@@ -275,7 +275,7 @@ export default function Register() {
                 <div id="Register-register-full" className={`${css["register-full"]} ${cssGlobal["flex-center-center"]}`}>
                     <div id="Register-register-full-box" className={`${css["register-full-box"]} ${cssGlobal["flex-flex-start-center"]}`}>
                         <div id="Register-register-page" className={css["register-page"]}>
-                            <h1 id="Register-register-page-h1">Stax Developer Suite</h1>
+                            <h1 id="Register-register-page-h1">Stax Developer Studios</h1>
                             <div id="Register-register" className={css["register"]}>
 
                                 <div id="Register-register-box" className={css["register-box"]}>

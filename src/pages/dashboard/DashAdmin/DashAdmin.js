@@ -839,7 +839,7 @@ export default function DashAdmin() {
                                             <p><select value="Option">
                                                 <option value="" selected disabled hidden>Rank</option>
                                                 <div className={css["option-filter-AlexK"]}>
-                                                    <p>Hey! Stax Developer Suite!</p>
+                                                    <p>Hey! Stax Developer Studios!</p>
                                                 </div>
                                                 <option value="member">Member</option>
                                                 <option value="manager">Manager</option>

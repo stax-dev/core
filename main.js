@@ -10,7 +10,7 @@ function createWindow() {
     },
     width: 800,
     height: 600,
-    title: "Stax Developer Suite",
+    title: "Stax Developer Studios",
     frame: false,
     transparent: true,
     webPreferences: {
@@ -24,6 +24,7 @@ function createWindow() {
 
   //load the index.html from a url
   //   win.removeMenu();
+
   win.loadURL("http://localhost:3000");
 
   // Open the DevTools.

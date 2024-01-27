@@ -59,7 +59,7 @@ export default function Products() {
         {
           title: "Wiki",
           colour: "var(--accent4)",
-          info: "The Stax Developer Suite full documentation library, with guides and tutorials.",
+          info: "The Stax Developer Studios full documentation library, with guides and tutorials.",
           link: "/wiki",
           icon: iconWiki,
         },

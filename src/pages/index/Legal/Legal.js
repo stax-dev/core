@@ -46,7 +46,7 @@ export default function Legal() {
                   <h1 id="Legal-legal-box-info-h1">Terms of Service</h1>
                   <p id="Legal-legal-box-info-p">
                     This policy document outlines the terms and conditions for
-                    using The Stax Developer Suite.
+                    using The Stax Developer Studios.
                   </p>
                 </div>
                 <div id="Legal-legal-box-view" className={css["legal-box-view"]}>

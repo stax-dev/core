@@ -290,7 +290,7 @@ export default function Login() {
         <div id="Login-login-full" className={`${css["login-full"]} ${cssGlobal["flex-stretch-center"]}`}>
           <div id="Login-login-full-box" className={`${css["login-full-box"]} ${cssGlobal["flex-flex-start-center"]}`}>
             <div id="Login-login-page" className={css["login-page"]}>
-              <h1 id="Login-login-page-h1">Stax Developer Suite</h1>
+              <h1 id="Login-login-page-h1">Stax Developer Studios</h1>
               <div id="Login-login" className={css["login-stax"]}>
                 <div id="Login-login-choice" className={`${css["login-choice"]} ${cssGlobal["flex-center-center"]}`}>
                   <div  id="Login-login-choice-title" className={css["login-choice-title"]}>
@@ -311,7 +311,7 @@ export default function Login() {
                       {forgotPassword === "normal" && (
                         <div id="Login-login-normal" className={css["login-normal"]}>
                           <p id="Login-login-js-p">
-                            <b>Login with Stax Developer Suite</b>
+                            <b>Login with Stax Developer Studios</b>
                           </p>
                           <div id="Login-login-details" className={css["login-details"]}>
                             <div id="Login-login-details-box" className={css["login-details-box"]}>

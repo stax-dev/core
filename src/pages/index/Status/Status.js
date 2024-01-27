@@ -89,7 +89,7 @@ export default function Status() {
                     <div id="Status-content-100" className={cssGlobal["content-100"]}>
                         <div id="Status-status-title" className={css["status-title"]}>
                             <h1 id="Status-status-title-h1">Status</h1>
-                            <p id="Status-status-title-p"><b>System Status of Stax Developer Suite</b></p>
+                            <p id="Status-status-title-p"><b>System Status of Stax Developer Studios</b></p>
                         </div>
                     </div>
                     <div id="Status-content-875" className={cssGlobal["content-875"]}>

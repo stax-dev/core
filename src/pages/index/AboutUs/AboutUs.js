@@ -143,7 +143,7 @@ export default function AboutUs() {
         <div id="AboutUs-content-100" className={cssGlobal["content-100"]}>
           <div id="AboutUs-about-title" className={css["about-title"]}>
             <h1 id="AboutUs-about-title-h1">About Us</h1>
-            <p id="AboutUs-about-title-p">Stax Developer Suite</p>
+            <p id="AboutUs-about-title-p">Stax Developer Studios</p>
 
             {data.map((list) => (
               <p key={list.ID}>Hi the id is {list.ID} and the name is {list.Name} and age is {list.Age}</p>

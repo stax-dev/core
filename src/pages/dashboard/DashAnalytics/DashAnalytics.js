@@ -192,7 +192,7 @@ export default function DashAnalytics() {
             borderRadius: 10,
             fill: true,
             borderSkipped: false,
-            backgroundColor: ["#ED4337"],
+            backgroundColor: ["#A30000"],
           },
         ],
       }}

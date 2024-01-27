@@ -58,7 +58,7 @@ export default function Support() {
                         <div id="Support-docs" className={`${css["docs"]} ${cssGlobal["flex-center-left"]}`}>
                             <div id="Support-docs-info" className={css["docs-info"]}>
                                 <h1 id="Support-docs-info-h1">SDS Wiki</h1>
-                                <p id="Support-docs-info-p">View the full Stax Developer Suite documentation library. Explore our guides, tutorials and instructions to our various products and services.</p>
+                                <p id="Support-docs-info-p">View the full Stax Developer Studios documentation library. Explore our guides, tutorials and instructions to our various products and services.</p>
                                 <Link id="Support-docs-info-a" className={css["docs-link"]} to="/wiki/sds">
                                     <div id="Support-docs-button" className={css["docs-button"]}>
                                         <p id="Support-docs-button-p">View Wiki<i id="Support-docs-button-icon" className={`${css["fas"]} ${css["fa-arrow-right"]} ${"fas fa-arrow-right"}`}></i></p>

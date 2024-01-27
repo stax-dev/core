@@ -305,7 +305,7 @@ export default function SplashIntegrations() {
               <React.Fragment>
                 <p>
                   Account Integrations allow you to integrate other platforms inside
-                  your Stax Developer Suite account.
+                  your Stax Developer Studios account.
                 </p>
                 <p>
                   These connections give functions and tools when linked, making it

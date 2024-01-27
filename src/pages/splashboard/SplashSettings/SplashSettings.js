@@ -1982,7 +1982,7 @@ export default function SplashSettings() {
               <div id="disablebox" className={css["changedelete-box"]}>
                 <h1>Disable Account</h1>
                 <p>
-                  If you wish to disable your Stax Developer Suite account,
+                  If you wish to disable your Stax Developer Studios account,
                   please read the following:
                 </p>
                 <li>
@@ -2037,7 +2037,7 @@ export default function SplashSettings() {
               <div id="deletebox" className={css["changedelete-box"]}>
                 <h1>Account Deletion</h1>
                 <p>
-                  If you wish to delete your Stax Developer Suite account,
+                  If you wish to delete your Stax Developer Studios account,
                   please read the following:
                 </p>
                 <li>

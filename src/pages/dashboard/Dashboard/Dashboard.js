@@ -603,7 +603,7 @@ export default function Dashboard() {
   //             fill: true,
   //             borderSkipped: false,
   //             backgroundColor: [
-  //                 '#ED4337',
+  //                 '#A30000',
   //             ],
   //         }],
   //     },

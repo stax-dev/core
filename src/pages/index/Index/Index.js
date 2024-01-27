@@ -86,7 +86,7 @@ export default function Index() {
             <div id="Index-title-split" className={css["title-split"]}>
               <div id="Index-index-title" className={`${css["index-title"]} ${cssGlobal["flex-center-left"]}`}>
                 <div id="Index-title-text" className={css["title-text"]}>
-                  <h1 id="Index-title-text-h1">Stax Developer Suite</h1>
+                  <h1 id="Index-title-text-h1">Stax Developer Studios</h1>
                   <p id="Index-title-text-p">
                     <span id="Index-title-text-span">
                       The Developer's Ecosystem
@@ -212,7 +212,7 @@ export default function Index() {
                           <div className={css["news-top-box"]}>
                             <h2><span className={css["news-date"]}>17th June 2021</span></h2>
                             <h1>Test Headline<i className={`${css["fas"]} ${css["fa-arrow-right"]} ${css["fa-1x"]} ${"fas fa-right fa-1x"}`}></i></h1>
-                            <p>Test news about testing headline test hello how are you doing thanks for using Stax Developer Suite</p>
+                            <p>Test news about testing headline test hello how are you doing thanks for using Stax Developer Studios</p>
                           </div>
                           <div className={css["news-top-image"]} style="background: url('/assets/images/computer.png')"></div>
                       </div>
@@ -223,7 +223,7 @@ export default function Index() {
                         <div className={css["news-other-box"]}>
                           <p><span className={css["news-date"]}>10th July 2021</span></p>
                           <h1>News Headline<i className={`${css["fas"]} ${css["fa-arrow-right"]} ${css["fa-1x"]} ${"fas fa-arrow-right fa-1x"}`}></i></h1>
-                          <p>Test news testing about Stax Developer Suite of the upcoming stuff and maximum limit of how much you can write headline!!</p>
+                          <p>Test news testing about Stax Developer Studios of the upcoming stuff and maximum limit of how much you can write headline!!</p>
                         </div>
                       </a>
                       <a href="/splashboard" className={css["news-other-box-link"]}>
@@ -251,10 +251,10 @@ export default function Index() {
                 <h1 id="Index-register-now-h1">
                   Welcome to the
                   <br />
-                  Stax Developer Suite
+                  Stax Developer Studios
                 </h1>
                 <p id="Index-register-now-p">
-                  Explore The Stax Developer Suite and register your account
+                  Explore The Stax Developer Studios and register your account
                   with a few simple steps.
                   <br />
                   Welcome to the World of Stax.

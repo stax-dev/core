@@ -3,7 +3,7 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #ed4337;
+        fill: #A30000;
       }
 
       .cls-2 {
@@ -53,7 +53,7 @@
       }
 
       .cls-8 {
-        stroke: #ed4337;
+        stroke: #A30000;
         stroke-dasharray: 0 0 12.184514045715332 12.184514045715332;
       }
 
