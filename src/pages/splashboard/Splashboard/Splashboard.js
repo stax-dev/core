@@ -10,6 +10,8 @@ import {
   closeNotification,
   scrollReveal,*/
   LazyLoad,
+  DefaultServerAvatar,
+  paymentSound,
   Addons,
   snackbarNotification,
   newNotification,
@@ -25,6 +27,9 @@ import css from "./Splashboard.module.css";
 import bannerColoursList from "../../../components/data/bannerColours";
 import integrationList from "../../../components/data/integrationList.json";
 import { APIRoutes } from "../../../components/data/APIRoutes";
+
+//Sounds
+import notificationPing from "../../../sounds/notificationPing.mp3";
 
 export default function Splashboard() {
 
@@ -75,14 +80,14 @@ export default function Splashboard() {
     {
       serverID: '423K51LQM9E2M',
       name: "1234567890123456",
-      icon: "https://cdn.st.ax/v2/logo.svg",
+      icon: undefined,
       time: 634,
       statusLive: 1,
     },
     {
       serverID: '423K51LQMP523M',
       name: "My Server Animal",
-      icon: "https://cdn.st.ax/v2/logo.svg",
+      icon: null,
       time: 811,
       statusLive: 0,
     }
@@ -433,8 +438,7 @@ export default function Splashboard() {
 
             {/* testing code can remove in final  */}
             <button onClick={() => snackbarNotification(1, "Error adding email breakpoint testing")}>snackbar test</button>
-            <button onClick={() => snackbarNotification(3, "Error adding email")}>snackbar test 2</button>
-            {/* <button onClick={() => paymentSound()}>payment sound</button> */}
+            <button onClick={() => paymentSound()}>payment sound</button>
             <button onClick={() => newNotification("fas fa-comments", "Message from John12", "Staffboard Messages", "/status")}>
               test notification
             </button>
@@ -442,6 +446,7 @@ export default function Splashboard() {
             <br/><Link to="/dashboard">Dashboard</Link>
             <button onClick={() => Sessiontest()}>session test</button>
             <button onClick={() => sessionsee()}>session see</button>
+
 
             {!planList ?
               <span>
@@ -494,10 +499,16 @@ export default function Splashboard() {
                 </div>
                 <div className={css["splashboard-server"]}>
                   {planList.map((list) => (
-                    <div key={list.serverID} className={css["splashboard-server-box"]}>
+                    <div key={list.planID} className={css["splashboard-server-box"]}>
                       <div className={css["splashboard-server-icon"]}>
                         <div className={css["splashboard-server-icon-box"]}>
-                          <img src={list.icon} />
+                          {!list.icon ?
+                            <DefaultServerAvatar
+                              name={list.name}
+                              bannerID={bannerID}
+                            />:
+                            <img src={list.icon} />
+                          }
                         </div>
                       </div>
                       <div className={css["splashboard-server-info"]}>

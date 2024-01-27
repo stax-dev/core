@@ -12,6 +12,9 @@ import axios from "axios";
 //Sounds
 import notificationPing from "../../sounds/notificationPing.mp3";
 
+//Extra
+import bannerColoursList from "../../components/data/bannerColours";
+
 const logo = "https://cdn.st.ax/v2/logo.svg";
 
 //Global Checks
@@ -26,6 +29,20 @@ window.addEventListener("online", (event) => {
 window.addEventListener("drop", (event) => {
   event.preventDefault();
 });
+
+export function DefaultServerAvatar(info){
+  return (
+    <div
+      className={`${cssAddon["default-serveravatar"]} ${cssGlobal["flex-center-center"]}`}
+      style={{
+        backgroundColor: bannerColoursList.find(colour => colour.name === info.bannerID).background,
+        color: bannerColoursList.find(colour => colour.name === info.bannerID).text
+      }}
+    >
+      {Array.from(info.name)[0]}
+    </div>
+  );
+}
 
 
 //Time Formatter
@@ -288,6 +305,7 @@ export function newNotification(
       notification.removeChild(notification.lastChild);
     }
 
+    ///*
     var notificationAudio = new Audio(notificationPing);
     notificationAudio.playbackRate = 1;
     notificationAudio.volume = 0.2;
@@ -296,6 +314,7 @@ export function newNotification(
       notificationAudio.pause();
       notificationAudio.currentTime = 0;
     }, 1000);
+    //*/
 
     var popup = document.createElement("div");
     notification.prepend(popup);

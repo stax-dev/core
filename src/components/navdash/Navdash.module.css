@@ -262,7 +262,7 @@
   white-space: nowrap;
 }
 
-.server-profile-photo {
+.plan-avatar {
   border-radius: 50%;
   width: 100%;
   height: 40px;
@@ -665,8 +665,8 @@
 }
 
 .dashchatroom-main {
-  /* 40px padding, 50px margin, 70px input, 60px title */
-  height: calc(100dvh - 40px - 70px - 50px - 60px);
+  /* 40px padding top/bot, 50px margin height top/bot, 70px input height, 60px title height*/
+  height: calc(100dvh - 40px - 50px - 70px - 60px);
   overflow: auto;
   overflow-x: hidden;
   word-wrap: break-word;
@@ -680,7 +680,7 @@
   /* css global flex */
   height: calc(50px + 20px);
   margin-top: 10px;
-  background-color:var(--theme1);
+  background-color: var(--theme1);
   border-radius: 10px;
   padding: 0%;
 }
@@ -696,12 +696,14 @@
 .dashchatroom-type .dashchatroom-type-send {
   width: 40px;
   margin-left: 10px;
-  margin-bottom: 12px;
-  align-self: flex-end;
+  margin-top: 0px;
+  align-self: center;
 }
 
 .dashchatroom-type-input {
   line-height: 0px;
+  background-color: var(--theme1);
+  border-radius: 10px;
 }
 
 .dashchatroom-type-input textarea{

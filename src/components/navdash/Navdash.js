@@ -13,6 +13,12 @@ import { Terminal } from 'xterm';
 import 'xterm/css/xterm.css';
 import { FitAddon } from 'xterm-addon-fit';
 
+
+//Extra
+import {
+  DefaultServerAvatar,
+} from "../../components/addons/Addons";
+
 export default function Navdash(page) {
   // document.querySelector("#exit-btn").addEventListener("click", function (e) {
   //   ipcRenderer.send("close-me");
@@ -20,10 +26,12 @@ export default function Navdash(page) {
 
   //user static
   var [username, SetUsername] = useState();
+  var [bannerID, SetBannerID] = useState();
 
   //plan static
   var [planName, SetPlanName] = useState();
   var [planID, SetPlanID] = useState();
+  var [planAvatar, SetPlanAvatar] = useState();
 
   //plan dynamic
   var [chatroomPing, SetChatroomPing] = useState(); //0 for none 1 for unread message(s)
@@ -32,7 +40,7 @@ export default function Navdash(page) {
 
 
   //dummy data
-  /*
+
   var [chatroomChat, setChatroomChat] = useState([
     {
       author: "John12",
@@ -44,10 +52,16 @@ export default function Navdash(page) {
     },
     {
       author: "Stax",
-      message: "yea thanks ill have a look at it soon",
+      message: "yea thanks dill have a look at it soon",
     }
   ]);
-  */
+  var [username, SetUsername] = useState("Dasho");
+  var [bannerID, SetBannerID] = useState("purple");
+  var [planName, SetPlanName] = useState("1234567890123456");
+  var [planID, SetPlanID] = useState("1234567890");
+  var [chatroomPing, SetChatroomPing] = useState(0); //0 for none 1 for unread message(s)
+  var [serverStatus, SetServerStatus] = useState(0); //0 for offline 1 for online 2 for restarting
+  //*///
 
   function requestAPI(){
     //API Request
@@ -305,10 +319,21 @@ export default function Navdash(page) {
     <div>
       <div className={css["dashboard-navbar-title"]}>
         <div className={css["dashboard-navbar-title-image"]}>
-          <div className={css["server-profile-photo"]}></div>
+          {!planID ?
+            <div className={css["plan-avatar"]}></div>:
+            <div className={css["plan-avatar"]}>
+              {!planAvatar ?
+                <DefaultServerAvatar
+                  name={planName}
+                  bannerID={bannerID}
+                />:
+                <img src={planAvatar} />
+              }
+            </div>
+          }
           {/* profile photo is added to this div above in style tag */}
         </div>
-        {!planName || !serverStatus ?
+        {!planName || serverStatus === null || serverStatus === undefined ?
           <div className={css["dashboard-navbar-title-text"]}>
             <p>
               <span className={`${cssGlobal["lazy-text-100"]} ${cssGlobal["lazy-colour2"]}`}></span>
