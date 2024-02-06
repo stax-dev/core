@@ -25,3 +25,9 @@ yarn-debug.log*
 yarn-error.log*
 dummy_data_generators/.env
 src/init/.env
+
+
+# Next.js build output
+.next/
+out/
+next-env.d.ts
