@@ -55,11 +55,11 @@ export default function DashBilling() {
   var planID = window.location.pathname.split("/")[1];
 
    //dummy data
-   /*
+   
    var [appTheme, setAppTheme] = useState();
     var [username, setUsername] = useState("Dasho");
     var [userID, setUserID] = useState("1234567890");
-    var [bannerID, SetBannerID] = useState(2);
+    var [bannerID, SetBannerID] = useState("red");
     var [userBalance, SetuserBalance] = useState(10.45);
     var [userJoin, SetUserJoin] = useState("2020-06-10");
     var [planName, setPlanName] = useState("1234567890123456");
@@ -75,7 +75,7 @@ export default function DashBilling() {
     var [planStatus, setPlanStatus] = useState(0); //0 expired, 1 active
     var [chatroomPing, setChatroomPing] = useState(0); //0 for no new message, 1 for unread message(s).onst appTheme = 0
     var [planUptime, setPlanUptime] = useState(825) //hours
-   */
+   //*/
 
   document.documentElement.setAttribute("data-apptheme", appTheme);
   document.body.style.overflow = 'auto';
@@ -934,11 +934,11 @@ export default function DashBilling() {
                     style={{
                       // background: bannerColoursList.find(colour => colour.id === bannerID).background,
                       background: "repeating-linear-gradient(45deg," +
-                        bannerColoursList.find(colour => colour.id === bannerID).background + "," +
-                        bannerColoursList.find(colour => colour.id === bannerID).background + " 100px," +
-                        bannerColoursList.find(colour => colour.id === bannerID).backgroundHover + " 100px," +
-                        bannerColoursList.find(colour => colour.id === bannerID).backgroundHover +  " 200px)",
-                      color: bannerColoursList.find(colour => colour.id === bannerID).text
+                        bannerColoursList.find(colour => colour.name === bannerID).background + "," +
+                        bannerColoursList.find(colour => colour.name === bannerID).background + " 100px," +
+                        bannerColoursList.find(colour => colour.name === bannerID).backgroundHover + " 100px," +
+                        bannerColoursList.find(colour => colour.name === bannerID).backgroundHover +  " 200px)",
+                      color: bannerColoursList.find(colour => colour.name === bannerID).text
                     }}>
                     {/* <div className={css["billing-card-backdrop"]}><div className={css["billing-card-backdrop-box1"]}></div><div> */}
                     <div className={css["billing-card-line1"]}>

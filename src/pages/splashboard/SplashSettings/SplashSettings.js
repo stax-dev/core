@@ -47,8 +47,8 @@ export default function SplashSettings() {
   var [emailList, setEmailList] = useState();
   var [loginActivityList, setLoginActivityList] = useState();
 
-  /* dummy data
-  var [bannerID, setBannerID] = useState("purple");
+  /* dummy data */
+  var [bannerID, setBannerID] = useState("yellow");
   var [username, setUsername] = useState("Dasho");
   var [userRank, setUserRank] = useState("Member");
   var [firstName, setFirstName] = useState("Dasho");
@@ -57,7 +57,7 @@ export default function SplashSettings() {
   var [userID, setUserID] = useState("12345678-1234-1234-1234-123456789012");
   var [accountStatus, setAccountStatus] = useState("Open");
   var [passwordLastChanged, setPasswordLastChanged] = useState("2021-03-04");
-  var [appTheme, setAppTheme] = useState("dark");
+  var [appTheme, setAppTheme] = useState("black");
   var [emailList, setEmailList] = useState([
     {
       ID: 1,
@@ -1633,7 +1633,7 @@ export default function SplashSettings() {
                 <button onClick={() => (window.location = "/logout")} className={css["account-tools-box1"]}>
                   <p>Logout</p>
                 </button>
-                <button className={
+                {/* <button className={
                     appTheme === "light"
                       ? css["apptheme-light"]
                       : css["apptheme-dark"]
@@ -1652,7 +1652,30 @@ export default function SplashSettings() {
                     <i className={`${css["apptheme-dark-icon"]} ${css["fas"]} ${css["fa-moon"]} ${"fas fa-moon"}`}></i>
                     <i className={`${css["apptheme-light-icon"]} ${css["fas"]} ${css["fa-sun"]} ${"fas fa-sun"}`}></i>
                   </div>
-                </button>
+                </button> */}
+                <div className={`${css["theme-buttons"]} ${cssGlobal["flex-center-center"]}`}>
+                  <button
+                    onClick={() => sendAPI("appTheme", "black")}
+                    style={appTheme === "black" ? {backgroundColor: "var(--theme1)",color: "var(--text1)"}:{opacity: "100%"}}
+                    className={css["theme-buttons-black"]}
+                  >
+                    <i className={`${css["fas"]} ${css["fa-lightbulb"]} ${"fas fa-lightbulb"}`}></i>
+                  </button>
+                  <button
+                    onClick={() => sendAPI("appTheme", "dark")}
+                    style={appTheme === "dark" ? {backgroundColor: "var(--theme1)",color: "var(--text1)"}:{opacity: "100%"}}
+                    className={css["theme-buttons-dark"]}
+                  >
+                    <i className={`${css["fas"]} ${css["fa-moon"]} ${"fas fa-moon"}`}></i>
+                  </button>
+                  <button
+                    onClick={() => sendAPI("appTheme", "light")}
+                    style={appTheme === "light" ? {backgroundColor: "var(--theme1)",color: "var(--text1)"}:{opacity: "100%"}}
+                    className={css["theme-buttons-light"]}
+                  >
+                    <i className={`${css["fas"]} ${css["fa-sun"]} ${"fas fa-sun"}`}></i>
+                  </button>
+                </div>
                 <button onClick={() => password()} className={css["account-tools-box2"]}>
                   <p>Change Password</p>
                 </button>
@@ -1724,7 +1747,7 @@ export default function SplashSettings() {
                   </div>
                 ))}
                 <button className={css["add-email"]} onClick={() => addEmail()}>
-                  <p>Add Email</p>
+                  <p><i className={`${css["fas"]} ${css["fa-1x"]} ${"fas fa-circle-plus"}`}></i>Add Email</p>
                 </button>
               </div>
             }
@@ -1802,7 +1825,7 @@ export default function SplashSettings() {
                     <div className={css["login-activity-button"]}>
                       {list.current === true ?
                         <button className={css["login-activity-status1"]}>Active</button>:
-                        <button onClick={() => sendAPI("removeLoginActivity", list.ID)} className={css["login-activity-status2"]}>Remove</button>
+                        <button onClick={() => sendAPI("removeLoginActivity", list.ID)} className={css["login-activity-status2"]}><i className={`${css["fas"]} ${css["fa-1x"]} ${"fas fa-right-from-bracket"}`}></i></button>
                       }
                     </div>
                   </div>
@@ -1845,7 +1868,7 @@ export default function SplashSettings() {
                     </div>
                     <div className={css["security-zone-button"]}>
                       <button onClick={() => lockacc()}>
-                        <p>Learn more</p>
+                        <p><i className={`${css["fas"]} ${css["fa-1x"]} ${"fas fa-arrow-right"}`}></i></p>
                       </button>
                     </div>
                   </div>
@@ -1859,7 +1882,7 @@ export default function SplashSettings() {
                     </div>
                     <div className={css["security-zone-button"]}>
                       <button onClick={() => unlockacc()}>
-                        <p>Learn more</p>
+                        <p><i className={`${css["fas"]} ${css["fa-1x"]} ${"fas fa-arrow-right"}`}></i></p>
                       </button>
                     </div>
                   </div>
@@ -1875,7 +1898,7 @@ export default function SplashSettings() {
                   </div>
                   <div className={css["security-zone-button"]}>
                     <button onClick={() => disableacc()}>
-                      <p>Learn more</p>
+                      <p><i className={`${css["fas"]} ${css["fa-1x"]} ${"fas fa-arrow-right"}`}></i></p>
                     </button>
                   </div>
                 </div>
@@ -1889,7 +1912,7 @@ export default function SplashSettings() {
                   </div>
                   <div className={css["security-zone-button"]}>
                     <button onClick={() => deleteacc()}>
-                      <p>Learn more</p>
+                      <p><i className={`${css["fas"]} ${css["fa-1x"]} ${"fas fa-arrow-right"}`}></i></p>
                     </button>
                   </div>
                 </div>
@@ -1965,7 +1988,7 @@ export default function SplashSettings() {
                     }
                     I have read everything and want to lock my account now
                   </p>
-                  <div className={css["changedelete-buttons"]}>
+                  <div className={`${cssGlobal["flex-center-left"]} ${css["changedelete-buttons"]}`}>
                     <div className={css["changedelete-button-cancel"]}>
                       <button onClick={() => lockacc()}>Cancel</button>
                     </div>
@@ -2020,7 +2043,7 @@ export default function SplashSettings() {
                     }
                     I have read everything and want to disable my account now
                   </p>
-                  <div className={css["changedelete-buttons"]}>
+                  <div className={`${cssGlobal["flex-center-left"]} ${css["changedelete-buttons"]}`}>
                     <div className={css["changedelete-button-cancel"]}>
                       <button onClick={() => disableacc()}>Cancel</button>
                     </div>
@@ -2073,7 +2096,7 @@ export default function SplashSettings() {
                     }
                     I have read everything and want to delete my account now
                   </p>
-                  <div className={css["changedelete-buttons"]}>
+                  <div className={`${cssGlobal["flex-center-left"]} ${css["changedelete-buttons"]}`}>
                     <div className={css["changedelete-button-cancel"]}>
                       <button onClick={() => deleteacc()}>Cancel</button>
                     </div>

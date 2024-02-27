@@ -35,7 +35,7 @@ export default function SplashSettings() {
   var [unread, setUnread] = useState(-1);
   var [notificationList, setNotificationList] = useState();
 
-/*
+
   //user dynamic
   var [notificationList, setNotificationList] = useState([
     {
@@ -64,7 +64,7 @@ export default function SplashSettings() {
     },
   ])
   var [unread, setUnread] = useState(notificationList.map(list => list.unread === true).filter(Boolean).length);
-*/
+//*/
 
   //external data
   var sessionID = localStorage.getItem("sessionID");
@@ -261,7 +261,7 @@ export default function SplashSettings() {
                 </div>
 
                 <div className={css["notifications-unread"]}>
-                  <div className={css["notifications-unread-title"]}>
+                  <div className={`${css["notifications-unread-title"]} ${cssGlobal["flex-center-center"]}`}>
                     <div className={css["notifications-unread-title-text"]}>
                       <h1>Unread Notifications</h1>
                     </div>

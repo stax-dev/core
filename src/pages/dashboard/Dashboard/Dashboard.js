@@ -59,7 +59,7 @@ export default function Dashboard() {
   //url is url/{planID}/[page] so 2nd slash
 
   /* dummy data */
-  /*
+  
   var [appTheme, setAppTheme] = useState();
   var [userID, setUserID] = useState("12345678-1234-1234-123456789012");
   var [bannerID, SetBannerID] = useState("purple");
@@ -963,7 +963,7 @@ export default function Dashboard() {
             </div>:
             <div className={css["dashboard-control"]}>
               <div className={css["dashboard-control-box"]}>
-                <div className={css["plan-status-online"]}>
+                <div className={serverStatus === 0 ? (css["plan-status-offline"]):(css["plan-status-online"])}>
                   <div className={css["online-tag"]}>
                     <i className={`${css["fas"]} ${css["fa-circle"]} ${"fas fa-circle"}`}></i>
                     Online

@@ -38,7 +38,8 @@ export default function DashHistory() {
   //plan dynamic
   var [historyList, setHistoryList] = useState();
 
-  /*dummy data
+  /*dummy data */
+  
    var [historyList, setHistoryList] = useState([
     {
       id: 1,
@@ -55,7 +56,7 @@ export default function DashHistory() {
       actionInfo: "Edited permissions for @Dasho",
     }
   ]);
-  */
+ // */
 
   document.documentElement.setAttribute("data-apptheme", appTheme);
   document.body.style.overflow = 'auto';
@@ -159,14 +160,14 @@ export default function DashHistory() {
     }
   }
 
-  window.onClick = function(closeModal){
+  window.onclick = function(closeModal){
     var searchhistory = document.getElementById("searchhistory");
     if (closeModal.target === searchhistory) {
       searchHistory();
     }
   };
 
-  window.onKeyUp = function(closeEscape){
+  window.onkeyup = function(closeEscape){
     var searchhistory = document.getElementById("searchhistory");
     if (closeEscape.keyCode === 27) {
       if (searchhistory.style.transform === "scale(1)") {

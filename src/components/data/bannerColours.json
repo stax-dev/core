@@ -31,8 +31,14 @@
     },
     {
         "name": "grey",
-        "background": "var(--theme3)",
-        "backgroundHover": "var(--theme2)",
-        "text": "var(--text1)"
+        "background": "var(--dtb1)",
+        "backgroundHover": "var(--dtb2)",
+        "text": "var(--dtt1)"
+    },
+    {
+        "name": "white",
+        "background": "var(--dtt1)",
+        "backgroundHover": "var(--ltb2)",
+        "text": "var(--ltt1)"
     }
 ]

@@ -31,7 +31,7 @@ import { APIRoutes } from "../../../components/data/APIRoutes";
 export default function SplashChatrooms() {
 
   //user static
-  var [bannerID, setBannerID] = useState(6);
+  var [bannerID, setBannerID] = useState("yellow");
   var [username, setUsername] = useState();
   var [userID, setUserID] = useState();
   var [appTheme, setAppTheme] = useState();
@@ -44,11 +44,11 @@ export default function SplashChatrooms() {
   var [chatroomChat, setChatroomChat] = useState();
 
   //dummy data
- /*
-  var [bannerID, setBannerID] = useState(2);
+ 
+  var [bannerID, setBannerID] = useState("red");
   var [username, setUsername] = useState("Dasho");
   var [userID, setUserID] = useState(1);
-  var [appTheme, setAppTheme] = useState();
+  var [appTheme, setAppTheme] = useState("dark");
   var [chatroomList, setChatroomList] = useState([]);
   var [chatroomList, setChatroomList] = useState([
     {
@@ -87,7 +87,7 @@ export default function SplashChatrooms() {
       message: "yea thanks ill have a look at it soon",
     }
   ]);
-*/
+//*/
 
   //external data
   var sessionID = localStorage.getItem("sessionID");
@@ -325,16 +325,26 @@ export default function SplashChatrooms() {
             <div className={css["loader-circle"]}></div>
           </div> */}
           <div className={css["dashchatroom-main"]}>
-            <div className={css["chatroom-messages"]}>
-              <div className={css["chatroom-date"]}>
-                <p>24th July 2021</p>
-              </div>
-              {chatroomChat && (chatroomChat.map((list) => (
-                <div className={list.author === username ? (css["chatroom-self"]):(css["chatroom-other"])}>
-                  <p><b>{list.author}</b>{list.message}</p>
-                </div>
-              )))}
+          <div className={css["chatroom-messages"]}>
+            <div className={css["chatroom-date"]}>
+              <p>24th July 2021</p>
             </div>
+            {chatroomChat && (chatroomChat.map((list, index) => (
+              <div className={
+                list.author === username ?
+                  (css["chatroom-self"]):
+                  (list.author == "Stax" ? css["chatroom-stax"]:css["chatroom-other"])
+              }>
+                <p>
+                  <b>
+                    {list.author}
+                    {list.author === "Stax" && <i className={`${css["fas"]} ${css["fa-check-circle"]} ${"fas fa-check-circle"}`}></i>}
+                  </b>
+                  {list.message}
+                </p>
+              </div>
+            )))}
+          </div>
           </div>
           <div className={`${css["dashchatroom-type"]} ${cssGlobal["flex-center-center"]}`}>
             <div className={css["dashchatroom-type-input"]}>
@@ -376,14 +386,14 @@ export default function SplashChatrooms() {
                     <div className={`${css["chatrooms-list-box"]} ${cssGlobal["flex-center-left"]}`}>
                       <div className={css["chatrooms-list-box-info"]}>
                         <h1>{username}</h1>
-                        <p>Account Support</p>
+                        <p style={{fontSize: "90%"}}>Account Support</p>
                         <div className={css["chatrooms-list-message"]}>
                           <p>yea thanks ill have a look at it soon might be testing</p>
                         </div>
                       </div>
                       <div className={css["chatrooms-list-box-button"]}>
                         <button onClick={() => {dashChatroom();sendAPI("markRead")}} className={css["chatrooms-list-button-personal"]}
-                          style={{background: bannerColoursList.find(colour => colour.id === bannerID).background}}
+                          style={{background: bannerColoursList.find(colour => colour.name === bannerID).background}}
                         ><i className={`${css["fas"]} ${css["fa-arrow-right"]} ${"fas fa-angles-right"}`}></i></button>
                       </div>
                     </div>
@@ -400,7 +410,7 @@ export default function SplashChatrooms() {
                         <h1>
                           {list.name}
                         </h1>
-                        <p>{list.type}</p>
+                        <p style={{fontSize: "90%"}}>{list.type}</p>
                         <div className={css["chatrooms-list-message"]}>
                           <p>
                             {list.unread === true &&

@@ -32,7 +32,7 @@ export default function SplashIntegrations() {
 
   //user static
   var [appTheme, setAppTheme] = useState();
-  var [bannerID, setBannerID] = useState(6);
+  var [bannerID, setBannerID] = useState("yellow");
   var [username, setUsername] = useState();
   var [userID, setUserID] = useState();
 
@@ -124,7 +124,7 @@ export default function SplashIntegrations() {
   }
 
 
-  var [integrationDisplay, SetIntegrationDisplay] = useState(false);
+  var [integrationDisplay, SetIntegrationDisplay] = useState(true);
 
 
   //integration modal

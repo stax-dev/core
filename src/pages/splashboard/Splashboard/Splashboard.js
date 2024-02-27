@@ -722,7 +722,7 @@ export default function Splashboard() {
                     )}
                   </p>
                   <button style={createDropletSubmitDisabled === true ? {opacity: "60%", cursor: "default"}:{cursor: "pointer"}} disabled={createDropletSubmitDisabled} onClick={() => sendAPI('createDroplet')} className={css["disposable-servers-create"]}>
-                    Create Droplet
+                    <i className={`${css["fas"]} ${css["fa-1x"]} ${"fas fa-circle-plus"}`}></i>Create
                   </button>
                 </div>
               ):(

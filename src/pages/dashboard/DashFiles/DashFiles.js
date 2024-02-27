@@ -1180,30 +1180,32 @@ export default function DashFiles() {
             {fileList ?
               <React.Fragment>
                 <div className={`${css["file-menu"]} ${cssGlobal["flex-center-left"]}`}>
-                  <button className={css["file-return-button"]}>
-                    <i className={`${css["fas"]} ${css["fa-chevron-left"]} ${"fas fa-chevron-left"}`}></i>Back
+                  <button title="Back" className={css["file-return-button"]}>
+                    <i style={{marginRight: "8px"}} className={`${css["fas"]} ${css["fa-chevron-left"]} ${"fas fa-chevron-left"}`}></i>Back
                   </button>
-                  <button onClick={() => searchFiles()} className={css["file-search-button"]}>
-                    <i className={`${css["fas"]} ${css["fa-search"]} ${"fas fa-search"}`}></i>Search
+                  <button title="Search" onClick={() => searchFiles()} className={css["file-search-button"]}>
+                    <i style={{marginRight: "8px"}} className={`${css["fas"]} ${css["fa-search"]} ${"fas fa-search"}`}></i>Search
                   </button>
                   <button
+                    title="New File"
                     disabled={createFileSubmitDisabled}
                     onClick={() => sendAPI("createFile")}
                     className={css["file-file-button"]}
                     style={createFileSubmitDisabled === true ? {opacity: "60%", cursor: "default", pointerEvents: "none"}:{opacity: "100%"}}
                   >
-                    <i className={`${css["fas"]} ${css["fa-plus"]} ${"fas fa-plus-circle"}`}></i>New File
+                    <i className={`${css["fas"]} ${css["fa-plus"]} ${"fas fa-file-circle-plus"}`}></i>
                   </button>
                   <button
+                    title="New Folder"
                     disabled={createFolderSubmitDisabled}
                     onClick={() => sendAPI("createFolder")}
                     className={css["file-folder-button"]}
                     style={createFolderSubmitDisabled === true ? {opacity: "60%", cursor: "default", pointerEvents: "none"}:{opacity: "100%"}}
                   >
-                    <i className={`${css["fas"]} ${css["fa-plus"]} ${"fas fa-plus-circle"}`}></i>New Folder
+                    <i className={`${css["fas"]} ${css["fa-plus"]} ${"fas fa-folder-plus"}`}></i>
                   </button>
                   <button onClick={() => uploadFiles()} className={css["file-upload-button"]}>
-                    <i className={`${css["fas"]} ${css["fa-upload"]} ${"fas fa-upload"}`}></i>Upload
+                    <i title="Upload File" className={`${css["fas"]} ${css["fa-upload"]} ${"fas fa-upload"}`}></i>
                   </button>
                 </div>
 

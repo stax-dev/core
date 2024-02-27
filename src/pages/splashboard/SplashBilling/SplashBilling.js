@@ -41,7 +41,7 @@ export default function SplashBilling() {
 
 
   //user static
-  var [bannerID, setBannerID] = useState(6);
+  var [bannerID, setBannerID] = useState("purple");
   var [username, setUsername] = useState();
   var [appTheme, setAppTheme] = useState();
 
@@ -55,8 +55,7 @@ export default function SplashBilling() {
   var sessionID = localStorage.getItem("sessionID");
 
   //dummy data
-  /*
-  var [bannerID, setBannerID] = useState(2);
+  var [bannerID, setBannerID] = useState("purple");
   var [username, setUsername] = useState("Dasho");
   var [appTheme, setAppTheme] = useState();
 
@@ -175,7 +174,7 @@ export default function SplashBilling() {
       amount: 41.9323,
     }
   ]);
-  */
+  //*/
 
   document.documentElement.setAttribute("data-apptheme", appTheme);
   document.body.style.overflow = 'auto';
@@ -990,9 +989,8 @@ export default function SplashBilling() {
   }
 
   if(transactionList){
-    var transactionDisplay = [...Array(1)].map((number) => ({
-      key: number,
-      value: transactionList
+    var transactionDisplay = [...Array(1)].map((number, index) => (
+      transactionList
       //transaction type filter
       .filter(id => transactionTypeFilterList.includes(id.typeID))
       //transaction date filter
@@ -1002,8 +1000,8 @@ export default function SplashBilling() {
       //show number of max results
       .slice(0, transactionCurrentView)
       //display result
-      .map((list) => (
-        <div key={list.id + "-key"} className={css["transaction-history-box"]}>
+      .map((list, index2) => (
+        <div key={index2} className={css["transaction-history-box"]}>
           <div className={css["transaction-history-type"]}>
             <p>{transactionTypes.find(id => id.id === list.typeID).type}</p>
           </div>
@@ -1026,7 +1024,7 @@ export default function SplashBilling() {
           </div>
         </div>
       ))
-    }));
+    ));
   }
   return (
     <div className={cssGlobal["splashboard-full"]}>
@@ -1272,8 +1270,8 @@ export default function SplashBilling() {
                   </div>
                 </button>
                 {addressList &&
-                  (addressList.map((list) => (
-                    <button key={list.id + "-key"} className={`${css["address-linked-list-box"]} ${cssGlobal["flex-center-left"]}`}>
+                  (addressList.map((list, index) => (
+                    <button key={index} className={`${css["address-linked-list-box"]} ${cssGlobal["flex-center-left"]}`}>
                       <div className={css["address-linked-list-info"]}>
                         <b>{list.nickname}</b><br/>{list.fullName}
                       </div>
@@ -1303,9 +1301,9 @@ export default function SplashBilling() {
           <div className={css["deleteaddress-info"]}>
             <div className={`${css["address-list"]} ${cssGlobal["flex-stretch-left"]}`}>
               {addressList &&
-                (addressList.filter(id => id.id === chooseRemoveAddress).map((list) => (
+                (addressList.filter(id => id.id === chooseRemoveAddress).map((list, index) => (
                   <div
-                    key={list.id + "-key"}
+                    key={index}
                     className={`${list.default === true ? (css["address-list-box-main"]):(css["address-list-box-normal"])} ${cssGlobal["flex-flex-start-center"]}`}
                   >
                     <div className={`${css["address-list-box-inside"]} ${cssGlobal["flex-center-left"]}`}>
@@ -1358,8 +1356,8 @@ export default function SplashBilling() {
           <h1>Edit Saved Payment</h1>
           <div className={css["editpayment-info"]}>
             {paymentList &&
-              (paymentList.filter(id => id.id === chooseEditPayment).map((list) => (
-                <div key={list.id + "-key"} className={`${list.default === true ? (css["saved-payments-box-main"]):(css["saved-payments-box"])} ${cssGlobal["flex-center-left"]}`}>
+              (paymentList.filter(id => id.id === chooseEditPayment).map((list, index) => (
+                <div key={index} className={`${list.default === true ? (css["saved-payments-box-main"]):(css["saved-payments-box"])} ${cssGlobal["flex-center-left"]}`}>
                   <div className={css["saved-payments-icon"]}>
                     {list.type === "Mastercard" &&
                       <img src={payIcon_mastercard} />
@@ -1417,8 +1415,8 @@ export default function SplashBilling() {
                 <b>None</b><br/>Leave Empty
               </div>
               {newLinkedAddress === -1 && paymentList ? (
-                paymentList.filter(id => id.id === chooseEditPayment).map((list2) => (
-                  <span key={list2.id + "-key"}>
+                paymentList.filter(id => id.id === chooseEditPayment).map((list2, index) => (
+                  <span key={index}>
                     {list2.linkedAddressID === 0 &&
                       <div className={css["address-linked-list-icon"]}>
                         <i className={`${css["fas"]} ${css["fa-check-circle"]} ${"fas fa-check-circle"}`}></i>
@@ -1434,19 +1432,19 @@ export default function SplashBilling() {
               )}
             </button>
             {addressList &&
-              (addressList.map((list) => (
+              (addressList.map((list, index) => (
                 <button
                   onClick={() => chooseNewLinkedAddress(list.id)}
                   disabled={linkAddressSubmitDisabled}
-                  key={list.id + "-key"}
+                  key={index}
                   className={`${css["address-linked-list-box"]} ${cssGlobal["flex-center-left"]}`}
                 >
                   <div className={css["address-linked-list-info"]}>
                     <b>{list.nickname}</b><br/>{list.fullName}
                   </div>
                   {newLinkedAddress === -1 ? (
-                    paymentList.filter(id => id.id === chooseEditPayment).map((list2) => (
-                      <span key={list2.id + "-key"}>
+                    paymentList.filter(id => id.id === chooseEditPayment).map((list2, index2) => (
+                      <span key={index2}>
                         {list.id === list2.linkedAddressID &&
                           <div className={css["address-linked-list-icon"]}>
                             <i className={`${css["fas"]} ${css["fa-check-circle"]} ${"fas fa-check-circle"}`}></i>
@@ -1627,13 +1625,13 @@ export default function SplashBilling() {
                 </div>:
                 <div className={`${css["billing-card"]} ${cssGlobal["flex-center-left"]}`}
                   style={{
-                    // background: bannerColoursList.find(colour => colour.id === bannerID).background,
+                    // background: bannerColoursList.find(colour => colour.name === bannerID).background,
                     background: "repeating-linear-gradient(45deg," +
-                      bannerColoursList.find(colour => colour.id === bannerID).background + "," +
-                      bannerColoursList.find(colour => colour.id === bannerID).background + " 100px," +
-                      bannerColoursList.find(colour => colour.id === bannerID).backgroundHover + " 100px," +
-                      bannerColoursList.find(colour => colour.id === bannerID).backgroundHover +  " 200px)",
-                    color: bannerColoursList.find(colour => colour.id === bannerID).text
+                      bannerColoursList.find(colour => colour.name === bannerID).background + "," +
+                      bannerColoursList.find(colour => colour.name === bannerID).background + " 100px," +
+                      bannerColoursList.find(colour => colour.name === bannerID).backgroundHover + " 100px," +
+                      bannerColoursList.find(colour => colour.name === bannerID).backgroundHover +  " 200px)",
+                    color: bannerColoursList.find(colour => colour.name === bannerID).text
                   }}>
                   {/* <div className={css["billing-card-backdrop"]}><div className={css["billing-card-backdrop-box1"]}></div><div> */}
                   <div className={css["billing-card-line1"]}>
@@ -1721,8 +1719,8 @@ export default function SplashBilling() {
                 ))}
               </div>:
               <div className={`${css["saved-payments"]} ${cssGlobal["flex-stretch-left"]}`}>
-                {paymentList.map((list) => (
-                  <div key={list.id + "-key"} className={`${list.default === true ? (css["saved-payments-box-main"]):(css["saved-payments-box"])} ${cssGlobal["flex-center-left"]}`}>
+                {paymentList.map((list, index) => (
+                  <div key={index} className={`${list.default === true ? (css["saved-payments-box-main"]):(css["saved-payments-box"])} ${cssGlobal["flex-center-left"]}`}>
                     <div className={css["saved-payments-icon"]}>
                       {list.type === "Mastercard" &&
                         <img src={payIcon_mastercard} />
@@ -1823,9 +1821,9 @@ export default function SplashBilling() {
                   <p>Your default address is linked to your default saved payment.</p>
                 </div>
                 <div className={`${css["address-list"]} ${cssGlobal["flex-stretch-left"]}`}>
-                  {addressList.map((list) => (
+                  {addressList.map((list, index) => (
                     <div
-                      key={list.id + "-key"}
+                      key={index}
                       className={`${list.default === true ? (css["address-list-box-main"]):(css["address-list-box-normal"])} ${cssGlobal["flex-flex-start-center"]}`}
                     >
                       <div className={`${css["address-list-box-inside"]} ${cssGlobal["flex-center-left"]}`}>
@@ -1936,8 +1934,8 @@ export default function SplashBilling() {
             </React.Fragment>:
             <React.Fragment>
               <div className={`${css["transaction-type"]} ${cssGlobal["flex-center-left"]}`}>
-                {transactionTypes.map((list) => (
-                  <div key={list.id + "-key"} className={css["transaction-type-box"]}>
+                {transactionTypes.map((list, index) => (
+                  <div key={index} className={css["transaction-type-box"]}>
                     <button onClick={
                       transactionTypeFilterList.includes(list.id) ?
                       (() => chooseTransactionTypeFilter("remove", list.id)):

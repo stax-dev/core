@@ -50,7 +50,7 @@ export default function DashAdmin() {
   var [memberList, setMemberList] = useState();
 
   //dummy data
-  /*
+  
   var [username, setUsername] = useState("Dasho");
   var [userID, setuserID] = useState("4324");
   var [permission, setPermission] = useState(2);
@@ -82,7 +82,7 @@ export default function DashAdmin() {
       joinDate: "23rd June 2021",
     },
   ]);
-  */
+  //*/
 
   useEffect(() => {
     APIRequest("all");
@@ -703,7 +703,7 @@ export default function DashAdmin() {
               </button>
             </div>
             <div className={css["edituser-buttons-box"]}>
-              <button disabled={editUserSubmitDisabled} onClick={() => sendAPI("editUser")} id="edituser-button-submit" className={css["edituser-button-submit-off"]} disabled>
+              <button disabled={editUserSubmitDisabled} onClick={() => sendAPI("editUser")} id="edituser-button-submit" className={css["edituser-button-submit-off"]}>
                 <p>Save Changes</p>
               </button>
             </div>
@@ -823,7 +823,7 @@ export default function DashAdmin() {
                       <input id="DashAdmin-edit-member-box-input" onKeyUp={() => checkAddUser()} type="text" placeholder="Username" />
                     </div>
                     <div style={addUserSubmitDisabled === true ? {opacity: "60%", cursor: "default"}:{opacity: "100%", cursor: "default"}} className={css["edit-member-submit"]}>
-                      <button disabled={addUserSubmitDisabled} onClick={() => sendAPI("addUser")}>Add User</button>
+                      <button disabled={addUserSubmitDisabled} onClick={() => sendAPI("addUser")}><i className={`${css["fas"]} ${css["fa-plus-circle"]} ${"fas fa-plus-circle"}`}></i>Add User</button>
                     </div>
                   </div>
 
@@ -940,7 +940,7 @@ export default function DashAdmin() {
                       <input onKeyUp={() => createSnapshotCheck()} id="DashAdmin-snapshots-create-inputs-text-input" type="text" placeholder="Snapshot Name"/>
                     </div>
                     <div id="DashAdmin-snapshots-create-inputs-submit" className={createSnapshotSubmitDisabled === true ? css["snapshots-create-inputs-submit-off"]: css["snapshots-create-inputs-submit"]}>
-                      <button onClick={() => sendAPI("createSnapshot")} disabled={createSnapshotSubmitDisabled}>Create</button>
+                      <button onClick={() => sendAPI("createSnapshot")} disabled={createSnapshotSubmitDisabled}><i className={`${css["fas"]} ${css["fa-plus-circle"]} ${"fas fa-plus-circle"}`}></i>Create</button>
                     </div>
                   </div>
                 </div>
@@ -974,13 +974,13 @@ export default function DashAdmin() {
                             {permission % 2 === 0 && (
                               <button className={css["snapshot-list-button-restore"]}
                                 onClick={() => restoreSnapshot()}>
-                                Restore
+                                <i className={`${css["fas"]} ${css["fa-exclamation-circle"]} ${"fas fa-rotate-left"}`}></i>
                               </button>
                             )}
                             {(permission % 2 === 0 || username === list.user) && (
                               <button className={css["snapshot-list-button-delete"]}
                                 onClick={() => deleteSnapshot()}>
-                                Delete
+                                <i className={`${css["fas"]} ${css["fa-trash"]} ${"fas fa-trash"}`}></i>
                               </button>
                             )}
                           </span>

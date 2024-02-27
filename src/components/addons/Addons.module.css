@@ -466,11 +466,15 @@
 }
 
 .default-serveravatar {
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
+  width: calc(100% - 0px);
+  height: calc(100% - 0px);
   border-radius: 10px;
   font-weight: 600;
   font-size: 100%;
   line-height: 0%;
-  border: 1px solid var(--theme1);
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
 }

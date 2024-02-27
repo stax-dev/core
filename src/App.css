@@ -20,13 +20,16 @@
     --ltt1: black;
     --ltt2: #5A5A5A;
 
+    /* black theme backgrounds (btb) */
+    --btb1: black;
+    --btb2: #121518;
+
     /* SDS Themes (main, hover, opaque) */
 
       /* Stax Theme 1 (ST1) */
       --st11: #00C79A;
       --st12: #00A77A;
       --st13: #00C79A40;
-      --st14: #00c79a;
 
       /* Stax Theme 2 (ST2) */
       --st21: #7367f0;
@@ -34,9 +37,9 @@
       --st23: #7367F040;
 
       /* Stax Theme 3 (ST3) */
-      --st31: #ffea00;
+      --st31: #F3B61F;
       --st32: #d0bf00;
-      --st33: #ffea0040;
+      --st33: #F3B61F40;
 
       /* Stax Theme 4 (ST4) */
       --st41: #2667f0;
@@ -44,9 +47,9 @@
       --st43: #2667f040;
 
       /* Red Theme (RT) */
-      --rt1: #ed4337;
+      --rt1: #EF3E36;
       --rt2: #bb1c10;
-      --rt3: #ed433740;
+      --rt3: #EF3E3640;
 
 
 
@@ -104,6 +107,12 @@
 
 }
 
+[data-apptheme="black"] {
+  --theme1: var(--btb1);
+  --theme2: var(--btb2);
+  --theme3: var(--dtb3);
+}
+
 [data-apptheme="light"] {
   --theme1: var(--ltb1);
   --theme2: var(--ltb2);
@@ -112,7 +121,7 @@
   --text1: var(--ltt1);
   --text2: var(--ltt2);
 
-  --accent: var(--st14);
+  --accent: var(--st11);
 }
 
 /* :root.dark-theme {

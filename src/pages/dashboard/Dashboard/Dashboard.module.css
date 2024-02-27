@@ -339,7 +339,7 @@
 .dashboard-control-buttons .server-off,
 .dashboard-control-buttons .server-grey {
   width: 100%;
-  padding: 12px;
+  padding: 12px 0px;
   margin-top: 5%;
   transition: all 0.2s ease-in-out;
   /* this is a button class so idk the widths */
@@ -365,11 +365,12 @@
 }
 
 .dashboard-control-buttons .dashboard-control-button-icon {
-  width: 30px;
+  width: 40px;
+  text-align: center;
 }
 
 .dashboard-control-buttons .dashboard-control-button-text {
-  width: calc(100% - 30px);
+  width: calc(100% - 40px);
 }
 
 .dashboard-control-button-text p {

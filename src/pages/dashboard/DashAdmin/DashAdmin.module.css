@@ -808,6 +808,10 @@
   background-color: var(--accent);
 }
 
+.edit-member-submit .fas {
+  margin-right: 8px;
+}
+
 .edit-member input,
 .edit-member button {
   border-radius: 10px;
@@ -1121,6 +1125,7 @@
   width: 92%;
 }
 
+
 .snapshots-create-inputs-submit button {
   text-align: center;
   padding: 12px 0%;
@@ -1139,6 +1144,11 @@
 
 .snapshots-create-inputs-submit button:hover {
   background-color: var(--accent-hover);
+}
+
+.snapshots-create-inputs-submit-off .fas,
+.snapshots-create-inputs-submit .fas {
+  margin-right: 8px;
 }
 
 .snapshot-list {

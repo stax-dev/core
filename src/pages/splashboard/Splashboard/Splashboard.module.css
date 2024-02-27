@@ -660,6 +660,10 @@
   transition: all 0.2s ease-in-out;
 }
 
+.disposable-servers-create .fas {
+  margin-right: 8px;
+}
+
 .disposable-servers-create:hover {
   background-color: var(--accent-hover);
 }

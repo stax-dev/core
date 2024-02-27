@@ -1082,17 +1082,23 @@
 .account-tools .account-tools-box1 {
   width: max-content;
   padding: 12px 24px;
+  height: 50px;
   margin-right: 1%;
 }
 
 .account-tools .account-tools-box2  {
   width: max-content;
   padding: 12px 24px;
+  height: 50px;
   margin-left: 1%;
 }
 
 .account-tools .apptheme-dark,
 .account-tools .apptheme-light {
+  margin: 0%;
+}
+
+.account-tools .theme-buttons {
   margin: 0%;
 }
 
@@ -1171,6 +1177,32 @@
   display: none;
 }
 
+.theme-buttons {
+  /* css global flex */
+  opacity: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--text1);
+  color: var(--theme3);
+}
+
+.theme-buttons button{
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 10px;
+  /* css global flex */
+  transition: all 0.2s ease-in-out;
+  color: inherit;
+}
+
+.theme-buttons button:nth-child(3n){
+  margin-right: 0%;
+}
+
+.theme-buttons button:hover {
+  background-color: var(--text2);
+}
 
 /*modal*/
 
@@ -1587,6 +1619,10 @@
   margin: 0%;
 }
 
+.add-email .fas {
+  margin-right: 8px
+}
+
 .settings-side {
   border-radius: 0px;
   color: var(--text2);
@@ -1770,13 +1806,13 @@
 }
 
 .security-zone-button button {
-  padding: 12px 0%;
+  padding: 10px 0%;
   margin-top: 2%;
   cursor: pointer;
   background-color: var(--theme1);
   color: var(--red);
   border-radius: 10px;
-  max-width: 150px;
+  max-width: 50px;
   width: 100%;
   text-align: center;
   transition: all 0.2s ease-in-out;
@@ -2032,14 +2068,18 @@
     margin-bottom: 2%;
     margin-right: 2%;
   }
+
   .account-tools .apptheme-dark,
-  .account-tools .apptheme-light {
+  .account-tools .apptheme-light,
+  .account-tools .theme-buttons {
     margin-bottom: 2%;
+    margin-right: 2%;
   }
 
 
   .account-tools .account-tools-box2 {
     margin-bottom: 2%;
+    margin-left: 0%;
   }
 
 
