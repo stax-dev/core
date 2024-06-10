@@ -57,7 +57,7 @@ export default function SplashSettings() {
   var [userID, setUserID] = useState("12345678-1234-1234-1234-123456789012");
   var [accountStatus, setAccountStatus] = useState("Open");
   var [passwordLastChanged, setPasswordLastChanged] = useState("2021-03-04");
-  var [appTheme, setAppTheme] = useState("black");
+  var [appTheme, setAppTheme] = useState("light");
   var [emailList, setEmailList] = useState([
     {
       ID: 1,

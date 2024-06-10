@@ -79,7 +79,7 @@ export default function Splashboard() {
   var [planList, setPlanList] = useState([
     {
       serverID: '423K51LQM9E2M',
-      name: "1234567890123456",
+      name: "F34567890123456",
       icon: undefined,
       time: 634,
       statusLive: 1,

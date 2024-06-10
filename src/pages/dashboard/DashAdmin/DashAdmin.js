@@ -50,7 +50,7 @@ export default function DashAdmin() {
   var [memberList, setMemberList] = useState();
 
   //dummy data
-  
+
   var [username, setUsername] = useState("Dasho");
   var [userID, setuserID] = useState("4324");
   var [permission, setPermission] = useState(2);

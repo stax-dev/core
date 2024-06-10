@@ -886,3 +886,10 @@
     transform: translateX(0%);
   }
 }
+
+
+@media screen and (max-width: 200px) {
+  .splashboard-full {
+    transform: scale(50%);
+  }
+}
