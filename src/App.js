@@ -76,7 +76,7 @@ import E404 from "./pages/errors/E404";
 
 function App() {
   const firebaseConfig = {
-    apiKey: "AIzaSyCnS-4wYLmVeUpGJdaciwAJrJxFtiQTaE8",
+    apiKey: "FIREBASE_API_KEY",
     authDomain: "stax-devio.firebaseapp.com",
     projectId: "stax-devio",
     storageBucket: "stax-devio.appspot.com",
