@@ -17,7 +17,7 @@ const devUpdatesList = [
       info: [
         <p>
           New Update! The backend of this project is on the way to completion.{" "}
-          We are planning to provide Shared, VPS and Droplet Hosting, alongside with storage services.{" "}
+          We are planning to provide <b>Shared, VPS and Droplet Hosting</b>, alongside with storage services.{" "}
           Our plans are designed to be as affordable as possible... by coders, for coders.{" "}
           New developments upcoming:
           <ul>
@@ -34,12 +34,12 @@ const devUpdatesList = [
       date: "14th September 2024",
       info: [
         <p>
-          The Whiteboard! Along with the dashboard, our plan is to build productivity tools alongside with SDS.{" "}
+          The Whiteboard! Along with the dashboard, our plan is to build <b>productivity tools</b> alongside with SDS.{" "}
           Our services don't just come with the hosting itself, as we aim to accomodate a smooth workflow with easy integrations and access.
           {" "}As mentioned with the upcoming AI assistant, we are adding emails, chats and features of a <b>Virtual Office</b>.
           <br/><br/>
-          Furthermore, from the last update, our AI assistant now doesn't just chat with you. Say good morning to Staxle!{" "}
-          Staxle now can carry out real operations and task like creating servers, updating details, manage your dashboard and many other real tasks!
+          Furthermore, from the last update, our AI assistant now doesn't just chat with you. Say good morning to <b>Staxle</b>!{" "}
+          Staxle now can carry out <u>real operations</u> and task like creating servers, updating details, manage your dashboard and many other real tasks!
         </p>
       ]
     },
@@ -48,9 +48,9 @@ const devUpdatesList = [
       date: "5th December 2024",
       info: [
         <p>
-          April 2025! We plan to launch SDS hosting next year as the project is nearing completion soon.{" "}
+          <b>April 2025!</b> We plan to launch SDS hosting <u>next year</u> as the project is nearing completion soon.{" "}
           The final stages for the backend/frontend are coming together, like the feeling of completing a 1000 piece puzzle!{" "}
-          We are currently in alpha testing now and will begin beta testing soon. Updates will bep posted here!{" "}
+          We are currently in <u>alpha testing</u> now and will begin beta testing soon. <b>Keep a lookout!</b>{" "}
           Here are some updates so far:
           <ul>
             <li>Subdomains for servers</li>
