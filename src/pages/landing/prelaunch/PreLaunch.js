@@ -46,7 +46,7 @@ export default function Index() {
 
   var logo = "https://cdn.st.ax/v2/logo.svg";
 
-  var releaseDate = "Sep 2024";
+  var releaseDate = "Aug 2025";
 
 
 

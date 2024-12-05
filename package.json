@@ -27,6 +27,7 @@
     "xterm-addon-fit": "^0.7.0"
   },
   "scripts": {
+    "localhost": "set HOST=localhost&&react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
