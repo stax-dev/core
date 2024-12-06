@@ -169,7 +169,7 @@ export default function Index() {
                   </div>
                 </div>
                 <div className={css["landing-project-progress"]}>
-                  <div style={{width: "70%"}} className={css["landing-project-progress-bar"]}></div>
+                  <div style={{width: "86%"}} className={css["landing-project-progress-bar"]}></div>
                 </div>
               </section>
               <div className={`${css["landing-project-list"]} ${cssGlobal["flex-flex-start-left"]}`}>
@@ -225,7 +225,45 @@ export default function Index() {
                 </div>
               </div>
             </div>
+            <section className={cssGlobal["rs-element-both"]}>
+              <div className={css["whiteboard"]}>
+                <div className={css["whiteboard-title"]}>
+                  <h2>Introducing...</h2>
+                  <h1>THE COOL STAX WHITEBOARD!!!{" "}
+                    <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>{" "}
+                    <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>{" "}
+                    <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>
+                  </h1>
+                </div>
+                <div className={css["whiteboard-info"]}>
+                  <p>
+                    A productivity tool that allows <span>you to jot down notes, tasks and reminders with the help of Staxle, our very own AI assistant helper.</span>
+                  </p>
+                </div>
+                <section className={cssGlobal["rs-element-both"]}>
+                <div className={`${css["whiteboard-sticky"]} ${cssGlobal["flex-flex-start-left"]}`}>
+                  <div className={css["whiteboard-sticky-box"]} contentEditable>
+                    <p>Take down notes/reminders with the help of an <u>AI Assistant</u>!!!!</p>
+                  </div>
+                  <div className={css["whiteboard-sticky-box"]} contentEditable>
+                    <p>
+                      ..to help you carry out tasks
+                      <br/><br/>
+                      Like creating this sticky note!
+                    </p>
+                  </div>
+                  <div className={css["whiteboard-sticky-box"]} contentEditable>
+                    <p>Finish the CSS for the landing page!!!
+                      <br/><br/>
+                      - Alex
+                    </p>
+                  </div>
+                </div>
+                </section>
+              </div>
+            </section>
           </div>
+
           {/* <div className={cssGlobal["content-100"]}>
             <div className={css["landing-project"]}>
               <div className={`${css["landing-project-title"]} ${cssGlobal["flex-center-left"]}`}>
@@ -243,6 +281,7 @@ export default function Index() {
               </div>
             </div>
           </div> */}
+
           <div className={cssGlobal["content-100"]}>
             <div className={css["landing-updates-art"]}>
               {/* <section className={cssGlobal["rs-element-both"]}> */}
