@@ -328,7 +328,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
 .whiteboard {
-    padding: 80px;
     font-family: "Kalam", cursive;
     font-family: "Indie Flower", cursive;
     color: var(--theme1);
@@ -342,36 +341,45 @@
     background-position: 0 0,16px 16px;
 }
 
-.whiteboard h1{
+.whiteboard-title h1{
     margin: 0%;
     font-size: 250%;
     font-weight: 600;
 }
 
-.whiteboard h2{
+.whiteboard-title h2{
     font-size: 200%;
     margin: 0%;
     font-weight: 500;
 }
 
+.whiteboard-title {
+    padding: 80px 80px 0px;
+}
+
 .whiteboard-sticky {
     width: 100%;
     /* css global flex */
-    margin: 40px 0px;
+    margin-top: 40px;
     font-family: "Indie Flower", cursive;
-}
-
-.whiteboard-sticky .whiteboard-sticky-box {
-    width: 120px;
-    height: 120px;
-    padding: 40px;
+    padding-bottom: 80px;
 }
 
 .whiteboard-info {
     margin-top: 20px;
     transform: rotate(0deg);
     font-size: 120%;
+    padding: 0px 80px;
 }
+
+.whiteboard-sticky .whiteboard-sticky-box {
+    width: 120px;
+    height: 120px;
+    padding: 40px;
+    margin-bottom: 40px;
+    margin-right: 50px;
+}
+
 
 .whiteboard-sticky-box p{
     margin: 0%;
@@ -394,13 +402,12 @@
 .whiteboard-sticky-box:nth-child(2){
     transform: rotate(4deg);
     background-color: #7afcff;
-    margin-left: 50px;
 }
 
 .whiteboard-sticky-box:nth-child(3){
     transform: rotate(-2deg);
     background-color: #ff7eb9;
-    margin-left: 50px;
+    margin-bottom: 0%;
 }
 
 .whiteboard-sticky-box:hover {
@@ -765,6 +772,11 @@
         transform: translateY(25%) translateX(-10%) scale(110%);
     }
 
+    .whiteboard-sticky {
+        padding: 0px 20px 40px;
+    }
+
+
 
 }
 
@@ -800,6 +812,15 @@
         font-size: 180%;
     }
 
+    .whiteboard-title {
+        padding: 40px 40px 0px;
+    }
+
+    .whiteboard-info {
+        padding: 0px 40px;
+    }
+
+
 }
 
 @media screen and (max-width: 525px) {
@@ -818,6 +839,10 @@
     .landing-title h1,
     .landing-features-box h1{
         font-size: 150%;
+    }
+
+    .whiteboard h1{
+        font-size: 200%;
     }
 
 

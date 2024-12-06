@@ -229,7 +229,7 @@ export default function Index() {
               <div className={css["whiteboard"]}>
                 <div className={css["whiteboard-title"]}>
                   <h2>Introducing...</h2>
-                  <h1>THE COOL STAX WHITEBOARD!!!{" "}
+                  <h1>THE COOOOL STAX WHITEBOARD!!!{" "}
                     <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>{" "}
                     <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>{" "}
                     <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>
@@ -241,9 +241,9 @@ export default function Index() {
                   </p>
                 </div>
                 <section className={cssGlobal["rs-element-both"]}>
-                <div className={`${css["whiteboard-sticky"]} ${cssGlobal["flex-flex-start-left"]}`}>
+                <div className={`${css["whiteboard-sticky"]} ${cssGlobal["flex-flex-start-center"]}`}>
                   <div className={css["whiteboard-sticky-box"]} contentEditable>
-                    <p>Take down notes/reminders with the help of an <u>AI Assistant</u>!!!!</p>
+                    <p>Collaborate  in real-time with your team with the <u>AI Assistant</u>!!!!</p>
                   </div>
                   <div className={css["whiteboard-sticky-box"]} contentEditable>
                     <p>
