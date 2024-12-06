@@ -564,12 +564,16 @@
     transition: all 0.2s ease-in-out;
 }
 
+.landing-updates-box-info b{
+    font-weight: 500;
+}
+
 .landing-updates-box-info:hover {
     background-color: var(--theme2);
 }
 
 .landing-updates-box:nth-child(1) .landing-updates-box-info{
-    background-color: var(--theme3);
+    background-color: var(--theme2);
     /* border-color: var(--theme3); */
     /* filter: drop-shadow(0px 0px 10px var(--theme3)); */
 }
