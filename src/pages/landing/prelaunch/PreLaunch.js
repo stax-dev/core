@@ -69,7 +69,76 @@ export default function Index() {
 
   });
 
-  function appTheme(){
+  function appCountdown(){
+    const now = new Date();
+    const targetDate = new Date('2025-08-31');
+
+    const diffInMilliseconds = targetDate - now; // Difference in milliseconds
+
+    let timeRemaining = '';
+
+    if (diffInMilliseconds > 0) {
+      const days = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
+      timeRemaining = `${days} days to go!`;
+    } else {
+      timeRemaining = "The date has passed!";
+    }
+
+    // Create the popup container and popup content dynamically
+    const popupContainer = document.createElement('div');
+    popupContainer.style.position = 'fixed';
+    popupContainer.style.bottom = '20px';
+    popupContainer.style.right = '20px';
+    popupContainer.style.zIndex = '1000';
+    popupContainer.style.display = 'flex';
+    popupContainer.style.justifyContent = 'flex-end';
+
+    const popupBox = document.createElement('div');
+    popupBox.style.backgroundColor = '#333';  // Dark background
+    popupBox.style.color = '#fff';            // White text
+    popupBox.style.padding = '20px';
+    popupBox.style.borderRadius = '10px';
+    popupBox.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.2)';
+    popupBox.style.fontFamily = 'Arial, sans-serif';
+    popupBox.style.display = 'flex';
+    popupBox.style.flexDirection = 'column';
+    popupBox.style.alignItems = 'center';
+    popupBox.style.position = 'relative';
+    popupBox.style.maxWidth = '250px';        // Ensure the popup doesn't get too large
+    popupBox.style.textAlign = 'center';      // Center the text
+
+    const popupText = document.createElement('p');
+    popupText.innerText = timeRemaining;
+    popupText.style.fontSize = '18px';        // Larger, more readable font
+
+    const closeButton = document.createElement('button');
+    closeButton.innerText = 'Close';
+    closeButton.style.marginTop = '10px';
+    closeButton.style.padding = '8px 15px';
+    closeButton.style.backgroundColor = '#f44336'; // Red background for button
+    closeButton.style.color = '#fff';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '5px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.onclick = () => {
+      // Remove the popup after the close button is clicked
+      document.body.removeChild(popupContainer);
+    };
+
+    // Append the text and button to the popup box
+    popupBox.appendChild(popupText);
+    popupBox.appendChild(closeButton);
+
+    // Append the popup box to the popup container
+    popupContainer.appendChild(popupBox);
+
+    // Append the popup container to the document body
+    document.body.appendChild(popupContainer);
+
+    // Automatically remove the popup after 5 seconds
+    setTimeout(() => {
+      document.body.removeChild(popupContainer);
+    }, 5000);
     /*
     if(document.documentElement.getAttribute("data-apptheme") === "dark") {
       document.documentElement.setAttribute("data-apptheme", "light");
@@ -102,8 +171,8 @@ export default function Index() {
                 <p>The Ultimate DevOps Ecosystem</p>
               </div>
               <section className={cssGlobal["rs-element-both"]}>
-                <button onClick={() => appTheme()} className={css["landing-finish-date"]}>
-                  <p>{releaseDate}</p>
+                <button onClick={() => appCountdown()} className={css["landing-finish-date"]}>
+                  <p>Coming {releaseDate}</p>
                 </button>
               </section>
             </div>
@@ -112,7 +181,7 @@ export default function Index() {
             <div className={`${css["landing-title"]} ${cssGlobal["flex-center-left"]}`}>
               <div className={css["landing-title-text"]}>
                 <h1>
-                  A <span className={css["landing-title-text-white"]}>Centralised Suite of Tools</span> for developers to <span className={css["landing-title-text-white"]}>streamline</span> the DevOps workflow.
+                  A <span className={css["landing-title-text-white"]}>centralised suite of tools</span> for developers to <span className={css["landing-title-text-white"]}>streamline</span> the DevOps workflow
                 </h1>
               </div>
               {/* <div className={css["landing-title-text"]}>
@@ -130,7 +199,7 @@ export default function Index() {
             </div>
             <div className={`${css["landing-features"]} ${cssGlobal["flex-center-center"]}`}>
               <div className={css["landing-features-box"]}>
-                <h1>An Ecosystem Integrating Seamlessly</h1>
+                <h1>An ecosystem integrating seamlessly</h1>
                 <div className={css["landing-features-box-art"]}>
                   <section className={cssGlobal["rs-element-both"]}>
                     <img id="PreLaunch-landing-feaetures-box-art-img" src={ecosystemArt} />
@@ -138,7 +207,7 @@ export default function Index() {
                 </div>
               </div>
               <div className={css["landing-features-box"]}>
-                <h1>Enhancing Teamwork and Collaboration</h1>
+                <h1>Enhancing teamwork and collaboration</h1>
                 <div className={css["landing-features-box-art"]}>
                   <section className={cssGlobal["rs-element-both"]}>
                     <img id="PreLaunch-landing-feaetures-box-art-img--2" src={collaborationArt} />
@@ -179,7 +248,7 @@ export default function Index() {
                       <i className={`${css["fas"]} ${css["fa-server"]} ${"fas fa-server"}`}></i>
                     </div>
                     <p>
-                      Scalable Droplet Hosting allows you to change your budget and resources <span>on the fly.</span>
+                      Scalable Droplets that allows you to change your budget and resources <span>on the fly.</span>
                     </p>
                   </section>
                 </div>
@@ -229,7 +298,7 @@ export default function Index() {
               <div className={css["whiteboard"]}>
                 <div className={css["whiteboard-title"]}>
                   <h2>Introducing...</h2>
-                  <h1>THE COOOOL STAX WHITEBOARD!!!{" "}
+                  <h1>THE STAX WHITEBOARD!!!{" "}
                     <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>{" "}
                     <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>{" "}
                     <i className={`${css["fa-face-smile"]} ${"far fa-face-smile"}`}></i>
@@ -237,13 +306,13 @@ export default function Index() {
                 </div>
                 <div className={css["whiteboard-info"]}>
                   <p>
-                    A productivity tool that allows <span>you to jot down notes, tasks and reminders with the help of Staxle, our very own AI assistant helper.</span>
+                    A productivity tool that allows <span>you to jot down notes, tasks and reminders with the help of Staxle, your very own AI assistant.</span>
                   </p>
                 </div>
                 <section className={cssGlobal["rs-element-both"]}>
                 <div className={`${css["whiteboard-sticky"]} ${cssGlobal["flex-flex-start-center"]}`}>
                   <div className={css["whiteboard-sticky-box"]} contentEditable>
-                    <p>Collaborate  in real-time with your team with the <u>AI Assistant</u>!!!!</p>
+                    <p>Collaborate  in real-time with your team with the <u title="Staxle is seriously awesome!">AI Assistant</u>!!!!</p>
                   </div>
                   <div className={css["whiteboard-sticky-box"]} contentEditable>
                     <p>
@@ -253,9 +322,9 @@ export default function Index() {
                     </p>
                   </div>
                   <div className={css["whiteboard-sticky-box"]} contentEditable>
-                    <p>Finish the CSS for the landing page!!!
+                    <p>Finish the <span className={`${css["censor"]}`}>fucking</span> SDS already!!!
                       <br/><br/>
-                      - Alex
+                      - Staxle
                     </p>
                   </div>
                 </div>
@@ -320,11 +389,12 @@ export default function Index() {
 
               </div>
             </div> */}
-            <div className={css["landing-finish"]}>
+        {/* <div className={css["landing-finish"]}>
               <button onClick={() => appTheme()} className={css["landing-finish-date"]}>
                 <p>{releaseDate}</p>
               </button>
             </div>
+        */}
 
           </div>
         </div>
