@@ -380,9 +380,13 @@ async def generate_image_handle(update: Update, context: CallbackContext, messag
 async def narrator_handle(update: Update, context: CallbackContext, message=None):
     message = message or update.message.text
     await update.message.chat.send_action(action="upload_audio")
-    audio_url = await openai_utils.generate_audio(message)
-    await update.message.reply_audio(audio_url)
-
+    
+    audio_file = await openai_utils.generate_audio(message)
+    with open(audio_file, 'rb') as f:
+        await update.message.reply_audio(f)
+    
+    # Clean up the temporary file
+    os.unlink(audio_file)
     await update.message.reply_text("🎤 Done", parse_mode=ParseMode.HTML)
 
 

@@ -1,6 +1,7 @@
 import config
 import tiktoken
 from openai import AsyncOpenAI, OpenAIError
+import tempfile
 
 client = AsyncOpenAI(
     api_key=config.openai_api_key,
@@ -222,22 +223,52 @@ async def generate_images(prompt, n_images=1):
     return image_urls
 
 async def analyze_image(image_path, instructions=None):
-    prompt = "Analyze this image"  # Set a default prompt
-    if instructions:
-        prompt = f"{prompt}\n\nInstructions: {instructions}"
-    r = await client.images.analyze(image=image_path, prompt=prompt)
-    return r.text
+    # Read image as base64
+    with open(image_path, "rb") as image_file:
+        import base64
+        image_data = base64.b64encode(image_file.read()).decode('utf-8')
+    
+    # Prepare the message
+    prompt = instructions if instructions else "What's in this image?"
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": prompt},
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/jpeg;base64,{image_data}"
+                    }
+                }
+            ]
+        }
+    ]
+    
+    # Make the API call
+    response = await client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=messages,
+        max_tokens=300
+    )
+    
+    return response.choices[0].message.content
 
 async def generate_audio(prompt):
     if not prompt or len(str(prompt).strip()) == 0:
         raise ValueError("Audio prompt cannot be empty")
         
-    r = await client.audio.speech.create(
+    response = await client.audio.speech.create(
         model="tts-1",
         voice="echo",
         input=str(prompt)
     )
-    return r.url
+    
+    # Create a temporary file to store the audio
+    with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as tmp_file:
+        # Write the binary content to the file
+        tmp_file.write(await response.read())
+        return tmp_file.name  # Return the path to the temporary file
 
 
 async def is_content_acceptable(prompt):
