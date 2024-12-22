@@ -1,9 +1,9 @@
-available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"]
+available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"]
 
 info:
   gpt-3.5-turbo-16k:
     type: chat_completion
-    name: 3
+    name: "3"
     description: ChatGPT is that well-known model. It's <b>fast</b>. Ideal for everyday tasks. If there are some tasks it can't handle, try the <b>GPT-4</b>.
 
     scores:
@@ -12,7 +12,7 @@ info:
 
   gpt-4-1106-preview:
     type: chat_completion
-    name: 4
+    name: "4"
     description: GPT-4 is a <b>faster</b> version of GPT-4. It is as smart as GPT-4, but it is faster, so you should use it instead of GPT-4.
 
     scores:
@@ -45,18 +45,6 @@ info:
     scores:
       Smart: 5
       Speed: 5
-
-  o1:
-    type: chat_completion
-    name: o1
-    description: O1 is a <b>flagship</b> model of OpenAI. It is the most powerful model they have with public access.
-
-    scores:
-      Smart: 5
-      Speed: 3
-
-  dalle-2:
-     type: image
 
   dalle-3:
      type: image

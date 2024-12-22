@@ -511,7 +511,9 @@ def get_settings_menu(user_id: int):
     # If the model is not in the available_text_models list, fallback to gpt-3.5-turbo-16k
     if current_model not in config.models["available_text_models"]:
         current_model = "gpt-3.5-turbo-16k"
-    text = config.models["info"][current_model]["description"]
+        text = "ChatGPT 3.5 Turbo 16k (Error)"
+    else:
+        text = config.models["info"][current_model]["description"]
 
     text += "\n\nSelect <b>model</b>:"
 
