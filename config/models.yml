@@ -1,9 +1,9 @@
-available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"]
+available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"]
 
 info:
   gpt-3.5-turbo-16k:
     type: chat_completion
-    name: GPT-16K
+    name: 3
     description: ChatGPT is that well-known model. It's <b>fast</b>. Ideal for everyday tasks. If there are some tasks it can't handle, try the <b>GPT-4</b>.
 
     scores:
@@ -12,7 +12,7 @@ info:
 
   gpt-4-1106-preview:
     type: chat_completion
-    name: GPT-4 Turbo
+    name: 4
     description: GPT-4 is a <b>faster</b> version of GPT-4. It is as smart as GPT-4, but it is faster, so you should use it instead of GPT-4.
 
     scores:
@@ -21,7 +21,7 @@ info:
 
   gpt-4o-2024-11-20:
     type: chat_completion
-    name: GPT-4o
+    name: 4o
     description: GPT-4o is a <b>faster</b> version of GPT-4. It is much smarter than GPT-4, but it is slower.
 
     scores:
@@ -30,7 +30,7 @@ info:
 
   gpt-4o-mini:
     type: chat_completion
-    name: GPT-4o Mini
+    name: 4o Mini
     description: GPT-4o Mini is a <b>smaller</b> version of GPT-4o. It is as smart as GPT-4o, but it is smaller, so you should use it instead of GPT-4o.
 
     scores:
@@ -39,21 +39,12 @@ info:
 
   o1-mini:
     type: chat_completion
-    name: O1 Mini
+    name: o1
     description: O1 Mini is a <b>smaller</b> version of O1. It is as smart as O1, but it is smaller, so you should use it instead of O1.
 
     scores:
       Smart: 5
       Speed: 5
-
-  o1:
-    type: chat_completion
-    name: O1
-    description: O1 is a <b>flagship</b> model of OpenAI. It is the most powerful model they have with public access.
-
-    scores:
-      Smart: 5
-      Speed: 3
 
   dalle-2:
      type: image

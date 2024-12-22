@@ -20,7 +20,7 @@ OPENAI_COMPLETION_OPTIONS = {
 
 class ChatGPT:
     def __init__(self, model="gpt-3.5-turbo-16k"):
-        assert model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"}, f"Unknown model: {model}"
+        assert model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"}, f"Unknown model: {model}"
         self.model = model
 
     async def send_message(self, message, dialog_messages=[], chat_mode="assistant"):
@@ -31,7 +31,7 @@ class ChatGPT:
         answer = None
         while answer is None:
             try:
-                if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"}:
+                if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"}:
                     messages = self._generate_prompt_messages(message, dialog_messages, chat_mode)
                     r = await client.chat.completions.create(
                         model=self.model,
@@ -77,7 +77,7 @@ class ChatGPT:
 
         while answer is None:
             try:
-                if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"}:
+                if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"}:
                     messages = self._generate_prompt_messages(message, dialog_messages, chat_mode)
                     r_gen = await client.chat.completions.create(
                         model=self.model,
@@ -142,7 +142,14 @@ class ChatGPT:
         prompt = config.system_intel + "\n\n"
         prompt += config.chat_modes[chat_mode]["prompt_start"]
 
-        messages = [{"role": "system", "content": prompt}]
+        messages = []
+        if self.model not in {"o1-mini"}:  # Add this check
+            messages.append({"role": "system", "content": prompt})
+        else:
+            # For O1 models, add the system message as a user message
+            messages.append({"role": "user", "content": prompt})
+            messages.append({"role": "assistant", "content": "I understand and will act accordingly."})
+
         for dialog_message in dialog_messages:
             messages.append({"role": "user", "content": dialog_message["user"]})
             messages.append({"role": "assistant", "content": dialog_message["bot"]})
@@ -170,9 +177,6 @@ class ChatGPT:
             tokens_per_message = 3
             tokens_per_name = 1
         elif model == "o1-mini":
-            tokens_per_message = 3
-            tokens_per_name = 1
-        elif model == "o1":
             tokens_per_message = 3
             tokens_per_name = 1
         else:
