@@ -51,6 +51,7 @@ HELP_MESSAGE = """Commands:
 
 🎨 Generate images from text prompts in <b>👩‍🎨 Artist</b> /mode
 🎤 You can send <b>Voice Messages</b> instead of text
+🎤 You can send <b>Narrator</b> mode to say anything that you write to me (e.g. <i>Ginger cat selfie on Times Square, illustration</i>).
 """
 
 
@@ -83,7 +84,7 @@ async def register_user_if_not_exists(update: Update, context: CallbackContext, 
     n_used_tokens = db.get_user_attribute(user.id, "n_used_tokens")
     if isinstance(n_used_tokens, int):  # old format
         new_n_used_tokens = {
-            "gpt-3.5-turbo": {
+            "gpt-3.5-turbo-16k": {
                 "n_input_tokens": 0,
                 "n_output_tokens": n_used_tokens
             }
@@ -181,6 +182,9 @@ async def message_handle(update: Update, context: CallbackContext, message=None,
 
     if chat_mode == "artist":
         await generate_image_handle(update, context, message=message)
+        return
+    elif chat_mode == "narrator":
+        await narrator_handle(update, context, message=message)
         return
 
     async def message_handle_fn():
@@ -373,6 +377,20 @@ async def generate_image_handle(update: Update, context: CallbackContext, messag
     for i, image_url in enumerate(image_urls):
         await update.message.chat.send_action(action="upload_photo")
         await update.message.reply_photo(image_url, parse_mode=ParseMode.HTML)
+
+async def narrator_handle(update: Update, context: CallbackContext, message=None):
+    await register_user_if_not_exists(update, context, update.message.from_user)
+    if await is_previous_message_not_answered_yet(update, context): return
+
+    user_id = update.message.from_user.id
+    db.set_user_attribute(user_id, "last_interaction", datetime.now())
+
+    await update.message.chat.send_action(action="upload_audio")
+
+    audio_url = await openai_utils.generate_audio(message)
+    await update.message.reply_audio(audio_url)
+
+    await update.message.reply_text("🎤 Done", parse_mode=ParseMode.HTML)
 
 
 async def new_dialog_handle(update: Update, context: CallbackContext):
