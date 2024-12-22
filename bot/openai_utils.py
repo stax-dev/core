@@ -10,11 +10,20 @@ client = AsyncOpenAI(
 
 
 OPENAI_COMPLETION_OPTIONS = {
-    "temperature": 0.7,
-    "max_tokens": 1000,
-    "top_p": 1,
-    "frequency_penalty": 0,
-    "presence_penalty": 0
+    "default": {
+        "temperature": 0.7,
+        "max_tokens": 4000,
+        "top_p": 1,
+        "frequency_penalty": 0,
+        "presence_penalty": 0
+    },
+    "o1-mini": {
+        "temperature": 0.7,
+        "max_completion_tokens": 4000,
+        "top_p": 1,
+        "frequency_penalty": 0,
+        "presence_penalty": 0
+    }
 }
 
 
@@ -22,6 +31,12 @@ class ChatGPT:
     def __init__(self, model="gpt-3.5-turbo-16k"):
         assert model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"}, f"Unknown model: {model}"
         self.model = model
+
+    def _get_completion_options(self):
+        """Get the appropriate completion options for the current model"""
+        if self.model in {"o1-mini"}:
+            return OPENAI_COMPLETION_OPTIONS["o1-mini"]
+        return OPENAI_COMPLETION_OPTIONS["default"]
 
     async def send_message(self, message, dialog_messages=[], chat_mode="assistant"):
         if chat_mode not in config.chat_modes.keys():
@@ -36,7 +51,7 @@ class ChatGPT:
                     r = await client.chat.completions.create(
                         model=self.model,
                         messages=messages,
-                        **OPENAI_COMPLETION_OPTIONS
+                        **self._get_completion_options()
                     )
                     answer = r.choices[0].message["content"]
                 elif self.model == "text-davinci-003":
@@ -44,7 +59,7 @@ class ChatGPT:
                     r = await client.completions.create(
                         engine=self.model,
                         prompt=prompt,
-                        **OPENAI_COMPLETION_OPTIONS
+                        **self._get_completion_options()
                     )
                     answer = r.choices[0].text
                 else:
@@ -83,7 +98,7 @@ class ChatGPT:
                         model=self.model,
                         messages=messages,
                         stream=True,
-                        **OPENAI_COMPLETION_OPTIONS
+                        **self._get_completion_options()
                     )
 
                     answer = ""
@@ -99,7 +114,7 @@ class ChatGPT:
                         engine=self.model,
                         prompt=prompt,
                         stream=True,
-                        **OPENAI_COMPLETION_OPTIONS
+                        **self._get_completion_options()
                     )
 
                     answer = ""
@@ -253,7 +268,7 @@ async def analyze_image(image_path, instructions=None):
     response = await client.chat.completions.create(
         model="gpt-4o-mini",
         messages=messages,
-        max_tokens=300
+        max_tokens=1000
     )
     
     return response.choices[0].message.content
