@@ -29,8 +29,20 @@ OPENAI_COMPLETION_OPTIONS = {
 
 class ChatGPT:
     def __init__(self, model="gpt-3.5-turbo-16k"):
-        assert model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"}, f"Unknown model: {model}"
-        self.model = model
+        self.available_models = {
+            "gpt-3.5-turbo-16k", 
+            "gpt-4-1106-preview", 
+            "gpt-4o-2024-11-20", 
+            "gpt-4o-mini", 
+            "o1-mini"
+        }
+        
+        # If model not in available models, fallback to default
+        if model not in self.available_models:
+            print(f"Warning: Model {model} not found, falling back to gpt-3.5-turbo-16k")
+            self.model = "gpt-3.5-turbo-16k"
+        else:
+            self.model = model
 
     def _get_completion_options(self):
         """Get the appropriate completion options for the current model"""
