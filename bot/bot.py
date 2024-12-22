@@ -32,7 +32,7 @@ from telegram.constants import ParseMode, ChatAction
 import config
 import database
 import openai_utils
-from .realtime_utils import RealtimeHandler
+from realtime_utils import RealtimeHandler
 
 
 # setup
