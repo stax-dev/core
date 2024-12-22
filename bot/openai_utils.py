@@ -69,6 +69,8 @@ class ChatGPT:
         n_dialog_messages_before = len(dialog_messages)
         answer = None
         n_input_tokens, n_output_tokens = 0, 0
+        n_first_dialog_messages_removed = 0
+
         while answer is None:
             try:
                 if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"}:
@@ -209,11 +211,9 @@ async def generate_images(prompt, n_images=1):
     return image_urls
 
 async def analyze_image(image_path, instructions=None):
-    # If instructions are provided, add them to the prompt
+    prompt = "Analyze this image"  # Set a default prompt
     if instructions:
         prompt = f"{prompt}\n\nInstructions: {instructions}"
-    else:
-        prompt = prompt
     r = await client.images.analyze(image=image_path, prompt=prompt)
     return r.text
 
