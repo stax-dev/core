@@ -68,6 +68,7 @@ class ChatGPT:
 
         n_dialog_messages_before = len(dialog_messages)
         answer = None
+        n_input_tokens, n_output_tokens = 0, 0
         while answer is None:
             try:
                 if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"}:
