@@ -63,6 +63,9 @@ class ChatGPT:
         return answer, (n_input_tokens, n_output_tokens), n_first_dialog_messages_removed
 
     async def send_message_stream(self, message, dialog_messages=[], chat_mode="assistant"):
+        if not message or len(str(message).strip()) == 0:
+            raise ValueError("Message cannot be empty")
+            
         if chat_mode not in config.chat_modes.keys():
             raise ValueError(f"Chat mode {chat_mode} is not supported")
 
@@ -83,10 +86,9 @@ class ChatGPT:
                     )
 
                     answer = ""
-                    async for r_item in r_gen:
-                        delta = r_item.choices[0].delta
-                        if "content" in delta:
-                            answer += delta.content
+                    async for chunk in r_gen:
+                        if chunk.choices[0].delta.content is not None:
+                            answer += chunk.choices[0].delta.content
                             n_input_tokens, n_output_tokens = self._count_tokens_from_messages(messages, answer, model=self.model)
                             n_first_dialog_messages_removed = n_dialog_messages_before - len(dialog_messages)
                             yield "not_finished", answer, (n_input_tokens, n_output_tokens), n_first_dialog_messages_removed
@@ -218,10 +220,13 @@ async def analyze_image(image_path, instructions=None):
     return r.text
 
 async def generate_audio(prompt):
+    if not prompt or len(str(prompt).strip()) == 0:
+        raise ValueError("Audio prompt cannot be empty")
+        
     r = await client.audio.speech.create(
         model="tts-1",
         voice="echo",
-        input={"text": prompt}
+        input={"text": str(prompt)}
     )
     return r.url
 

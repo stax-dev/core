@@ -378,14 +378,8 @@ async def generate_image_handle(update: Update, context: CallbackContext, messag
         await update.message.reply_photo(image_url, parse_mode=ParseMode.HTML)
 
 async def narrator_handle(update: Update, context: CallbackContext, message=None):
-    await register_user_if_not_exists(update, context, update.message.from_user)
-    if await is_previous_message_not_answered_yet(update, context): return
-
-    user_id = update.message.from_user.id
-    db.set_user_attribute(user_id, "last_interaction", datetime.now())
-
+    message = message or update.message.text
     await update.message.chat.send_action(action="upload_audio")
-
     audio_url = await openai_utils.generate_audio(message)
     await update.message.reply_audio(audio_url)
 
