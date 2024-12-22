@@ -1,6 +1,6 @@
 import config
 import tiktoken
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI, OpenAIError
 
 client = AsyncOpenAI(
     api_key=config.openai_api_key,
@@ -52,7 +52,7 @@ class ChatGPT:
 
                 answer = self._postprocess_answer(answer)
                 n_input_tokens, n_output_tokens = r.usage.prompt_tokens, r.usage.completion_tokens
-            except openai.error.InvalidRequestError as e:  # too many tokens
+            except OpenAIError as e:  # too many tokens
                 if len(dialog_messages) == 0:
                     raise ValueError("Dialog messages is reduced to zero, but still has too many tokens to make completion") from e
 
@@ -106,7 +106,7 @@ class ChatGPT:
 
                 answer = self._postprocess_answer(answer)
 
-            except openai.error.InvalidRequestError as e:  # too many tokens
+            except OpenAIError as e:  # too many tokens
                 if len(dialog_messages) == 0:
                     raise e
 
@@ -221,7 +221,7 @@ async def generate_audio(prompt):
     r = await client.audio.speech.create(
         model="tts-1",
         voice="echo",
-        input=prompt
+        input={"text": prompt}
     )
     return r.url
 
