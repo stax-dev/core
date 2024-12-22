@@ -604,8 +604,11 @@ async def image_message_handle(update: Update, context: CallbackContext):
     user_id = update.message.from_user.id
     db.set_user_attribute(user_id, "last_interaction", datetime.now())
 
+    # Send typing action
+    await update.message.chat.send_action(action="typing")
+
     # Get the image file
-    photo = update.message.photo[-1]
+    photo = update.message.photo[-1]  # Get the largest size
     with tempfile.TemporaryDirectory() as tmp_dir:
         tmp_dir = Path(tmp_dir)
         image_path = tmp_dir / "image.jpg"
@@ -614,19 +617,17 @@ async def image_message_handle(update: Update, context: CallbackContext):
         photo_file = await context.bot.get_file(photo.file_id)
         await photo_file.download_to_drive(image_path)
 
-        # Perform image recognition (using a placeholder function)
-        recognized_text = await recognize_image(image_path)
-
-        # Check for caption and interpret as instructions
-        caption = update.message.caption or ""
-        if caption:
-            instructions = f"Instructions: {caption}"
-        else:
-            instructions = "No instructions provided."
-
-        # Send the recognized text and instructions back to the user
-        response_text = f"Recognized Text: {recognized_text}\n{instructions}"
-        await update.message.reply_text(response_text, parse_mode=ParseMode.HTML)
+        try:
+            # Get caption as instructions if provided
+            instructions = update.message.caption if update.message.caption else None
+            
+            # Analyze the image
+            analysis = await openai_utils.analyze_image(image_path, instructions)
+            
+            # Send the analysis back
+            await update.message.reply_text(analysis, parse_mode=ParseMode.HTML)
+        except Exception as e:
+            await update.message.reply_text(f"Error analyzing image: {str(e)}", parse_mode=ParseMode.HTML)
 
 def run_bot() -> None:
     application = (
@@ -663,6 +664,9 @@ def run_bot() -> None:
     application.add_handler(CallbackQueryHandler(set_settings_handle, pattern="^set_settings"))
 
     application.add_error_handler(error_handle)
+
+    # Add image handler
+    application.add_handler(MessageHandler(filters.PHOTO & user_filter, image_message_handle))
 
     # start the bot
     application.run_polling()

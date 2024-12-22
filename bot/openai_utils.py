@@ -203,12 +203,21 @@ class ChatGPT:
 
 
 async def transcribe_audio(audio_file):
-    r = await client.audio.transcribe("whisper-1", audio_file)
-    return r["text"]
+    r = await client.audio.transcriptions.create(
+        model="whisper-1",
+        file=audio_file
+    )
+    return r.text
 
 
 async def generate_images(prompt, n_images=1):
-    r = await client.images.create(model="dall-e-3", prompt=prompt, n=n_images, size="1792x1024", quality="hd")
+    r = await client.images.generate(
+        model="dall-e-3",
+        prompt=prompt,
+        n=n_images,
+        size="1792x1024",
+        quality="hd"
+    )
     image_urls = [item.url for item in r.data]
     return image_urls
 
@@ -226,7 +235,7 @@ async def generate_audio(prompt):
     r = await client.audio.speech.create(
         model="tts-1",
         voice="echo",
-        input={"text": str(prompt)}
+        input=str(prompt)
     )
     return r.url
 
