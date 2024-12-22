@@ -1,4 +1,4 @@
-available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"]
+available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"]
 
 info:
   gpt-3.5-turbo-16k:
@@ -45,6 +45,15 @@ info:
     scores:
       Smart: 5
       Speed: 5
+
+  o1:
+    type: chat_completion
+    name: o1
+    description: O1 is a <b>flagship</b> model of OpenAI. It is the most powerful model they have with public access.
+
+    scores:
+      Smart: 5
+      Speed: 3
 
   dalle-2:
      type: image
