@@ -32,7 +32,6 @@ from telegram.constants import ParseMode, ChatAction
 import config
 import database
 import openai_utils
-from realtime_utils import RealtimeHandler
 
 
 # setup
@@ -634,61 +633,6 @@ async def image_message_handle(update: Update, context: CallbackContext):
         except Exception as e:
             await update.message.reply_text(f"Error analyzing image: {str(e)}", parse_mode=ParseMode.HTML)
 
-async def voice_chat_started(update: Update, context: CallbackContext):
-    chat_id = update.message.chat_id
-    context.chat_data['realtime'] = RealtimeHandler()
-    await context.chat_data['realtime'].start_call(update.message)
-    
-    # Start audio streaming
-    audio_task = asyncio.create_task(handle_audio_stream(update, context))
-    context.chat_data['audio_task'] = audio_task
-    
-    await update.message.reply_text("Voice chat started! You can speak or type messages.")
-
-async def handle_audio_stream(update: Update, context: CallbackContext):
-    """Handle continuous audio streaming"""
-    handler = context.chat_data.get('realtime')
-    if not handler:
-        return
-        
-    try:
-        while True:
-            # Get audio from Telegram
-            voice_data = await context.bot.get_voice_chat_audio(update.message.chat_id)
-            if voice_data:
-                # Process through realtime handler
-                async for audio_response in handler.handle_voice(voice_data):
-                    # Send audio back to voice chat
-                    await context.bot.send_voice_chat_audio(
-                        update.message.chat_id,
-                        audio_response
-                    )
-            await asyncio.sleep(0.1)  # Small delay to prevent flooding
-            
-    except Exception as e:
-        print(f"Audio streaming error: {e}")
-
-async def voice_chat_message(update: Update, context: CallbackContext):
-    """Handle text messages during voice chat"""
-    handler = context.chat_data.get('realtime')
-    if not handler:
-        return
-        
-    await handler.handle_text(update.message.text)
-
-async def voice_chat_ended(update: Update, context: CallbackContext):
-    if 'realtime' in context.chat_data:
-        # Cancel audio streaming task
-        if 'audio_task' in context.chat_data:
-            context.chat_data['audio_task'].cancel()
-            del context.chat_data['audio_task']
-            
-        # Close realtime session
-        await context.chat_data['realtime'].end_call()
-        del context.chat_data['realtime']
-        
-    await update.message.reply_text("Voice chat ended.")
-
 def run_bot() -> None:
     application = (
         ApplicationBuilder()
@@ -727,14 +671,6 @@ def run_bot() -> None:
 
     # Add image handler
     application.add_handler(MessageHandler(filters.PHOTO & user_filter, image_message_handle))
-
-    # Add voice chat handlers
-    application.add_handler(MessageHandler(filters.VOICE_CHAT_STARTED, voice_chat_started))
-    application.add_handler(MessageHandler(filters.VOICE_CHAT_ENDED, voice_chat_ended))
-    application.add_handler(MessageHandler(
-        filters.TEXT & filters.VOICE_CHAT_ACTIVE & ~filters.COMMAND,
-        voice_chat_message
-    ))
 
     # start the bot
     application.run_polling()

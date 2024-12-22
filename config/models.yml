@@ -1,4 +1,4 @@
-available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"]
+available_text_models: ["gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"]
 
 info:
   gpt-3.5-turbo-16k:
@@ -66,23 +66,3 @@ info:
 
   tts-1:
     type: audio
-
-  gpt-4o-realtime-preview-2024-12-17:
-    type: realtime
-    name: 4o Realtime
-    description: GPT-4o Realtime is optimized for low-latency, multi-modal conversations with voice capabilities.
-
-    scores:
-      Smart: 5
-      Speed: 5
-      Latency: 1
-
-  gpt-4o-mini-realtime-preview-2024-12-17:
-    type: realtime
-    name: 4o Mini Realtime
-    description: A lighter version of GPT-4o Realtime with similar capabilities but faster response times.
-
-    scores:
-      Smart: 5
-      Speed: 5
-      Latency: 1
