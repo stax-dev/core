@@ -186,27 +186,22 @@ class ChatGPT:
         return answer
 
     def _count_tokens_from_messages(self, messages, answer, model="gpt-3.5-turbo-16k"):
-        encoding = tiktoken.encoding_for_model(model)
+        # Map O1 models to a compatible tokenizer
+        if model == "o1-mini":
+            encoding = tiktoken.get_encoding("cl100k_base")  # Use cl100k_base for O1 models
+        else:
+            encoding = tiktoken.encoding_for_model(model)
 
         if model == "gpt-3.5-turbo-16k":
-            tokens_per_message = 4  # every message follows <im_start>{role/name}\n{content}<im_end>\n
-            tokens_per_name = -1  # if there's a name, the role is omitted
-        elif model == "gpt-4-1106-preview":
-            tokens_per_message = 3
-            tokens_per_name = 1
-        elif model == "gpt-4o-2024-11-20":
-            tokens_per_message = 3
-            tokens_per_name = 1
-        elif model == "gpt-4o-mini":
-            tokens_per_message = 3
-            tokens_per_name = 1
-        elif model == "o1-mini":
+            tokens_per_message = 4
+            tokens_per_name = -1
+        elif model in {"gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini"}:
             tokens_per_message = 3
             tokens_per_name = 1
         else:
             raise ValueError(f"Unknown model: {model}")
 
-        # input
+        # Rest of the method remains the same
         n_input_tokens = 0
         for message in messages:
             n_input_tokens += tokens_per_message
@@ -216,8 +211,6 @@ class ChatGPT:
                     n_input_tokens += tokens_per_name
 
         n_input_tokens += 2
-
-        # output
         n_output_tokens = 1 + len(encoding.encode(answer))
 
         return n_input_tokens, n_output_tokens
