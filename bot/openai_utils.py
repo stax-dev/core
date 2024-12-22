@@ -209,7 +209,11 @@ async def generate_images(prompt, n_images=1):
     return image_urls
 
 async def generate_audio(prompt):
-    r = await openai.Audio.acreate(model="tts-1", input=prompt, voice="echo")
+    r = await openai.audio.speech.create(
+        model="tts-1",
+        voice="echo",
+        input=prompt
+    )
     return r.url
 
 
