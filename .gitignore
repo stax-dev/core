@@ -3,6 +3,8 @@ node_modules
 
 # Ignore dotenv file
 .env
+config/config.yml
+config/config.env
 
 # Ignore build, dist, and bin folders
 build/
