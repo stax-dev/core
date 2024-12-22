@@ -266,8 +266,8 @@ async def generate_audio(prompt):
     
     # Create a temporary file to store the audio
     with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as tmp_file:
-        # Write the binary content to the file
-        tmp_file.write(await response.read())
+        # Write the binary content directly - response is already bytes
+        tmp_file.write(response.content)
         return tmp_file.name  # Return the path to the temporary file
 
 
