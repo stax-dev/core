@@ -598,6 +598,43 @@ async def post_init(application: Application):
         BotCommand("/help", "Show help message"),
     ])
 
+recognize_image = openai_utils.analyze_image
+
+async def image_message_handle(update: Update, context: CallbackContext):
+    # Check if bot was mentioned (for group chats)
+    if not await is_bot_mentioned(update, context):
+        return
+
+    await register_user_if_not_exists(update, context, update.message.from_user)
+    if await is_previous_message_not_answered_yet(update, context): return
+
+    user_id = update.message.from_user.id
+    db.set_user_attribute(user_id, "last_interaction", datetime.now())
+
+    # Get the image file
+    photo = update.message.photo[-1]
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        tmp_dir = Path(tmp_dir)
+        image_path = tmp_dir / "image.jpg"
+
+        # Download the image
+        photo_file = await context.bot.get_file(photo.file_id)
+        await photo_file.download_to_drive(image_path)
+
+        # Perform image recognition (using a placeholder function)
+        recognized_text = await recognize_image(image_path)
+
+        # Check for caption and interpret as instructions
+        caption = update.message.caption or ""
+        if caption:
+            instructions = f"Instructions: {caption}"
+        else:
+            instructions = "No instructions provided."
+
+        # Send the recognized text and instructions back to the user
+        response_text = f"Recognized Text: {recognized_text}\n{instructions}"
+        await update.message.reply_text(response_text, parse_mode=ParseMode.HTML)
+
 def run_bot() -> None:
     application = (
         ApplicationBuilder()

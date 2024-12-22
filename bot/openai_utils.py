@@ -1,11 +1,11 @@
 import config
-
 import tiktoken
-import openai
-openai.api_key = config.openai_api_key
+from openai import AsyncOpenAI
 
-if config.openai_api_base is not None:
-    openai.api_base = config.openai_api_base
+client = AsyncOpenAI(
+    api_key=config.openai_api_key,
+    base_url=config.openai_api_base if config.openai_api_base else None
+)
 
 
 OPENAI_COMPLETION_OPTIONS = {
@@ -33,7 +33,7 @@ class ChatGPT:
             try:
                 if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"}:
                     messages = self._generate_prompt_messages(message, dialog_messages, chat_mode)
-                    r = await openai.ChatCompletion.acreate(
+                    r = await client.chat.completions.create(
                         model=self.model,
                         messages=messages,
                         **OPENAI_COMPLETION_OPTIONS
@@ -41,7 +41,7 @@ class ChatGPT:
                     answer = r.choices[0].message["content"]
                 elif self.model == "text-davinci-003":
                     prompt = self._generate_prompt(message, dialog_messages, chat_mode)
-                    r = await openai.Completion.acreate(
+                    r = await client.completions.create(
                         engine=self.model,
                         prompt=prompt,
                         **OPENAI_COMPLETION_OPTIONS
@@ -73,7 +73,7 @@ class ChatGPT:
             try:
                 if self.model in {"gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4o-2024-11-20", "gpt-4o-mini", "o1-mini", "o1"}:
                     messages = self._generate_prompt_messages(message, dialog_messages, chat_mode)
-                    r_gen = await openai.ChatCompletion.acreate(
+                    r_gen = await client.chat.completions.create(
                         model=self.model,
                         messages=messages,
                         stream=True,
@@ -90,7 +90,7 @@ class ChatGPT:
                             yield "not_finished", answer, (n_input_tokens, n_output_tokens), n_first_dialog_messages_removed
                 elif self.model == "text-davinci-003":
                     prompt = self._generate_prompt(message, dialog_messages, chat_mode)
-                    r_gen = await openai.Completion.acreate(
+                    r_gen = await client.completions.create(
                         engine=self.model,
                         prompt=prompt,
                         stream=True,
@@ -199,17 +199,26 @@ class ChatGPT:
 
 
 async def transcribe_audio(audio_file):
-    r = await openai.Audio.atranscribe("whisper-1", audio_file)
+    r = await client.audio.transcribe("whisper-1", audio_file)
     return r["text"]
 
 
 async def generate_images(prompt, n_images=1):
-    r = await openai.Image.acreate(model="dall-e-3", prompt=prompt, n=n_images, size="1792x1024", quality="hd")
+    r = await client.images.create(model="dall-e-3", prompt=prompt, n=n_images, size="1792x1024", quality="hd")
     image_urls = [item.url for item in r.data]
     return image_urls
 
+async def analyze_image(image_path, instructions=None):
+    # If instructions are provided, add them to the prompt
+    if instructions:
+        prompt = f"{prompt}\n\nInstructions: {instructions}"
+    else:
+        prompt = prompt
+    r = await client.images.analyze(image=image_path, prompt=prompt)
+    return r.text
+
 async def generate_audio(prompt):
-    r = await openai.audio.speech.create(
+    r = await client.audio.speech.create(
         model="tts-1",
         voice="echo",
         input=prompt
@@ -218,5 +227,5 @@ async def generate_audio(prompt):
 
 
 async def is_content_acceptable(prompt):
-    r = await openai.Moderation.acreate(input=prompt)
+    r = await client.moderation.create(input=prompt)
     return not all(r.results[0].categories.values())
