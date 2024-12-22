@@ -9,12 +9,22 @@ client = AsyncOpenAI(
 )
 
 
+# Update the completion options to be model-specific
 OPENAI_COMPLETION_OPTIONS = {
-    "temperature": 0.7,
-    "max_tokens": 1000,
-    "top_p": 1,
-    "frequency_penalty": 0,
-    "presence_penalty": 0
+    "default": {
+        "temperature": 0.7,
+        "max_tokens": 1000,
+        "top_p": 1,
+        "frequency_penalty": 0,
+        "presence_penalty": 0
+    },
+    "o1-mini": {
+        "temperature": 0.7,
+        "max_completion_tokens": 1000,  # Different parameter name for O1 models
+        "top_p": 1,
+        "frequency_penalty": 0,
+        "presence_penalty": 0
+    }
 }
 
 
@@ -35,6 +45,12 @@ class ChatGPT:
         else:
             self.model = model
 
+    def _get_completion_options(self):
+        """Get the appropriate completion options for the current model"""
+        if self.model in {"o1-mini"}:
+            return OPENAI_COMPLETION_OPTIONS["o1-mini"]
+        return OPENAI_COMPLETION_OPTIONS["default"]
+
     async def send_message(self, message, dialog_messages=[], chat_mode="assistant"):
         if chat_mode not in config.chat_modes.keys():
             raise ValueError(f"Chat mode {chat_mode} is not supported")
@@ -48,7 +64,7 @@ class ChatGPT:
                     r = await client.chat.completions.create(
                         model=self.model,
                         messages=messages,
-                        **OPENAI_COMPLETION_OPTIONS
+                        **self._get_completion_options()  # Use model-specific options
                     )
                     answer = r.choices[0].message["content"]
                 elif self.model == "text-davinci-003":
